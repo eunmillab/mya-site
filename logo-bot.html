@@ -1,0 +1,375 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>로고 생성기 — 먀 AI 스튜디오</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="값을 바꾸면 바로 그려지는 먀 로고 생성기. SVG로 내보낼 수 있습니다.">
+<link rel="canonical" href="https://www.myaaistudio.com/logo-bot.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="먀 AI 스튜디오">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="로고 생성기 — 먀 AI 스튜디오">
+<meta property="og:description" content="값을 바꾸면 바로 그려지는 먀 로고 생성기. SVG로 내보낼 수 있습니다.">
+<meta property="og:url" content="https://www.myaaistudio.com/logo-bot.html">
+<meta property="og:image" content="https://www.myaaistudio.com/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="stylesheet" href="style.css?v=1790119730">
+<style>
+  .bot{max-width:1180px; margin:0 auto; padding:clamp(28px,4vw,52px) 24px 90px}
+  .bot-grid{display:grid; grid-template-columns:330px 1fr; gap:22px; margin-top:28px; align-items:start}
+  @media (max-width:880px){ .bot-grid{grid-template-columns:1fr} }
+
+  .panel{border:1px solid var(--line); border-radius:var(--r-2xl); padding:22px; background:var(--bg); position:sticky; top:86px}
+  @media (max-width:880px){ .panel{position:static} }
+  .fieldset{border-top:1px solid var(--line-2); padding-top:16px; margin-top:16px}
+  .fieldset:first-child{border-top:0; padding-top:0; margin-top:0}
+  .fieldset > label{display:block; font-size:11.5px; font-weight:700; letter-spacing:.14em;
+    color:var(--silver-700); margin-bottom:10px}
+  .seg{display:flex; flex-wrap:wrap; gap:6px}
+  .seg button{height:34px; padding:0 12px; border-radius:var(--r-sm); border:1px solid var(--line);
+    background:var(--bg); font:inherit; font-size:13px; font-weight:600; color:var(--ink-2); cursor:pointer}
+  .seg button[aria-pressed="true"]{background:var(--silver-sheen); border-color:transparent; color:var(--g900)}
+  .row{display:grid; grid-template-columns:1fr auto; align-items:center; gap:10px; margin-top:10px}
+  .row span{font-size:13px; color:var(--ink-2)}
+  .row output{font-size:12px; color:var(--grey-2); font-variant-numeric:tabular-nums; min-width:46px; text-align:right}
+  input[type=range]{width:100%; accent-color:var(--silver-600)}
+  .panel input[type=text]{width:100%; height:38px; padding:0 11px; border:1px solid var(--line);
+    border-radius:var(--r-sm); font:inherit; font-size:14px; color:var(--ink); background:var(--bg)}
+  .panel input[type=text]:focus{outline:none; border-color:var(--silver-600)}
+
+  .stageA{border:1px solid var(--line); border-radius:var(--r-2xl); overflow:hidden}
+  .stageA .top{display:grid; place-items:center; padding:clamp(40px,7vw,86px) 24px; background:var(--g50)}
+  .stageA .bot2{display:grid; place-items:center; padding:clamp(40px,7vw,86px) 24px; background:var(--stage)}
+  .mini{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-top:16px}
+  .mini > div{border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden}
+  .mini .in{height:118px; display:grid; place-items:center; padding:16px}
+  .mini .in.d{background:var(--stage)} .mini .in.l{background:var(--g50)}
+  .mini .cap{padding:9px 12px; border-top:1px solid var(--line); font-size:11.5px; color:var(--grey)}
+
+  .out{margin-top:20px; border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden}
+  .out .hd{display:flex; justify-content:space-between; align-items:center; gap:12px;
+    padding:12px 16px; border-bottom:1px solid var(--line); background:var(--g50)}
+  .out .hd b{font-size:13px; font-weight:700; color:var(--ink)}
+  .out textarea{width:100%; height:190px; border:0; padding:14px 16px; font:12px/1.65 ui-monospace,Menlo,monospace;
+    color:var(--ink-2); background:var(--bg); resize:vertical}
+  .out textarea:focus{outline:none}
+  .toast{position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(10px); opacity:0;
+    background:var(--g900); color:#fff; font-size:13.5px; font-weight:600; padding:11px 18px; border-radius:999px;
+    transition:opacity .2s, transform .2s; pointer-events:none; z-index:80}
+  .toast.on{opacity:1; transform:translateX(-50%)}
+</style>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html"><span class="mk"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span></a>
+    <nav class="nav-links"><a href="index.html">홈</a><a href="brand.html">브랜드 가이드</a><a href="logo.html">시안</a></nav>
+    <a class="btn sm" href="index.html#contact">상담 받기</a>
+  </div>
+</header>
+
+<main class="bot">
+  <p class="eyebrow">브랜드 도구</p>
+  <h1 class="title" style="font-size:var(--d2)">먀 로고 생성기</h1>
+  <p class="lead">값을 바꾸면 바로 그려집니다. 마음에 드는 조합이 나오면 <b>SVG로 복사</b>해서 피그마에 붙여 넣으세요.
+    벡터라 크기를 키워도 안 깨지고, 보는 사람 컴퓨터에 Pretendard가 없어도 형태가 유지됩니다.</p>
+
+  <div class="bot-grid">
+    <!-- 컨트롤 -->
+    <form class="panel" id="ctl" onsubmit="return false">
+      <div class="fieldset">
+        <label>심볼</label>
+        <div class="seg" data-k="sym">
+          <button type="button" data-v="none">없음</button>
+          <button type="button" data-v="tile" aria-pressed="true">둥근 사각</button>
+          <button type="button" data-v="circle">원형</button>
+          <button type="button" data-v="geo">도형 먀</button>
+        </div>
+      </div>
+
+      <div class="fieldset">
+        <label>배치</label>
+        <div class="seg" data-k="lay">
+          <button type="button" data-v="h" aria-pressed="true">가로</button>
+          <button type="button" data-v="v">세로</button>
+          <button type="button" data-v="mark">심볼만</button>
+        </div>
+      </div>
+
+      <div class="fieldset">
+        <label>구분자</label>
+        <div class="seg" data-k="div">
+          <button type="button" data-v="slash" aria-pressed="true">슬래시 /</button>
+          <button type="button" data-v="bar">세로선</button>
+          <button type="button" data-v="dot">점</button>
+          <button type="button" data-v="none">없음</button>
+        </div>
+      </div>
+
+      <div class="fieldset">
+        <label>글자</label>
+        <div class="row"><span>심볼 글자</span></div>
+        <input type="text" id="t-mark" value="먀" maxlength="4">
+        <div class="row" style="margin-top:12px"><span>워드마크</span></div>
+        <input type="text" id="t-word" value="AI STUDIO" maxlength="28">
+      </div>
+
+      <div class="fieldset">
+        <label>비율</label>
+        <div class="row"><span>워드마크 크기</span><output id="o-ws">0.345</output></div>
+        <input type="range" id="r-ws" min="0.22" max="0.6" step="0.005" value="0.345">
+        <div class="row"><span>워드마크 자간</span><output id="o-ls">0.17</output></div>
+        <input type="range" id="r-ls" min="0" max="0.4" step="0.005" value="0.17">
+        <div class="row"><span>요소 간격</span><output id="o-gap">0.30</output></div>
+        <input type="range" id="r-gap" min="0.08" max="0.7" step="0.01" value="0.30">
+        <div class="row"><span>심볼 모서리</span><output id="o-rad">24</output></div>
+        <input type="range" id="r-rad" min="0" max="50" step="1" value="24">
+      </div>
+
+      <div class="fieldset">
+        <label>색</label>
+        <div class="seg" data-k="col">
+          <button type="button" data-v="ink" aria-pressed="true">먹색</button>
+          <button type="button" data-v="silver">실버</button>
+          <button type="button" data-v="mono">먹색 + 실버 구분자</button>
+        </div>
+      </div>
+
+      <div class="fieldset">
+        <div class="seg" style="gap:8px">
+          <button type="button" class="btn sm" id="reset" style="background:var(--g100); color:var(--ink-2)">기본값</button>
+          <button type="button" class="btn sm silver" id="copy">SVG 복사</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- 미리보기 -->
+    <div>
+      <div class="stageA">
+        <div class="top" id="pvL"></div>
+        <div class="bot2" id="pvD"></div>
+      </div>
+
+      <div class="mini">
+        <div><div class="in l" id="m1"></div><div class="cap">16px — 최소 크기</div></div>
+        <div><div class="in l" id="m2"></div><div class="cap">28px — 헤더</div></div>
+        <div><div class="in d" id="m3"></div><div class="cap">반전</div></div>
+        <div><div class="in l" id="m4"></div><div class="cap">파비콘 32px</div></div>
+      </div>
+
+      <div class="out">
+        <div class="hd"><b>SVG 코드</b><span style="font-size:12px;color:var(--grey-2)" id="dims">—</span></div>
+        <textarea id="code" readonly spellcheck="false"></textarea>
+      </div>
+      <p class="note-inline">피그마에 붙여 넣을 땐 코드를 복사한 뒤 캔버스에서 <b>Ctrl/Cmd+V</b> 하면 벡터로 들어갑니다.
+        글자는 path가 아니라 text로 나가므로, 최종 확정본은 피그마에서 <b>Outline Stroke / Flatten</b> 한 번 해주세요.</p>
+    </div>
+  </div>
+</main>
+
+<div class="toast" id="toast">복사했어요</div>
+
+<footer>
+  <div class="wrap foot-in">
+    <div><b>먀 AI STUDIO</b><p>myaaistudio@gmail.com</p></div>
+    <div><p><a href="index.html">홈</a> · <a href="brand.html">브랜드 가이드</a> · <a href="logo.html">시안</a></p><p style="margin-top:6px"><a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a></p></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var S = { sym:'tile', lay:'h', div:'slash', col:'ink', ws:0.345, ls:0.17, gap:0.30, rad:24,
+            mark:'먀', word:'AI STUDIO' };
+  var DEF = JSON.parse(JSON.stringify(S));
+  var FONT = "Pretendard Variable, Pretendard, -apple-system, Apple SD Gothic Neo, sans-serif";
+  var INK = '#0B0B0C', SILVER = '#B6BCC4', WHITE = '#FFFFFF';
+
+  function colors(onDark){
+    var base = onDark ? WHITE : (S.col === 'silver' ? SILVER : INK);
+    var div  = (S.col === 'mono') ? SILVER : base;
+    var tileBg = onDark ? WHITE : (S.col === 'silver' ? SILVER : INK);
+    var tileFg = onDark ? INK : WHITE;
+    return {base:base, div:div, tileBg:tileBg, tileFg:tileFg};
+  }
+
+  // 도형 먀 (ㅁ + ㅑ) — 120x100 그리드
+  function geoPath(fill){
+    return '<g fill="'+fill+'">'
+      + '<rect x="3" y="17" width="55" height="66" fill="none" stroke="'+fill+'" stroke-width="15"/>'
+      + '<rect x="75" y="3" width="15" height="94"/>'
+      + '<rect x="90" y="26" width="28" height="15"/>'
+      + '<rect x="90" y="59" width="28" height="15"/></g>';
+  }
+
+  function build(U, onDark){
+    U = U || 100;                       // 기준 단위 = 먀 높이
+    var c = colors(onDark);
+    var pad = U * 0.5;                  // 클리어 스페이스
+    var gap = U * S.gap;
+    var wordSize = U * S.ws;
+    var tile = U * 1.42;
+    var parts = [], x = 0, symW = 0, symH = 0;
+
+    // 심볼
+    var sym = '';
+    if (S.sym === 'tile' || S.sym === 'circle') {
+      symW = symH = tile;
+      var r = (S.sym === 'circle') ? tile/2 : tile * (S.rad/100);
+      sym = '<rect x="0" y="0" width="'+tile+'" height="'+tile+'" rx="'+r.toFixed(2)+'" fill="'+c.tileBg+'"/>'
+          + '<text x="'+(tile/2)+'" y="'+(tile/2)+'" fill="'+c.tileFg+'" font-family="'+FONT+'"'
+          + ' font-size="'+(U*0.78).toFixed(2)+'" font-weight="900" text-anchor="middle"'
+          + ' dominant-baseline="central">'+esc(S.mark)+'</text>';
+    } else if (S.sym === 'geo') {
+      symH = U; symW = U * 1.2;
+      sym = '<g transform="translate(0,0) scale('+(U/100).toFixed(4)+')">'+geoPath(c.base)+'</g>';
+    } else {
+      symH = U; symW = U * 0.92;
+      sym = '<text x="0" y="'+U+'" fill="'+c.base+'" font-family="'+FONT+'" font-size="'+U+'"'
+          + ' font-weight="900">'+esc(S.mark)+'</text>';
+    }
+
+    if (S.lay === 'mark') {
+      var w0 = symW + pad*2, h0 = symH + pad*2;
+      return wrap(w0, h0, '<g transform="translate('+pad+','+pad+')">'+sym+'</g>');
+    }
+
+    // 구분자
+    var dv = '', dvW = 0;
+    if (S.div !== 'none' && S.lay === 'h') {
+      if (S.div === 'slash') {
+        dvW = U*0.30;
+        dv = '<text x="0" y="'+(U*0.94)+'" fill="'+c.div+'" font-family="'+FONT+'"'
+           + ' font-size="'+(U*0.62).toFixed(2)+'" font-weight="400">/</text>';
+      } else if (S.div === 'bar') {
+        dvW = U*0.06;
+        dv = '<rect x="0" y="'+(U*0.20)+'" width="'+(U*0.03)+'" height="'+(U*0.62)+'"'
+           + ' rx="'+(U*0.015)+'" fill="'+c.div+'" opacity=".55"/>';
+      } else {
+        dvW = U*0.14;
+        dv = '<circle cx="'+(U*0.06)+'" cy="'+(U*0.72)+'" r="'+(U*0.055)+'" fill="'+c.div+'"/>';
+      }
+    }
+
+    // 워드마크
+    var ls = wordSize * S.ls;
+    var wordW = measure(S.word, wordSize, ls);
+    var word = '<text x="0" y="'+(U*0.92)+'" fill="'+c.base+'" font-family="'+FONT+'"'
+             + ' font-size="'+wordSize.toFixed(2)+'" font-weight="700"'
+             + ' letter-spacing="'+ls.toFixed(2)+'">'+esc(S.word)+'</text>';
+
+    if (S.lay === 'v') {
+      var vw = Math.max(symW, wordW), vh = symH + U*0.30 + wordSize*1.25;
+      var g = '<g transform="translate('+((vw-symW)/2)+',0)">'+sym+'</g>'
+            + '<g transform="translate('+((vw-wordW)/2)+','+(symH + U*0.30 - U*0.92 + wordSize*0.95)+')">'+word+'</g>';
+      return wrap(vw + pad*2, vh + pad*2, '<g transform="translate('+pad+','+pad+')">'+g+'</g>');
+    }
+
+    // 가로
+    var g2 = '<g transform="translate(0,'+((U*1.42 > symH ? 0 : 0))+')">'+sym+'</g>';
+    x = symW + gap;
+    var symOffsetY = (S.sym==='tile'||S.sym==='circle') ? 0 : 0;
+    var baseH = Math.max(symH, U);
+    var yAlign = (S.sym==='tile'||S.sym==='circle') ? (tile - U)/2 : 0;
+
+    var body = '<g transform="translate(0,0)">'+sym+'</g>';
+    if (dvW) { body += '<g transform="translate('+x+','+yAlign+')">'+dv+'</g>'; x += dvW + gap; }
+    body += '<g transform="translate('+x+','+yAlign+')">'+word+'</g>';
+    var totalW = x + wordW, totalH = Math.max(symH, U);
+
+    return wrap(totalW + pad*2, totalH + pad*2, '<g transform="translate('+pad+','+pad+')">'+body+'</g>');
+  }
+
+  // 대략적인 글자 폭 — 대문자 라틴 기준 0.62em + 자간
+  function measure(s, size, ls){
+    var w = 0;
+    for (var i=0;i<s.length;i++){
+      var ch = s[i];
+      if (ch === ' ') w += size*0.30;
+      else if (/[A-Z0-9]/.test(ch)) w += size*0.66;
+      else if (/[a-z]/.test(ch)) w += size*0.55;
+      else w += size*1.0;              // 한글
+      w += ls;
+    }
+    return Math.max(0, w - ls);
+  }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function wrap(w,h,inner){
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="'+Math.round(w)+'" height="'+Math.round(h)+'"'
+         + ' viewBox="0 0 '+Math.round(w)+' '+Math.round(h)+'" role="img" aria-label="먀 AI STUDIO">'
+         + inner + '</svg>';
+  }
+
+  function scaleTo(svg, px){
+    return svg.replace(/^<svg([^>]*)width="(\d+)" height="(\d+)"/, function(m,a,w,h){
+      var k = px / parseInt(h,10);
+      return '<svg'+a+'width="'+Math.round(parseInt(w,10)*k)+'" height="'+Math.round(px)+'"';
+    });
+  }
+
+  function render(){
+    var light = build(100,false), dark = build(100,true);
+    document.getElementById('pvL').innerHTML = scaleTo(light, 96);
+    document.getElementById('pvD').innerHTML = scaleTo(dark, 96);
+    document.getElementById('m1').innerHTML = scaleTo(light, 16);
+    document.getElementById('m2').innerHTML = scaleTo(light, 28);
+    document.getElementById('m3').innerHTML = scaleTo(dark, 40);
+    var fav = (function(){ var keep=S.lay; S.lay='mark'; var s=build(100,false); S.lay=keep; return s; })();
+    document.getElementById('m4').innerHTML = scaleTo(fav, 32);
+    var code = light.replace('><','>\n  <').replace('</svg>','\n</svg>');
+    document.getElementById('code').value = code;
+    var m = light.match(/width="(\d+)" height="(\d+)"/);
+    document.getElementById('dims').textContent = m ? (m[1]+' × '+m[2]) : '—';
+  }
+
+  // 컨트롤 배선
+  document.querySelectorAll('.seg[data-k]').forEach(function(seg){
+    seg.addEventListener('click', function(e){
+      var b = e.target.closest('button[data-v]'); if(!b) return;
+      seg.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+      b.setAttribute('aria-pressed','true');
+      S[seg.dataset.k] = b.dataset.v; render();
+    });
+  });
+  [['r-ws','ws','o-ws',3],['r-ls','ls','o-ls',3],['r-gap','gap','o-gap',2],['r-rad','rad','o-rad',0]]
+  .forEach(function(t){
+    var el = document.getElementById(t[0]);
+    el.addEventListener('input', function(){
+      S[t[1]] = parseFloat(el.value);
+      document.getElementById(t[2]).textContent = S[t[1]].toFixed(t[3]);
+      render();
+    });
+  });
+  document.getElementById('t-mark').addEventListener('input', function(){ S.mark = this.value || '먀'; render(); });
+  document.getElementById('t-word').addEventListener('input', function(){ S.word = this.value; render(); });
+
+  document.getElementById('reset').addEventListener('click', function(){
+    S = JSON.parse(JSON.stringify(DEF));
+    document.getElementById('t-mark').value = S.mark;
+    document.getElementById('t-word').value = S.word;
+    ['r-ws','r-ls','r-gap','r-rad'].forEach(function(id,i){
+      var k=['ws','ls','gap','rad'][i]; document.getElementById(id).value = S[k];
+      document.getElementById('o-'+k).textContent = (k==='rad') ? S[k] : S[k].toFixed(k==='gap'?2:3);
+    });
+    document.querySelectorAll('.seg[data-k]').forEach(function(seg){
+      seg.querySelectorAll('button').forEach(function(b){
+        b.setAttribute('aria-pressed', String(b.dataset.v === S[seg.dataset.k]));
+      });
+    });
+    render();
+  });
+
+  var toast = document.getElementById('toast');
+  function say(msg){ toast.textContent = msg; toast.classList.add('on'); setTimeout(function(){ toast.classList.remove('on'); }, 1500); }
+  document.getElementById('copy').addEventListener('click', function(){
+    var ta = document.getElementById('code');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(ta.value).then(function(){ say('SVG를 복사했어요'); },
+        function(){ ta.removeAttribute('readonly'); ta.select(); document.execCommand('copy'); ta.setAttribute('readonly',''); say('SVG를 복사했어요'); });
+    } else { ta.removeAttribute('readonly'); ta.select(); document.execCommand('copy'); ta.setAttribute('readonly',''); say('SVG를 복사했어요'); }
+  });
+
+  render();
+})();
+</script>

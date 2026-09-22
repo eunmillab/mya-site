@@ -1,0 +1,488 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>브랜드 가이드라인 — 먀 AI 스튜디오</title>
+<meta name="description" content="먀의 브랜드마크·컬러·타이포그래피·적용 규정.">
+<link rel="canonical" href="https://www.myaaistudio.com/brand.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="먀 AI 스튜디오">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="브랜드 가이드라인 — 먀 AI 스튜디오">
+<meta property="og:description" content="먀의 브랜드마크·컬러·타이포그래피·적용 규정.">
+<meta property="og:url" content="https://www.myaaistudio.com/brand.html">
+<meta property="og:image" content="https://www.myaaistudio.com/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="stylesheet" href="style.css?v=1790119730">
+<style>
+  .bg-wrap{max-width:1140px; margin:0 auto; padding:0 24px}
+  .bg-cover{background:var(--stage); color:#fff; padding:clamp(72px,12vw,150px) 0 clamp(56px,9vw,110px)}
+  .bg-cover .mk{font-size:clamp(46px,8vw,92px)}
+  .bg-cover h1{margin-top:34px; font-size:clamp(26px,3.6vw,40px); color:#fff; font-weight:700; line-height:1.3}
+  .bg-cover .ver{margin-top:20px; font-size:12px; letter-spacing:.22em; color:var(--silver); text-transform:uppercase}
+  .bg-cover .note{margin-top:38px; max-width:46em; font-size:14px; line-height:1.75; color:#9A9A9A}
+
+  .toc{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; margin-top:30px}
+  .toc > div{background:var(--bg); padding:20px 22px}
+  .toc b{display:block; font-size:12px; letter-spacing:.14em; color:var(--silver-700); font-weight:700}
+  .toc ul{list-style:none; margin:12px 0 0; padding:0; display:flex; flex-direction:column; gap:7px}
+  .toc a{font-size:14px; color:var(--ink-2)}
+  .toc a:hover{color:var(--ink); text-decoration:underline; text-underline-offset:3px}
+
+  .chap{border-top:1px solid var(--line); padding-block:clamp(56px,7vw,96px)}
+  .chap-no{font-size:12px; font-weight:700; letter-spacing:.18em; color:var(--silver-700)}
+  .chap h2{margin-top:10px; font-size:clamp(24px,3vw,34px); font-weight:700; line-height:1.3}
+  .sec{margin-top:clamp(36px,4.6vw,62px)}
+  .sec-no{font-size:11.5px; font-weight:700; letter-spacing:.16em; color:var(--grey-2)}
+  .sec h3{margin-top:8px; font-size:var(--t3); line-height:var(--t3l); font-weight:700}
+  .sec p.d{margin-top:10px; max-width:52em; font-size:var(--t6); line-height:1.8; color:var(--grey)}
+
+  .quad{display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:14px; margin-top:24px}
+  .quad > div{border:1px solid var(--line); border-radius:var(--r-lg); padding:22px}
+  .quad em{font-style:normal; font-size:11.5px; font-weight:700; letter-spacing:.16em; color:var(--silver-700)}
+  .quad b{display:block; margin-top:8px; font-size:var(--t4); font-weight:700; color:var(--ink)}
+  .quad span{display:block; margin-top:8px; font-size:13.5px; line-height:1.7; color:var(--grey)}
+
+  .manifesto{margin-top:26px; border-left:3px solid var(--silver); padding-left:24px;
+    font-size:var(--t4); line-height:1.85; color:var(--ink-2)}
+  .manifesto b{color:var(--ink); font-weight:700}
+
+  .spec{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-top:24px}
+  .stage-box{border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden}
+  .stage-box .in{height:168px; display:grid; place-items:center; background:var(--g50); padding:22px}
+  .stage-box .in.blk{background:var(--stage); color:#fff}
+  .stage-box .cap{padding:12px 16px; border-top:1px solid var(--line); font-size:12.5px; color:var(--grey)}
+  .stage-box .cap b{display:block; color:var(--ink); font-size:13.5px; font-weight:700; margin-bottom:2px}
+
+  /* 그리드·여백 도식 */
+  .gridfig{position:relative; display:inline-block; padding:38px}
+  .gridfig::before{content:""; position:absolute; inset:0; border:1px dashed var(--silver); border-radius:6px}
+  .gridfig::after{content:"X/2"; position:absolute; top:12px; left:12px; font-size:10px; color:var(--silver-700); letter-spacing:.1em}
+
+  .swatches{display:grid; grid-template-columns:repeat(auto-fit,minmax(104px,1fr)); gap:10px; margin-top:22px}
+  .sw{border:1px solid var(--line); border-radius:var(--r-md); overflow:hidden}
+  .sw i{display:block; height:74px}
+  .sw span{display:block; padding:9px 11px; font-size:11px; color:var(--grey); line-height:1.55}
+  .sw span b{display:block; color:var(--ink); font-size:12px; font-weight:700}
+
+  .typerow{border-top:1px solid var(--line-2); padding:16px 0; display:grid;
+    grid-template-columns:132px 1fr auto; gap:18px; align-items:baseline}
+  .typerow:first-of-type{border-top:0}
+  .typerow .tk{font-size:11.5px; font-weight:700; letter-spacing:.1em; color:var(--silver-700)}
+  .typerow .sm{font-size:12px; color:var(--grey-2); font-variant-numeric:tabular-nums; white-space:nowrap}
+
+  .dont{display:grid; grid-template-columns:repeat(auto-fit,minmax(178px,1fr)); gap:12px; margin-top:22px}
+  .dont > div{border:1px solid var(--line); border-radius:var(--r-md); padding:18px; text-align:center}
+  .dont .x{height:76px; display:grid; place-items:center; color:var(--ink)}
+  .dont p{margin-top:12px; font-size:12.5px; color:var(--grey)}
+  .dont .bad{color:#C0392B; font-weight:700; font-size:11.5px; letter-spacing:.1em}
+
+  .app{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-top:24px}
+  .card-mock{border:1px solid var(--line); border-radius:var(--r-lg); padding:24px; background:var(--g50)}
+  .card-mock.dark{background:var(--stage); color:#fff; border-color:#262627}
+  .namecard{aspect-ratio:91/55; border-radius:8px; background:#fff; border:1px solid var(--line);
+    padding:18px; display:flex; flex-direction:column; justify-content:space-between}
+  .namecard.d{background:var(--stage); border-color:#262627; color:#fff}
+  .namecard .who{font-size:12px; line-height:1.6; color:var(--grey)}
+  .namecard.d .who{color:#8E8E8E}
+  .namecard .who b{display:block; color:var(--ink); font-size:14px; font-weight:700}
+  .namecard.d .who b{color:#fff}
+  footer{margin-top:0}
+</style>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html"><span class="mk"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span></a>
+    <nav class="nav-links"><a href="index.html">홈</a><a href="team.html">팀</a><a href="logo.html">로고 시안</a></nav>
+    <a class="btn sm" href="index.html#contact">상담 받기</a>
+  </div>
+</header>
+
+<main>
+  <!-- COVER -->
+  <section class="bg-cover" style="border:0; padding-inline:0">
+    <div class="bg-wrap">
+      <span class="mk"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span>
+      <h1>먀 브랜드 가이드라인<br>MYA BRAND GUIDELINES</h1>
+      <p class="ver">Ver 1.0 · 2026</p>
+      <p class="note">이 가이드는 먀의 브랜드 아이덴티티를 일관되게 유지하기 위한 기본 원칙과 적용 예시로 구성돼 있습니다.
+        브랜드마크를 사용하기 전에 내용을 확인하고 항목별 규정을 지켜 주세요.
+        여기서 다루지 않은 항목이나 규정을 벗어난 사용이 불가피한 경우 먀에 문의해 주세요.</p>
+    </div>
+  </section>
+
+  <!-- INDEX -->
+  <section style="border:0">
+    <div class="bg-wrap">
+      <p class="chap-no">CONTENTS</p>
+      <div class="toc">
+        <div><b>1.0 BRAND</b><ul>
+          <li><a href="#s11">1.1 Brand Overview</a></li>
+          <li><a href="#s12">1.2 Brand Mission</a></li>
+          <li><a href="#s13">1.3 Brand Feature</a></li>
+          <li><a href="#s14">1.4 Brand Personality</a></li>
+          <li><a href="#s15">1.5 Brand Manifesto</a></li>
+          <li><a href="#s16">1.6 Design Concept</a></li></ul></div>
+        <div><b>2.0 BASIC SYSTEM</b><ul>
+          <li><a href="#s21">2.1 Brandmark</a></li>
+          <li><a href="#s22">2.2 Grid</a></li>
+          <li><a href="#s23">2.3 Clear Space</a></li>
+          <li><a href="#s24">2.4 Minimum Size</a></li>
+          <li><a href="#s25">2.5 Restrictions</a></li>
+          <li><a href="#s26">2.6 Color</a></li>
+          <li><a href="#s27">2.7 Typography</a></li></ul></div>
+        <div><b>3.0 KEY VISUAL</b><ul>
+          <li><a href="#s31">3.1 Overview</a></li>
+          <li><a href="#s32">3.2 Graphic — Silver Sheen</a></li>
+          <li><a href="#s33">3.3 Frame</a></li>
+          <li><a href="#s34">3.4 Tone of Voice</a></li></ul></div>
+        <div><b>4.0 APPLICATION</b><ul>
+          <li><a href="#s41">4.1 Online</a></li>
+          <li><a href="#s42">4.2 Document</a></li>
+          <li><a href="#s43">4.3 Offline</a></li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1.0 BRAND -->
+  <section class="chap" style="border-top:1px solid var(--line)">
+    <div class="bg-wrap">
+      <p class="chap-no">1.0 BRAND</p>
+      <h2>먀가 어떤 회사인지부터.</h2>
+
+      <div class="sec" id="s11">
+        <p class="sec-no">1.1 BRAND OVERVIEW</p>
+        <h3>AI를 도구가 아니라 운영 방식으로 씁니다.</h3>
+        <p class="d">대부분의 회사는 AI를 업무 보조로 씁니다. 먀는 기획·제작·운영을 AI 위에서 돌리고,
+          사람은 판단과 검수만 합니다. 우리 서비스를 그렇게 굴려 보고, 그때 쓴 구조를 맡은 일에 그대로 적용합니다.</p>
+        <div class="quad">
+          <div><em>WHO</em><b>먀 AI 스튜디오</b><span>AI 네이티브 스튜디오. 자체 서비스 4개를 직접 운영하면서 컨설팅·제작·대행을 맡습니다.</span></div>
+          <div><em>FOR</em><b>손이 모자란 곳</b><span>온라인과 현장 양쪽에서, 매일 반복되는 일에 사람이 붙어 있어야 하는 곳.</span></div>
+          <div><em>WHAT</em><b>덜어내기</b><span>없앨 일과 남길 일을 나누고, 없앨 일은 자동으로 돌게 만듭니다.</span></div>
+          <div><em>HOW</em><b>직접</b><span>영업 담당이 따로 없습니다. 상담에서 만난 사람이 그 일을 맡은 전문가입니다.</span></div>
+        </div>
+      </div>
+
+      <div class="sec" id="s12">
+        <p class="sec-no">1.2 BRAND MISSION</p>
+        <h3>운영에만 집중하세요.<br>AI 고민은 저희가 할게요.</h3>
+        <p class="d">먀의 제1목표입니다. 어떤 도구를 쓸지, 어떻게 붙일지, 돌다가 멈추면 누가 고칠지.
+          이 고민을 고객에게서 걷어내는 것이 이 회사가 존재하는 이유입니다.
+          모든 카피와 제안은 이 문장에서 출발하고, 이 문장과 어긋나면 쓰지 않습니다.</p>
+      </div>
+
+      <div class="sec" id="s13">
+        <p class="sec-no">1.3 BRAND FEATURE</p>
+        <h3>세 가지로 증명합니다.</h3>
+        <div class="quad">
+          <div><em>① OPERATE</em><b>직접 운영</b><span>스샷·은밀위키·은밀한연구소·은연. 남의 돈이 아니라 우리 돈으로 먼저 만들고 굴려 봅니다.</span></div>
+          <div><em>② SPECIALIST</em><b>전문가 직접</b><span>기획·개발·커머스·음악. 각 분야를 맡은 사람이 자기 일을 합니다. 재하청 구간이 없습니다.</span></div>
+          <div><em>③ COST</em><b>비용 원칙</b><span>컨설팅비 + 저희가 태우는 토큰값을 더해도 고객이 직접 쓰는 값보다 싸지는 선에서만 제안합니다.</span></div>
+        </div>
+      </div>
+
+      <div class="sec" id="s14">
+        <p class="sec-no">1.4 BRAND PERSONALITY</p>
+        <h3>먀는 이런 태도로 말합니다.</h3>
+        <div class="quad">
+          <div><em>PROOF</em><b>증명</b><span>제안서보다 돌아가는 화면을 먼저 보여 줍니다.</span></div>
+          <div><em>PLAIN</em><b>담백</b><span>꾸미지 않습니다. 숫자와 사실로 말합니다.</span></div>
+          <div><em>HONEST</em><b>정직</b><span>안 되는 건 안 된다고 먼저 말합니다.</span></div>
+          <div><em>SPEED</em><b>속도</b><span>1주 프로토타입, 3일 데모, 1영업일 회신.</span></div>
+        </div>
+      </div>
+
+      <div class="sec" id="s15">
+        <p class="sec-no">1.5 BRAND MANIFESTO</p>
+        <h3>브랜드 선언</h3>
+        <p class="manifesto">
+          먀는 <b>남의 일을 대신하는 회사가 아니라, 그 일을 없애는 회사</b>입니다.<br><br>
+          먀는 <b>만들어 본 것만 말합니다.</b> 해보지 않은 방법을 권하지 않고,
+          우리 서비스에서 먼저 돌려 본 구조만 제안합니다.<br><br>
+          먀는 <b>맡은 사람이 끝까지 합니다.</b> 중간에 담당이 바뀌지 않고, 다른 업체로 넘기지 않습니다.<br><br>
+          먀는 <b>비용이 줄어드는 선에서만 일합니다.</b> 그 선을 못 맞추면 맡지 않는 쪽을 먼저 권합니다.
+        </p>
+      </div>
+
+      <div class="sec" id="s16">
+        <p class="sec-no">1.6 DESIGN CONCEPT</p>
+        <h3>도형으로 조립하고, 실버로 마감합니다.</h3>
+        <p class="d">먀의 디자인은 세 낱말로 정리됩니다.
+          <b style="color:var(--ink)">CONSTRUCTED</b>는 손맛이 아니라 규격으로 만든 형태,
+          <b style="color:var(--ink)">ACHROMATIC</b>은 색으로 주장하지 않고 구조로 말하기,
+          <b style="color:var(--ink)">SILVER</b>는 금속의 차분한 광택 하나만 브랜드 색으로 쓴다는 뜻입니다.</p>
+        <div class="spec">
+          <div class="stage-box"><div class="in"><span style="font-size:13px;letter-spacing:.2em;color:var(--silver-700);font-weight:700">CONSTRUCTED</span></div><div class="cap"><b>규격</b>120×100 그리드, 획 두께 15 고정</div></div>
+          <div class="stage-box"><div class="in"><span style="font-size:13px;letter-spacing:.2em;color:var(--grey);font-weight:700">ACHROMATIC</span></div><div class="cap"><b>무채색</b>먹색과 흰색, 그 사이 회색 10단</div></div>
+          <div class="stage-box"><div class="in" style="background:var(--silver-sheen)"><span style="font-size:13px;letter-spacing:.2em;color:var(--g900);font-weight:700">SILVER</span></div><div class="cap"><b>실버</b>브랜드 색은 하나. 강조는 여기서만</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.0 BASIC SYSTEM -->
+  <section class="chap">
+    <div class="bg-wrap">
+      <p class="chap-no">2.0 BASIC SYSTEM</p>
+      <h2>브랜드마크와 기본 요소.</h2>
+
+      <div class="sec" id="s21">
+        <p class="sec-no">2.1 BRANDMARK</p>
+        <h3>먀 / AI STUDIO</h3>
+        <p class="d">브랜드마크는 <b style="color:var(--ink)">먀</b>, 슬래시, <b style="color:var(--ink)">AI STUDIO</b> 세 요소로만 구성합니다.
+          모든 매체에 이 가로 락업을 우선 적용합니다. 국내 계약서·공문에는 국문 표기를 씁니다.</p>
+        <div class="spec">
+          <div class="stage-box"><div class="in"><span class="mk" style="font-size:40px"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span></div><div class="cap"><b>기본 · 가로 락업</b>웹 헤더 · 명함 · 문서 머리</div></div>
+          <div class="stage-box"><div class="in blk"><span class="mk" style="font-size:40px"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span></div><div class="cap"><b>반전</b>어두운 지배면 · 영상 엔딩</div></div>
+          <div class="stage-box"><div class="in"><span class="mk" style="font-size:40px"><span class="k">먀</span><span class="sl">/</span><span class="l" style="letter-spacing:.06em">AI 스튜디오</span></span></div><div class="cap"><b>국문 표기</b>계약서 · 공문 · 국내 제안서</div></div>
+          <div class="stage-box"><div class="in"><span style="width:86px;height:86px;border-radius:22px;background:var(--stage);color:#fff;display:grid;place-items:center;font-size:40px;font-weight:900">먀</span></div><div class="cap"><b>심볼 단독</b>파비콘 · 앱 아이콘 · 프로필</div></div>
+        </div>
+      </div>
+
+      <div class="sec" id="s22">
+        <p class="sec-no">2.2 GRID</p>
+        <h3>먀 한 글자의 폭을 X로 둡니다.</h3>
+        <p class="d">먀의 글자 폭을 <b style="color:var(--ink)">X</b>로 정하고 모든 간격을 X의 배수로 잡습니다.
+          슬래시는 먀 오른쪽으로 <b style="color:var(--ink)">0.30X</b> 떨어지고, AI STUDIO는 슬래시에서 다시 0.30X 떨어집니다.
+          AI STUDIO의 글자 크기는 먀의 <b style="color:var(--ink)">0.345배</b>, 자간은 0.17em입니다.</p>
+        <table class="spec-table" style="margin-top:20px">
+          <tr><th>먀</th><td>기준 크기 1X · 굵기 900</td></tr>
+          <tr><th>슬래시</th><td>0.62X · 굵기 400 · 실버 <code>#B6BCC4</code></td></tr>
+          <tr><th>AI STUDIO</th><td>0.345X · 굵기 700 · 자간 0.17em · 대문자 고정</td></tr>
+          <tr><th>정렬</th><td>세 요소 모두 베이스라인 정렬</td></tr>
+        </table>
+      </div>
+
+      <div class="sec" id="s23">
+        <p class="sec-no">2.3 CLEAR SPACE</p>
+        <h3>사방으로 X의 절반을 비웁니다.</h3>
+        <p class="d">브랜드마크 주위에는 먀 글자 폭의 절반(0.5X) 이상을 비워 둡니다.
+          이 영역 안에는 다른 로고·텍스트·이미지·도형이 들어올 수 없습니다.</p>
+        <div style="margin-top:22px; padding:30px; border:1px solid var(--line); border-radius:var(--r-lg); background:var(--g50); display:grid; place-items:center">
+          <span class="gridfig"><span class="mk" style="font-size:36px"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span></span>
+        </div>
+      </div>
+
+      <div class="sec" id="s24">
+        <p class="sec-no">2.4 MINIMUM SIZE</p>
+        <h3>가로 락업은 16px 아래로 쓰지 않습니다.</h3>
+        <p class="d">그보다 작아지면 AI STUDIO의 자간이 뭉개집니다. 더 작은 자리에는 심볼 단독을 씁니다.</p>
+        <div style="margin-top:22px; padding:28px; border:1px solid var(--line); border-radius:var(--r-lg); background:var(--g50);
+          display:flex; align-items:flex-end; gap:26px; flex-wrap:wrap; justify-content:center">
+          <span class="mk" style="font-size:16px"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span>
+          <span class="mk" style="font-size:24px"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span>
+          <span class="mk" style="font-size:38px"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span>
+        </div>
+      </div>
+
+      <div class="sec" id="s25">
+        <p class="sec-no">2.5 RESTRICTIONS</p>
+        <h3>이렇게는 쓰지 않습니다.</h3>
+        <div class="dont">
+          <div><div class="x"><span class="mk" style="font-size:24px; transform:skewX(-12deg)"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span></div><p class="bad">금지</p><p>기울이기</p></div>
+          <div><div class="x"><span class="mk" style="font-size:24px; text-shadow:2px 3px 4px rgba(0,0,0,.4)"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span></div><p class="bad">금지</p><p>그림자 넣기</p></div>
+          <div><div class="x"><span class="mk" style="font-size:24px; color:#C0392B"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span></div><p class="bad">금지</p><p>지정 외 색 쓰기</p></div>
+          <div><div class="x"><span class="mk" style="font-size:24px"><span class="k" style="font-weight:400">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span></div><p class="bad">금지</p><p>굵기 바꾸기</p></div>
+          <div><div class="x"><span class="mk" style="font-size:24px; gap:0"><span class="k">먀</span><span class="sl">/</span><span class="l" style="letter-spacing:0">AI STUDIO</span></span></div><p class="bad">금지</p><p>자간·간격 조정</p></div>
+          <div><div class="x"><span class="mk" style="font-size:24px"><span class="k">먀</span><span class="sl">/</span><span class="l">AI 스튜디오 주식회사</span></span></div><p class="bad">금지</p><p>문구 덧붙이기</p></div>
+        </div>
+      </div>
+
+      <div class="sec" id="s26">
+        <p class="sec-no">2.6 COLOR</p>
+        <h3>메인 컬러는 실버입니다.</h3>
+        <p class="d">브랜드를 대표하는 색은 실버 하나입니다. 강조·선택 상태·구분선에만 쓰고, 넓은 면을 채우지 않습니다.
+          본문과 배경은 무채색 10단으로 처리합니다. 실버 외 유채색은 쓰지 않습니다.</p>
+        <p class="sec-no" style="margin-top:28px">PRIMARY — SILVER</p>
+        <div class="swatches">
+          <div class="sw"><i style="background:var(--silver-50)"></i><span><b>Silver 50</b>#F4F6F7</span></div>
+          <div class="sw"><i style="background:var(--silver-100)"></i><span><b>Silver 100</b>#E7EAED</span></div>
+          <div class="sw"><i style="background:var(--silver-200)"></i><span><b>Silver 200</b>#D3D8DD</span></div>
+          <div class="sw"><i style="background:var(--silver)"></i><span><b>Silver ★</b>#B6BCC4</span></div>
+          <div class="sw"><i style="background:var(--silver-600)"></i><span><b>Silver 600</b>#949BA4</span></div>
+          <div class="sw"><i style="background:var(--silver-700)"></i><span><b>Silver 700</b>#767D87</span></div>
+          <div class="sw"><i style="background:var(--silver-sheen)"></i><span><b>Sheen</b>그라데이션</span></div>
+        </div>
+        <p class="sec-no" style="margin-top:30px">ACHROMATIC — GREY 10</p>
+        <div class="swatches">
+          <div class="sw"><i style="background:var(--g50)"></i><span><b>Grey 50</b>#F9FAFB</span></div>
+          <div class="sw"><i style="background:var(--g100)"></i><span><b>Grey 100</b>#F2F4F6</span></div>
+          <div class="sw"><i style="background:var(--g200)"></i><span><b>Grey 200</b>#E5E8EB</span></div>
+          <div class="sw"><i style="background:var(--g300)"></i><span><b>Grey 300</b>#D1D6DB</span></div>
+          <div class="sw"><i style="background:var(--g500)"></i><span><b>Grey 500</b>#8B95A1</span></div>
+          <div class="sw"><i style="background:var(--g600)"></i><span><b>Grey 600</b>#6B7684</span></div>
+          <div class="sw"><i style="background:var(--g700)"></i><span><b>Grey 700</b>#4E5968</span></div>
+          <div class="sw"><i style="background:var(--g900)"></i><span><b>Grey 900</b>#191F28</span></div>
+          <div class="sw"><i style="background:var(--stage)"></i><span><b>Ink ★</b>#0B0B0C</span></div>
+        </div>
+      </div>
+
+      <div class="sec" id="s27">
+        <p class="sec-no">2.7 TYPOGRAPHY</p>
+        <h3>Pretendard 한 벌로 씁니다.</h3>
+        <p class="d">국·영문 모두 Pretendard를 씁니다. 자간은 <b style="color:var(--ink)">건드리지 않습니다</b>(normal).
+          한글에서 자간을 좁히면 단단해 보이는 대신 딱딱해집니다. 본문 행간은 글자 크기의 1.5배, 제목은 1.33배입니다.</p>
+        <div style="margin-top:24px">
+          <div class="typerow"><span class="tk">DISPLAY</span><span style="font-size:clamp(28px,3.4vw,40px); font-weight:700; line-height:1.28">운영에만 집중하세요</span><span class="sm">40 / 52 · 700</span></div>
+          <div class="typerow"><span class="tk">TYPO 1</span><span style="font-size:30px; font-weight:700; line-height:1.33">매우 큰 제목</span><span class="sm">30 / 40 · 700</span></div>
+          <div class="typerow"><span class="tk">TYPO 2</span><span style="font-size:26px; font-weight:700; line-height:1.35">큰 제목</span><span class="sm">26 / 35 · 700</span></div>
+          <div class="typerow"><span class="tk">TYPO 3</span><span style="font-size:22px; font-weight:700; line-height:1.41">일반 제목</span><span class="sm">22 / 31 · 700</span></div>
+          <div class="typerow"><span class="tk">TYPO 4</span><span style="font-size:20px; font-weight:600; line-height:1.45">작은 제목</span><span class="sm">20 / 29 · 600</span></div>
+          <div class="typerow"><span class="tk">TYPO 5</span><span style="font-size:17px; font-weight:400; line-height:1.5">일반 본문입니다. 읽는 글의 기본 크기예요.</span><span class="sm">17 / 25.5 · 400</span></div>
+          <div class="typerow"><span class="tk">TYPO 6</span><span style="font-size:15px; font-weight:400; line-height:1.5">작은 본문. 보조 설명에 씁니다.</span><span class="sm">15 / 22.5 · 400</span></div>
+          <div class="typerow"><span class="tk">TYPO 7</span><span style="font-size:13px; font-weight:400; line-height:1.5; color:var(--grey)">캡션·주석. 안 읽어도 되는 글.</span><span class="sm">13 / 19.5 · 400</span></div>
+          <div class="typerow"><span class="tk">LABEL</span><span style="font-size:12px; font-weight:700; letter-spacing:.16em; color:var(--silver-700)">EYEBROW · 라벨</span><span class="sm">12 · 700 · +.16em</span></div>
+        </div>
+        <table class="spec-table" style="margin-top:26px">
+          <tr><th>서체</th><td>Pretendard Variable → Pretendard → Apple SD Gothic Neo</td></tr>
+          <tr><th>굵기</th><td>400 / 500 / 600 / 700 네 단계만. <b>800·900은 로고에만</b></td></tr>
+          <tr><th>자간</th><td>본문·제목 모두 normal. 라벨만 +0.16em</td></tr>
+          <tr><th>숫자</th><td>표·지표에는 tabular-nums 적용</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3.0 KEY VISUAL -->
+  <section class="chap">
+    <div class="bg-wrap">
+      <p class="chap-no">3.0 KEY VISUAL</p>
+      <h2>먀답게 보이는 방법.</h2>
+
+      <div class="sec" id="s31">
+        <p class="sec-no">3.1 OVERVIEW</p>
+        <h3>사진을 쓰지 않습니다. 화면을 씁니다.</h3>
+        <p class="d">스톡 사진과 AI 생성 이미지는 쓰지 않습니다. 먀의 비주얼 재료는
+          <b style="color:var(--ink)">실제로 돌아가는 서비스 화면</b>입니다. 만들지 않은 것은 보여주지 않습니다.</p>
+        <div class="spec">
+          <div class="stage-box"><div class="in blk" style="padding:0"><img src="sshot-card.jpg" alt="스샷 화면" style="width:100%;height:100%;object-fit:cover"></div><div class="cap"><b>서비스 화면</b>먹색 바닥 위에 폰 3대, 아래로 흘림</div></div>
+          <div class="stage-box"><div class="in blk" style="padding:0"><img src="wiki-card.jpg" alt="은밀위키 화면" style="width:100%;height:100%;object-fit:cover"></div><div class="cap"><b>규격 고정</b>폭 400 · 간격 34 · 상단 44</div></div>
+          <div class="stage-box"><div class="in" style="background:var(--g100); color:var(--grey-2); font-size:13px">스톡 사진 · AI 생성 이미지</div><div class="cap"><b class="" style="color:#C0392B">쓰지 않음</b>만들지 않은 장면은 넣지 않습니다</div></div>
+        </div>
+      </div>
+
+      <div class="sec" id="s32">
+        <p class="sec-no">3.2 GRAPHIC — SILVER SHEEN</p>
+        <h3>실버 그라데이션은 한 화면에 한 번만.</h3>
+        <p class="d">실버 시언(sheen)은 브랜드를 드러내는 유일한 장식입니다. 버튼, 선택된 칩, 강조 배지 중
+          <b style="color:var(--ink)">한 화면에 한 군데</b>에만 씁니다. 넓은 배경에 깔지 않습니다.</p>
+        <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap; align-items:center">
+          <span class="btn silver">실버 버튼</span>
+          <span class="chip-btn" aria-pressed="true">선택된 칩</span>
+          <span class="badge-t brand">브랜드 배지</span>
+          <span style="width:120px; height:4px; border-radius:2px; background:var(--silver-sheen)"></span>
+        </div>
+      </div>
+
+      <div class="sec" id="s33">
+        <p class="sec-no">3.3 FRAME</p>
+        <h3>모서리는 다섯 단계만.</h3>
+        <p class="d">반경은 8 · 10 · 14 · 16 · 20 다섯 값만 씁니다. 버튼은 크기에 따라, 콘텐츠 카드는 20을 씁니다.</p>
+        <table class="spec-table" style="margin-top:20px">
+          <tr><th>8</th><td>배지 · 작은 버튼(높이 32) · 칩</td></tr>
+          <tr><th>10</th><td>중간 버튼(높이 38)</td></tr>
+          <tr><th>14</th><td>기본 버튼(높이 48) · 아이콘 박스</td></tr>
+          <tr><th>16</th><td>큰 버튼(높이 56) · 하단 고정 CTA</td></tr>
+          <tr><th>20</th><td>콘텐츠 카드 · 선택 카드</td></tr>
+        </table>
+      </div>
+
+      <div class="sec" id="s34">
+        <p class="sec-no">3.4 TONE OF VOICE</p>
+        <h3>해요체로, 짧게, 숫자로.</h3>
+        <div class="quad">
+          <div><em>DO</em><b>사실을 씁니다</b><span>"1주 만에 눌러볼 수 있는 화면을 먼저 드립니다"</span></div>
+          <div><em>DO</em><b>문장을 맺습니다</b><span>"~합니다" "~해요"로 끝냅니다. 명사로 끊지 않습니다.</span></div>
+          <div><em>DON'T</em><b>자랑하지 않습니다</b><span>"만든 것으로 말할게요" 같은 선언조는 쓰지 않습니다.</span></div>
+          <div><em>DON'T</em><b>호칭을 부르지 않습니다</b><span>"사장님" 같은 2인칭 호칭 대신 서술형으로 씁니다.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4.0 APPLICATION -->
+  <section class="chap">
+    <div class="bg-wrap">
+      <p class="chap-no">4.0 APPLICATION</p>
+      <h2>실제로 놓이는 자리.</h2>
+
+      <div class="sec" id="s41">
+        <p class="sec-no">4.1 ONLINE APPLICATION</p>
+        <h3>프로필 · 웹 · SNS</h3>
+        <div class="app">
+          <div class="card-mock" style="display:grid; place-items:center">
+            <span style="width:82px;height:82px;border-radius:50%;background:var(--stage);color:#fff;display:grid;place-items:center;font-size:38px;font-weight:900">먀</span>
+          </div>
+          <div class="card-mock" style="display:grid; place-items:center">
+            <span style="width:82px;height:82px;border-radius:21px;background:var(--stage);color:#fff;display:grid;place-items:center;font-size:38px;font-weight:900">먀</span>
+          </div>
+          <div class="card-mock dark" style="display:grid; place-items:center">
+            <span class="mk" style="font-size:30px"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span>
+          </div>
+        </div>
+        <p class="note-inline">프로필은 원형, 앱 아이콘은 반경 21의 둥근 사각, 커버는 먹색 바탕에 가로 락업.</p>
+      </div>
+
+      <div class="sec" id="s42">
+        <p class="sec-no">4.2 DOCUMENT</p>
+        <h3>제안서 · 보고서</h3>
+        <p class="d">문서 머리에는 가로 락업을 왼쪽 정렬로 놓고, 아래에 실버 1px 선을 깝니다.
+          본문은 개조식(명사형 종결)으로 쓰고, 표지에는 프로젝트명과 날짜만 둡니다.</p>
+        <div class="app">
+          <div class="card-mock">
+            <span class="mk" style="font-size:20px"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span>
+            <div style="height:1px; background:var(--silver); margin:14px 0 16px"></div>
+            <div style="font-size:12.5px; color:var(--grey); line-height:1.9">
+              AI 자동화 시스템 구축 제안<br>2026. 09. 23<br>먀 AI 스튜디오
+            </div>
+          </div>
+          <div class="card-mock">
+            <div style="font-size:11px; letter-spacing:.16em; color:var(--silver-700); font-weight:700">SECTION 01</div>
+            <div style="font-size:19px; font-weight:700; color:var(--ink); margin-top:7px; line-height:1.4">현황 진단</div>
+            <ul style="list-style:none; padding:0; margin:14px 0 0; font-size:12.5px; color:var(--grey); line-height:2">
+              <li>· 주당 반복 업무 12시간으로 측정</li>
+              <li>· 수기 입력 구간 4곳 확인</li>
+              <li>· 자동화 우선순위 3건 선정</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec" id="s43">
+        <p class="sec-no">4.3 OFFLINE</p>
+        <h3>명함</h3>
+        <div class="app">
+          <div class="namecard">
+            <span class="mk" style="font-size:19px"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span>
+            <div class="who"><b>대표 · 기획 · AI 운영</b>myaaistudio@gmail.com<br>070-4571-8763</div>
+          </div>
+          <div class="namecard d">
+            <span class="mk" style="font-size:19px"><span class="k">먀</span><span class="sl">/</span><span class="l">AI STUDIO</span></span>
+            <div class="who"><b>MYA AI STUDIO</b>운영에만 집중하세요.<br>AI 고민은 저희가 할게요.</div>
+          </div>
+        </div>
+        <p class="note-inline">명함은 91×55mm. 앞면은 흰 바탕에 락업과 연락처, 뒷면은 먹색에 락업과 미션 문장만 둡니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" style="padding-bottom:clamp(60px,8vw,110px)">
+    <div class="bg-wrap">
+      <p class="chap-no">문의</p>
+      <h2>규정을 벗어난 사용이<br>필요하면 먼저 물어봐 주세요.</h2>
+      <p class="d" style="margin-top:14px">이 가이드에서 다루지 않은 적용 항목은 먀에서 확인 후 회신드립니다.</p>
+      <p style="margin-top:26px"><a class="btn" href="index.html#contact">문의하기</a>
+        <a class="btn silver" href="logo.html" style="margin-left:8px">로고 시안 보기</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <div><b>먀 AI STUDIO</b><p>myaaistudio@gmail.com · 070-4571-8763</p></div>
+    <div><p><a href="index.html">홈</a> · <a href="team.html">팀</a> · <a href="logo.html">로고</a> · <a href="brand.html">브랜드 가이드</a></p><p style="margin-top:6px"><a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a></p></div>
+  </div>
+</footer>

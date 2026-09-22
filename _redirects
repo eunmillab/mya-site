@@ -1,0 +1,21 @@
+# Netlify / Cloudflare Pages
+# apex → www (canonical을 www로 잡았으므로)
+https://myaaistudio.com/*    https://www.myaaistudio.com/:splat    301!
+
+# 확장자 없이 들어와도 열리게
+/ai-ops      /ai-ops.html      200
+/content     /content.html     200
+/music       /music.html       200
+/dev         /dev.html         200
+/branding    /branding.html    200
+/team        /team.html        200
+/brand       /brand.html       200
+/sshot       /sshot.html       200
+/lab         /lab.html         200
+/eunyeon     /eunyeon.html     200
+/seonoja     /seonoja.html     200
+/terms       /terms.html       200
+/privacy     /privacy.html     200
+
+# 없는 주소
+/*           /404.html         404
