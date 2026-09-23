@@ -1,5 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="s" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#F2F4F6"/>
+      <stop offset="18%"  stop-color="#FFFFFF"/>
+      <stop offset="34%"  stop-color="#C9CFD6"/>
+      <stop offset="52%"  stop-color="#9AA3AD"/>
+      <stop offset="68%"  stop-color="#EDEFF2"/>
+      <stop offset="84%"  stop-color="#B6BCC4"/>
+      <stop offset="100%" stop-color="#E7EAED"/>
+    </linearGradient>
+    <linearGradient id="e" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity=".18"/>
+      <stop offset="45%"  stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
   <rect width="64" height="64" rx="14" fill="#0B0B0C"/>
-  <text x="32" y="33" fill="#fff" font-family="Pretendard,-apple-system,'Apple SD Gothic Neo',sans-serif"
+  <rect width="64" height="64" rx="14" fill="url(#e)"/>
+  <text x="32" y="33" fill="url(#s)" font-family="Pretendard,-apple-system,'Apple SD Gothic Neo',sans-serif"
         font-size="38" font-weight="900" text-anchor="middle" dominant-baseline="central">먀</text>
 </svg>
