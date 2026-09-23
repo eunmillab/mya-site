@@ -955,3 +955,47 @@ footer{font-size:15.5px}
   background:var(--stage); color:var(--silver-100);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 0 0 1px rgba(11,11,12,.10);
 }
+
+/* ══ 기업 · 기관 페이지 ═══════════════════════════════════ */
+.ent-hero{padding-block:clamp(84px,11vw,150px) clamp(60px,7vw,96px)}
+.ent-hero h1{max-width:16em}
+.ent-hero .lead{max-width:36em}
+
+.entgrid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(28px,3.4vw,44px) clamp(32px,4vw,58px);
+  margin-top:40px; border-top:1px solid var(--line); padding-top:clamp(28px,3.4vw,40px)}
+.entcell .n{display:block; font-size:13.5px; font-weight:700; color:var(--silver-700);
+  letter-spacing:.06em; margin-bottom:10px}
+.entcell h3{font-size:21px; line-height:1.35}
+.entcell p{font-size:16.5px; line-height:27px; color:var(--grey); margin-top:9px}
+
+.ent-spec{width:100%; border-collapse:collapse; margin-top:34px}
+.ent-spec th,.ent-spec td{text-align:left; vertical-align:top;
+  padding:18px 0; border-bottom:1px solid var(--line-2); font-size:16.5px; line-height:27px}
+.ent-spec th{width:170px; padding-right:26px; color:var(--ink); font-weight:700; white-space:nowrap}
+.ent-spec td{color:var(--grey)}
+.ent-spec td.need{color:var(--silver-700); font-weight:700}
+.ent-spec tr:first-child th,.ent-spec tr:first-child td{border-top:1px solid var(--line)}
+
+@media (max-width:760px){
+  .entgrid{grid-template-columns:1fr; gap:0}
+  .entcell{border-bottom:1px solid var(--line-2); padding-bottom:24px; margin-bottom:24px}
+  .entcell:last-child{border-bottom:0; padding-bottom:0; margin-bottom:0}
+  .ent-spec th,.ent-spec td{display:block; width:auto; padding-right:0}
+  .ent-spec th{border-bottom:0; padding-bottom:4px}
+  .ent-spec td{padding-top:0}
+}
+
+/* 히어로 기업 진입로 */
+.hero-ent{margin-top:22px; font-size:15.5px; color:var(--grey)}
+.hero-ent .linkout{font-size:15.5px}
+
+/* 비용 계산기 규모 프리셋 */
+.calc-preset{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:18px}
+.calc-preset span{font-size:14px; color:var(--grey-2); font-weight:700; margin-right:2px}
+.calc-preset button{font-family:inherit; font-size:14px; font-weight:700; color:var(--grey);
+  background:var(--bg); border:1px solid var(--line); border-radius:var(--r-sm);
+  padding:7px 12px; cursor:pointer; transition:border-color .15s ease, color .15s ease}
+.calc-preset button:hover{border-color:var(--silver); color:var(--ink)}
+.calc-preset button[aria-pressed="true"]{background:var(--silver-sheen); background-size:170% 100%;
+  border-color:transparent; color:#101216; box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}

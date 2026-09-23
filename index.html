@@ -15,7 +15,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<link rel="stylesheet" href="style.css?v=1790123437">
+<link rel="stylesheet" href="style.css?v=1790123858">
 
 <header class="nav">
   <div class="nav-in">
@@ -27,7 +27,8 @@
       <a href="dev.html">AI 서비스 개발</a>
       <a href="#works">우리 서비스</a>
       <a href="team.html">팀</a>
-    </nav>
+          <a href="enterprise.html">기업 · 기관</a>
+</nav>
     <a class="btn sm silver" href="#contact">상담 받기</a>
   </div>
 </header>
@@ -44,6 +45,7 @@
           <a class="btn" href="#contact">상담 시작하기</a>
           <a class="btn silver" href="#works">서비스 살펴보기</a>
         </div>
+        <p class="hero-ent">규모가 있는 조직이신가요? <a class="linkout" href="enterprise.html">기업 · 기관 도입 절차 보기 →</a></p>
       </div>
       <div class="hs-visual">
         <div class="screen">
@@ -275,6 +277,12 @@
           <label><span>월 AI 구독료</span><i>원</i><input id="c1" type="text" inputmode="numeric" value="60,000"></label>
           <label><span>주당 AI 붙잡는 시간</span><i>시간</i><input id="c2" type="text" inputmode="numeric" value="6"></label>
           <label><span>내 1시간 값</span><i>원</i><input id="c3" type="text" inputmode="numeric" value="30,000"></label>
+          <div class="calc-preset">
+            <span>규모 예시</span>
+            <button type="button" data-p="60000,6,30000">1인 · 소규모</button>
+            <button type="button" data-p="400000,20,45000">팀 단위</button>
+            <button type="button" data-p="2000000,60,60000">부서 · 기업</button>
+          </div>
           <p class="calc-note">세 값 모두 직접 넣으신 숫자로만 계산해요. 저희가 임의로 정한 값은 없어요.</p>
         </div>
         <div class="calc-out">
@@ -465,6 +473,15 @@
     });
   });
   calc();
+  var pr=document.querySelector('.calc-preset');
+  if(pr) pr.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-p]'); if(!b) return;
+    pr.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true');
+    var v=b.dataset.p.split(',');
+    ids[0].value=f.format(+v[0]); ids[1].value=v[1]; ids[2].value=f.format(+v[2]);
+    calc();
+  });
 })();
 </script>
 
