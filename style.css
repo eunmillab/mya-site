@@ -1021,3 +1021,4 @@ footer{font-size:15.5px}
 .shotfig{margin:clamp(28px,4vw,48px) 0 0}
 .shotfig img{width:100%; height:auto; border-radius:var(--r-lg); background:var(--stage)}
 .shotfig figcaption{margin-top:10px; font-size:14px; color:var(--grey-2)}
+.tmem .role.out{color:var(--grey-2); border-color:var(--line); border-style:dashed}
