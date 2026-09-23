@@ -808,3 +808,107 @@ a.wrow:hover .w-go{border-bottom-color:var(--g900); color:var(--ink)}
   .tmem{border-bottom:1px solid var(--line-2); padding-bottom:26px; margin-bottom:26px}
   .tmem:last-child{border-bottom:0; padding-bottom:0; margin-bottom:0}
 }
+
+/* ══ 타입 스케일 상향 — 전체 한 단계 ═════════════════════ */
+:root{
+  --t1:34px; --t1l:45px;
+  --t2:28px; --t2l:38px;
+  --t3:24px; --t3l:34px;
+  --t4:21px; --t4l:31px;
+  --t5:18px; --t5l:27px;
+  --t6:16px; --t6l:24px;
+  --t7:14px; --t7l:21px;
+}
+body{font-size:17px; line-height:27px}
+.lead{font-size:19px; line-height:30px}
+.sub{font-size:16.5px; line-height:26px}
+.eyebrow{font-size:15.5px}
+.nav-links{font-size:16px}
+.btn{font-size:17px; height:52px; padding:0 26px}
+.btn.sm{height:40px; font-size:15px; padding:0 16px}
+.btn.lg{height:58px; font-size:18px}
+.btn.xs{font-size:14px}
+
+/* 본문 블록 */
+.frow h3{font-size:19.5px}
+.frow p{font-size:16.5px}
+.frow .ico{font-size:14px}
+.frow .go{font-size:15px}
+.frow .bio li{font-size:15.5px}
+.fcell h3{font-size:20px}
+.fcell p{font-size:16.5px}
+.fcell .spec{font-size:14px}
+.stp h3{font-size:19px; line-height:28px}
+.stp p{font-size:16.5px; line-height:26px}
+.stp b{width:28px; height:28px; font-size:13px}
+.stp{grid-template-columns:28px minmax(0,1fr)}
+.stp::before{left:13.5px; top:28px}
+.rule-note{font-size:16.5px}
+.note-inline{font-size:16px}
+.linkout{font-size:16.5px}
+
+/* 팀 */
+.tmem h3{font-size:20.5px}
+.tmem p{font-size:16.5px; line-height:27px}
+.tmem .bio li{font-size:15.5px; line-height:26px}
+.tmem .role{font-size:13.5px}
+
+/* 자체 서비스 행 */
+.sr-meta{font-size:15px}
+.sr-line{font-size:19px}
+.sr-desc{font-size:16.5px; line-height:27px}
+.sr-note{font-size:14.5px}
+.sr-nums span{font-size:14.5px}
+.sr-vis figcaption{font-size:15px}
+.vis-cap{font-size:15px}
+
+/* 맡는 일 표 */
+.w-tag{font-size:14.5px}
+.w-name{font-size:17.5px}
+.w-desc{font-size:16px; line-height:26px}
+.w-term{font-size:15px}
+.w-go{font-size:15px}
+
+/* 지표 · 계산기 */
+.kpi b{font-size:34px}
+.kpi span{font-size:15px}
+.stat b{font-size:34px}
+.stat span{font-size:15px}
+.calc-in label span{font-size:16px}
+.calc-note{font-size:14.5px}
+.co-a .k,.co-b .k{font-size:15px}
+.co-a li,.co-b p{font-size:15.5px}
+
+/* 슬랙 화면 */
+.msg h4{font-size:17px}
+.msg .who{font-size:14.5px}
+.tasklist li{font-size:15.5px}
+.pillnote{font-size:13.5px}
+.screen-top b{font-size:14px}
+
+/* 상담 */
+.choice .ch-t{font-size:17.5px}
+.choice .ch-b{font-size:15px}
+.chip-btn{font-size:15.5px}
+.field label{font-size:15.5px}
+.field input,.field textarea{font-size:16.5px}
+.consent span{font-size:15px}
+.form-note{font-size:14.5px}
+
+/* 상태 라벨 · 배지 */
+.state,.svc-head .state{font-size:13.5px}
+.svc-head .kind{font-size:14.5px}
+.badge-t{font-size:13.5px}
+
+/* 작업 이력 */
+.worklist .cli{font-size:15px}
+.worklist .ttl{font-size:17px}
+.worklist .yr{font-size:14.5px}
+.stagehero .sub{font-size:16.5px}
+.stagehero .meta span{font-size:14px}
+.stage-foot span{font-size:15px}
+
+/* 푸터 · 고정바 */
+footer{font-size:15.5px}
+.foot-in b{font-size:16.5px}
+.stickybar .txt{font-size:15.5px}
