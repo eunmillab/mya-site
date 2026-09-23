@@ -1,13 +1,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>로고 생성기 — 먀 AI 스튜디오</title>
+<title>로고 생성기 | 먀 AI 스튜디오</title>
 <meta name="robots" content="noindex">
 <meta name="description" content="값을 바꾸면 바로 그려지는 먀 로고 생성기. SVG로 내보낼 수 있습니다.">
 <link rel="canonical" href="https://www.myaaistudio.com/logo-bot.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="먀 AI 스튜디오">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="로고 생성기 — 먀 AI 스튜디오">
+<meta property="og:title" content="로고 생성기 | 먀 AI 스튜디오">
 <meta property="og:description" content="값을 바꾸면 바로 그려지는 먀 로고 생성기. SVG로 내보낼 수 있습니다.">
 <meta property="og:url" content="https://www.myaaistudio.com/logo-bot.html">
 <meta property="og:image" content="https://www.myaaistudio.com/og.jpg">
@@ -16,7 +16,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<link rel="stylesheet" href="style.css?v=1790124836">
+<link rel="stylesheet" href="style.css?v=1790124837">
 <style>
   .bot{max-width:1180px; margin:0 auto; padding:clamp(28px,4vw,52px) 24px 90px}
   .bot-grid{display:grid; grid-template-columns:330px 1fr; gap:22px; margin-top:28px; align-items:start}
@@ -153,14 +153,14 @@
       </div>
 
       <div class="mini">
-        <div><div class="in l" id="m1"></div><div class="cap">16px — 최소 크기</div></div>
-        <div><div class="in l" id="m2"></div><div class="cap">28px — 헤더</div></div>
+        <div><div class="in l" id="m1"></div><div class="cap">16px · 최소 크기</div></div>
+        <div><div class="in l" id="m2"></div><div class="cap">28px · 헤더</div></div>
         <div><div class="in d" id="m3"></div><div class="cap">반전</div></div>
         <div><div class="in l" id="m4"></div><div class="cap">파비콘 32px</div></div>
       </div>
 
       <div class="out">
-        <div class="hd"><b>SVG 코드</b><span style="font-size:12px;color:var(--grey-2)" id="dims">—</span></div>
+        <div class="hd"><b>SVG 코드</b><span style="font-size:12px;color:var(--grey-2)" id="dims">-</span></div>
         <textarea id="code" readonly spellcheck="false"></textarea>
       </div>
       <p class="note-inline">피그마에 붙여 넣을 땐 코드를 복사한 뒤 캔버스에서 <b>Ctrl/Cmd+V</b> 하면 벡터로 들어갑니다.
@@ -320,7 +320,7 @@
     var code = light.replace('><','>\n  <').replace('</svg>','\n</svg>');
     document.getElementById('code').value = code;
     var m = light.match(/width="(\d+)" height="(\d+)"/);
-    document.getElementById('dims').textContent = m ? (m[1]+' × '+m[2]) : '—';
+    document.getElementById('dims').textContent = m ? (m[1]+' × '+m[2]) : '-';
   }
 
   // 컨트롤 배선

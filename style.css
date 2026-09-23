@@ -126,7 +126,7 @@ h2.title{font-size:clamp(26px,3.6vw,40px)}
 .msg h4{font-size:16px; margin-top:3px}
 .tasklist{list-style:none; padding:0; margin:12px 0 0; display:grid; gap:7px}
 .tasklist li{display:flex; gap:9px; font-size:14.5px; color:var(--ink-2)}
-.tasklist li::before{content:"—"; color:var(--grey)}
+.tasklist li::before{content:"·"; color:var(--grey)}
 .tasklist li.warn::before{content:"!"; color:var(--ink); font-weight:700}
 .screen-foot{margin-top:16px; padding-top:13px; border-top:1px solid var(--line-2); display:flex; gap:14px; flex-wrap:wrap}
 .pillnote{font-size:12.5px; color:var(--grey)}
@@ -198,7 +198,7 @@ a.fcell:hover{background:var(--bg-2)}
 .price .amt small{font-size:14px; font-weight:600; color:var(--grey); letter-spacing:normal}
 .price ul{list-style:none; padding:0; margin:18px 0 0; display:grid; gap:8px}
 .price li{font-size:14.5px; color:var(--grey); padding-left:14px; position:relative}
-.price li::before{content:"—"; position:absolute; left:0; color:var(--line)}
+.price li::before{content:"·"; position:absolute; left:0; color:var(--line)}
 
 /* KPI */
 .kpi{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:32px; margin-top:40px; padding-top:28px; border-top:1px solid var(--line)}
