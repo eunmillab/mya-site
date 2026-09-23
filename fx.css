@@ -1,0 +1,157 @@
+/* 먀 스튜디오 — FX 레이어 (리퀴드 크롬)
+   style.css 위에 얹는 연출 전용 파일. 이 파일과 fx.js를 빼면 원래 사이트로 돌아가요.
+   브랜드 원칙 유지: 무채색 + 실버. 유채색 추가 없음. */
+
+:root{
+  --fx-ink:#0B0B0C;
+  --fx-chrome:linear-gradient(104deg,#8E97A1 0%,#E9ECEF 14%,#FFFFFF 22%,#A3ACB6 34%,#5E6670 46%,#DDE1E5 58%,#FFFFFF 64%,#98A1AB 78%,#EEF0F2 92%,#AEB6BF 100%);
+  --fx-ease:cubic-bezier(.16,1,.3,1);
+}
+
+/* ---------- 스크롤 진행 바 ---------- */
+.fx-progress{position:fixed; top:0; left:0; right:0; height:2px; z-index:90; pointer-events:none;
+  background:var(--fx-chrome); background-size:200% 100%; transform-origin:0 50%; transform:scaleX(0)}
+
+/* ---------- 커서 링 (마우스 기기만) ---------- */
+.fx-cursor{position:fixed; left:0; top:0; z-index:95; pointer-events:none; width:34px; height:34px; margin:-17px 0 0 -17px;
+  border-radius:50%; border:1.5px solid #fff; mix-blend-mode:difference; opacity:0;
+  transition:width .25s var(--fx-ease), height .25s var(--fx-ease), margin .25s var(--fx-ease), opacity .2s, background .25s}
+.fx-cursor.on{opacity:1}
+.fx-cursor.big{width:64px; height:64px; margin:-32px 0 0 -32px; background:#fff}
+@media (hover:none),(pointer:coarse){.fx-cursor{display:none}}
+
+/* ---------- 헤더: 히어로 위에서는 먹색 유리 ---------- */
+html.fx .nav{transition:background .35s ease, border-color .35s ease}
+html.fx .nav.fx-dark{background:rgba(11,11,12,.72); -webkit-backdrop-filter:blur(14px) saturate(140%); backdrop-filter:blur(14px) saturate(140%); border-bottom-color:rgba(255,255,255,.06)}
+html.fx .nav.fx-dark .logo,html.fx .nav.fx-dark .mk{color:#fff}
+/* 브랜드 가이드의 '먹색 면 위 반전' 규칙을 어두운 헤더에도 적용 */
+html.fx .nav.fx-dark .mk .k{background:var(--silver-sheen); background-size:150% 100%; -webkit-background-clip:text; background-clip:text; filter:none}
+html.fx .nav.fx-dark .mk .l{filter:brightness(1)}
+html.fx .nav.fx-dark .mk .sl{color:var(--silver-200)}
+html.fx .nav.fx-dark .nav-links{color:#9AA3AE}
+html.fx .nav.fx-dark .nav-links a:hover{color:#fff}
+
+/* ---------- 히어로 ---------- */
+.fx-hero{position:relative; isolation:isolate; overflow:hidden; background:var(--fx-ink); color:#C4CAD2;
+  padding-block:clamp(72px,9vw,128px) clamp(72px,9vw,120px) !important}
+.fx-hero .fx-canvas{position:absolute; inset:0; width:100%; height:100%; display:block; z-index:-2;
+  /* WebGL을 못 쓰는 환경용 정지 배경 */
+  background:radial-gradient(120% 90% at 85% 30%,#9AA3AD 0%,#3A3F46 28%,#121315 58%,#0B0B0C 80%)}
+.fx-hero::after{content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:linear-gradient(90deg,rgba(11,11,12,.92) 0%,rgba(11,11,12,.72) 38%,rgba(11,11,12,.12) 72%,rgba(11,11,12,.35) 100%),
+             linear-gradient(0deg,rgba(11,11,12,.9),rgba(11,11,12,0) 22%)}
+.fx-hero h1{color:#fff; font-size:clamp(34px,4.6vw,58px) !important; line-height:1.22 !important; letter-spacing:-.02em}
+.fx-hero .eyebrow{color:#B6BCC4}
+.fx-hero .lead{color:#AEB5BD}
+.fx-hero .hero-ent{color:#8B95A1}
+.fx-hero .linkout{color:#fff; border-bottom-color:rgba(255,255,255,.4)}
+.fx-hero .linkout:hover{border-bottom-color:#fff}
+.fx-hero .vis-cap{color:#C4CAD2; text-shadow:0 1px 12px rgba(0,0,0,.9), 0 0 2px rgba(0,0,0,.8)}
+.fx-hero .hero-btns .btn{background:var(--fx-chrome); background-size:220% 100%; color:var(--fx-ink); box-shadow:0 10px 40px -10px rgba(214,219,225,.45)}
+.fx-hero .hero-btns .btn.silver{background:rgba(255,255,255,.08); color:#fff; box-shadow:inset 0 0 0 1px rgba(255,255,255,.28); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px)}
+
+/* 흐르는 크롬 글자 */
+.fx-sheen{background:var(--fx-chrome); background-size:220% 100%; -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:fx-flow 7s linear infinite}
+@keyframes fx-flow{to{background-position:-220% 0}}
+
+/* 히어로 슬랙 카드: 유리 + 둥둥 */
+.fx-hero .hs-visual{perspective:1100px}
+.fx-hero .screen{background:rgba(22,23,26,.55); border-color:rgba(255,255,255,.14); -webkit-backdrop-filter:blur(18px) saturate(150%); backdrop-filter:blur(18px) saturate(150%);
+  box-shadow:0 40px 100px -30px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.12); transform-style:preserve-3d; transition:transform .5s var(--fx-ease);
+  animation:fx-float 7s ease-in-out infinite}
+.fx-hero .screen.tilting{animation:none; transition:transform .12s linear}
+@keyframes fx-float{50%{transform:translateY(-10px) rotateX(2deg)}}
+.fx-hero .screen-top{background:rgba(255,255,255,.04); border-bottom-color:rgba(255,255,255,.08)}
+.fx-hero .screen-top b{color:#C4CAD2}
+.fx-hero .msg .who,.fx-hero .msg h4{color:#fff}
+.fx-hero .msg .av{background:var(--fx-chrome); background-size:200% 100%; color:var(--fx-ink); font-weight:900}
+.fx-hero .tasklist li{color:#C4CAD2}
+.fx-hero .tasklist li.warn{color:#fff}
+.fx-hero .tasklist li.warn::before{color:#fff}
+.fx-hero .screen-foot{border-top-color:rgba(255,255,255,.08)}
+.fx-hero .pillnote,.fx-hero .screen-top .ch-meta{color:#8B95A1}
+.fx-hero .tasklist li{opacity:1}
+html.fx-anim .fx-hero .tasklist li{animation:fx-tick .6s var(--fx-ease) both}
+html.fx-anim .fx-hero .tasklist li:nth-child(2){animation-delay:.15s}
+html.fx-anim .fx-hero .tasklist li:nth-child(3){animation-delay:.3s}
+html.fx-anim .fx-hero .tasklist li:nth-child(4){animation-delay:.45s}
+@keyframes fx-tick{from{transform:translateX(-8px); opacity:.2}}
+
+/* ---------- 마퀴 ---------- */
+.fx-marquee{background:var(--fx-ink); overflow:hidden; border-top:1px solid rgba(255,255,255,.06); position:relative; z-index:1}
+.fx-marquee .fx-track{display:flex; width:max-content; animation:fx-slide 38s linear infinite}
+.fx-marquee span{font-size:clamp(34px,6.2vw,78px); font-weight:900; letter-spacing:-.03em; line-height:1.25; padding:14px 0 18px; white-space:nowrap;
+  color:transparent; -webkit-text-stroke:1.2px #6B7684}
+.fx-marquee span:nth-child(even){-webkit-text-stroke:0; background:var(--fx-chrome); background-size:200% 100%; -webkit-background-clip:text; background-clip:text}
+.fx-marquee span::after{content:"✦"; display:inline-block; margin:0 .55em; font-size:.42em; vertical-align:.5em; color:#8B95A1; -webkit-text-stroke:0}
+.fx-marquee.rev{background:var(--fx-chrome); background-size:200% 100%; border:0; animation:fx-flow 12s linear infinite}
+.fx-marquee.rev .fx-track{animation-direction:reverse; animation-duration:46s}
+.fx-marquee.rev span{font-size:clamp(15px,1.6vw,19px); font-weight:800; letter-spacing:.18em; -webkit-text-stroke:0; color:var(--fx-ink); background:none; padding:13px 0}
+.fx-marquee.rev span::after{color:var(--fx-ink); font-size:.8em; vertical-align:0}
+@keyframes fx-slide{to{transform:translateX(-50%)}}
+.fx-marquee:hover .fx-track{animation-play-state:paused}
+
+/* ---------- 버튼 광택 스윕 + 자석 ---------- */
+html.fx .btn{position:relative; overflow:hidden; isolation:isolate}
+html.fx .btn::after{content:""; position:absolute; top:0; bottom:0; left:-60%; width:45%; z-index:1; pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent); transform:skewX(-20deg) translateX(-120%);
+  transition:transform .7s var(--fx-ease)}
+html.fx .btn:hover::after{transform:skewX(-20deg) translateX(420%)}
+html.fx .fx-mag{transition:transform .35s var(--fx-ease), background .16s, color .16s, opacity .15s}
+
+/* ---------- 분야 칩 ---------- */
+html.fx .chip-btn{transition:transform .3s var(--fx-ease), border-color .2s, box-shadow .3s, background .2s}
+html.fx .chip-btn:hover{transform:translateY(-3px); box-shadow:0 12px 28px -14px rgba(11,11,12,.45)}
+
+/* ---------- 섹션 제목: 은빛 광택이 한 번 스침 ---------- */
+html.fx-anim section:not(.band):not(.stagehero):not(.fx-hero) h2.title.in{
+  background:linear-gradient(100deg,var(--ink) 0 40%,#767D87 46%,#C9CFD6 50%,#767D87 54%,var(--ink) 60% 100%);
+  background-size:300% 100%; background-position:100% 0; -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:fx-title 1.8s .35s var(--fx-ease) forwards}
+@keyframes fx-title{to{background-position:0 0}}
+
+/* ---------- 자체 서비스 카드 이미지 ---------- */
+html.fx .sr-vis{perspective:1200px}
+html.fx .sr-vis .fx-tilt{position:relative; border-radius:var(--r-lg); overflow:hidden; transform-style:preserve-3d;
+  transition:transform .6s var(--fx-ease), box-shadow .6s var(--fx-ease); box-shadow:0 20px 50px -30px rgba(11,11,12,.5)}
+html.fx .sr-vis .fx-tilt img{border-radius:0; transition:transform 1s var(--fx-ease)}
+html.fx .sr-vis .fx-tilt::after{content:""; position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .4s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.38),transparent 55%)}
+html.fx .svc-row:hover .fx-tilt{box-shadow:0 40px 80px -30px rgba(11,11,12,.55)}
+html.fx .svc-row:hover .fx-tilt img{transform:scale(1.04)}
+html.fx .svc-row:hover .fx-tilt::after{opacity:1}
+html.fx .sr-nums b{font-variant-numeric:tabular-nums}
+
+/* ---------- 작업 이력(다크): 커서 스포트라이트 + 행 스윕 ---------- */
+html.fx .stagehero{position:relative; isolation:isolate; overflow:hidden}
+html.fx .stagehero::before{content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:radial-gradient(520px circle at var(--sx,70%) var(--sy,20%),rgba(182,188,196,.16),transparent 60%)}
+html.fx .worklist li{position:relative; overflow:hidden}
+html.fx .worklist li::before{content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:linear-gradient(90deg,rgba(182,188,196,0),rgba(182,188,196,.10) 40%,rgba(182,188,196,0)); transform:translateX(-100%);
+  transition:transform .7s var(--fx-ease)}
+html.fx .worklist li:hover::before{transform:translateX(100%)}
+html.fx .worklist a,html.fx .worklist .row{position:relative; z-index:1}
+html.fx .worklist li:hover .ttl{background:var(--fx-chrome); background-size:200% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; text-decoration:none}
+
+/* ---------- 추천 구성(다크) ---------- */
+html.fx .band{position:relative; isolation:isolate; overflow:hidden}
+html.fx .band::before{content:""; position:absolute; width:70vmax; height:70vmax; right:-25vmax; top:-35vmax; z-index:-1; pointer-events:none; border-radius:50%;
+  background:conic-gradient(from 0deg,#0B0B0C,#6B7684,#0B0B0C,#B6BCC4,#0B0B0C); filter:blur(90px); opacity:.35; animation:fx-spin 30s linear infinite}
+@keyframes fx-spin{to{transform:rotate(360deg)}}
+html.fx .band .frow{transition:padding .35s var(--fx-ease), background .35s}
+html.fx .band .frow:hover{padding-inline:14px; background:rgba(255,255,255,.035)}
+html.fx .band .frow:hover .ico{background:var(--fx-chrome); -webkit-background-clip:text; background-clip:text; color:transparent !important}
+
+/* ---------- 상담 선택지 ---------- */
+html.fx .choice{transition:transform .3s var(--fx-ease), border-color .2s, box-shadow .3s, background .2s}
+html.fx .choice:hover{transform:translateX(6px); box-shadow:0 14px 30px -20px rgba(11,11,12,.5)}
+
+@media (max-width:860px){
+  .fx-hero::after{background:linear-gradient(180deg,rgba(11,11,12,.86) 0%,rgba(11,11,12,.7) 45%,rgba(11,11,12,.45) 100%)}
+}
+@media (prefers-reduced-motion:reduce){
+  .fx-sheen,.fx-marquee .fx-track,.fx-marquee.rev,.fx-hero .screen,html.fx .band::before{animation:none !important}
+  html.fx .btn::after{display:none}
+}

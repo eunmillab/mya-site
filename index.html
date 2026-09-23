@@ -15,7 +15,8 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<link rel="stylesheet" href="style.css?v=1790124833">
+<link rel="stylesheet" href="style.css?v=1790124835">
+<link rel="stylesheet" href="fx.css?v=1">
 
 <header class="nav">
   <div class="nav-in">
@@ -35,11 +36,12 @@
 
 <main>
   <!-- 1. 히어로 -->
-  <section class="hero hero-split">
+  <section class="hero hero-split fx-hero">
+    <canvas class="fx-canvas" aria-hidden="true"></canvas>
     <div class="wrap hs-grid">
       <div class="hs-copy">
         <p class="eyebrow"><i class="rule"></i>기획부터 운영까지, 먀 AI 스튜디오</p>
-        <h1>운영에만 집중하세요.<br><span style="color:var(--grey-2)">AI 고민은 저희가 할게요.</span></h1>
+        <h1>운영에만 집중하세요.<br><span class="fx-sheen">AI 고민은 저희가 할게요.</span></h1>
         <p class="lead">매일 반복되는 일은 자동으로 돌려요.<br>새로 시작하는 일은 같이 만들고요.<br>온라인이든 현장이든, 직접 운영해 보며 쌓은 방식을 그대로 적용해요.</p>
         <div class="hero-btns">
           <a class="btn" href="#contact">상담 시작하기</a>
@@ -74,6 +76,10 @@
       </div>
     </div>
   </section>
+
+  <!-- FX 마퀴 -->
+  <div class="fx-marquee" aria-hidden="true"><div class="fx-track"><span>AI 컨설팅</span><span>자동화 구축</span><span>자사몰</span><span>AI 서비스 개발</span><span>광고 소재</span><span>작사 · 작곡</span><span>브랜딩</span><span>AI 컨설팅</span><span>자동화 구축</span><span>자사몰</span><span>AI 서비스 개발</span><span>광고 소재</span><span>작사 · 작곡</span><span>브랜딩</span></div></div>
+  <div class="fx-marquee rev" aria-hidden="true"><div class="fx-track"><span>DAILY AUTOMATION</span><span>FOUR LIVE SERVICES</span><span>PROTOTYPE IN 1 WEEK</span><span>CREATIVE IN 3 DAYS</span><span>OPERATE, DON'T WORRY</span><span>DAILY AUTOMATION</span><span>FOUR LIVE SERVICES</span><span>PROTOTYPE IN 1 WEEK</span><span>CREATIVE IN 3 DAYS</span><span>OPERATE, DON'T WORRY</span></div></div>
 
   <!-- 2. 분야 선택 -->
   <section class="picker" id="picker">
@@ -484,6 +490,8 @@
   });
 })();
 </script>
+
+<script src="fx.js?v=1" defer></script>
 
 <footer>
   <div class="wrap foot-in">
