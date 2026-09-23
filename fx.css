@@ -12,14 +12,6 @@
 .fx-progress{position:fixed; top:0; left:0; right:0; height:2px; z-index:90; pointer-events:none;
   background:var(--fx-chrome); background-size:200% 100%; transform-origin:0 50%; transform:scaleX(0)}
 
-/* ---------- 커서 링 (마우스 기기만) ---------- */
-.fx-cursor{position:fixed; left:0; top:0; z-index:95; pointer-events:none; width:34px; height:34px; margin:-17px 0 0 -17px;
-  border-radius:50%; border:1.5px solid #fff; mix-blend-mode:difference; opacity:0;
-  transition:width .25s var(--fx-ease), height .25s var(--fx-ease), margin .25s var(--fx-ease), opacity .2s, background .25s}
-.fx-cursor.on{opacity:1}
-.fx-cursor.big{width:64px; height:64px; margin:-32px 0 0 -32px; background:#fff}
-@media (hover:none),(pointer:coarse){.fx-cursor{display:none}}
-
 /* ---------- 헤더: 히어로 위에서는 먹색 유리 ---------- */
 html.fx .nav{transition:background .35s ease, border-color .35s ease}
 html.fx .nav.fx-dark{background:rgba(11,11,12,.72); -webkit-backdrop-filter:blur(14px) saturate(140%); backdrop-filter:blur(14px) saturate(140%); border-bottom-color:rgba(255,255,255,.06)}

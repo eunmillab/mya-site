@@ -87,16 +87,6 @@
 
   if (reduce) { countUpImmediate(); return; }
 
-  /* ---------- 커서 링 ---------- */
-  if (fine){
-    var cur = document.createElement('div'); cur.className = 'fx-cursor'; cur.setAttribute('aria-hidden', 'true'); document.body.appendChild(cur);
-    var cx = -100, cy = -100, px = -100, py = -100;
-    window.addEventListener('pointermove', function(e){ cx = e.clientX; cy = e.clientY; cur.classList.add('on'); });
-    document.addEventListener('pointerleave', function(){ cur.classList.remove('on'); });
-    document.addEventListener('pointerover', function(e){ cur.classList.toggle('big', !!e.target.closest('a,button,.svc-row figure')); });
-    (function tick(){ px += (cx - px) * .22; py += (cy - py) * .22; cur.style.transform = 'translate(' + px + 'px,' + py + 'px)'; requestAnimationFrame(tick); })();
-  }
-
   /* ---------- 자석 버튼 ---------- */
   if (fine) document.querySelectorAll('.hero-btns .btn, .go-row .btn, .nav .btn').forEach(function(b){
     b.classList.add('fx-mag');
