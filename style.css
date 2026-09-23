@@ -1022,3 +1022,6 @@ footer{font-size:15.5px}
 .shotfig img{width:100%; height:auto; border-radius:var(--r-lg); background:var(--stage)}
 .shotfig figcaption{margin-top:10px; font-size:14px; color:var(--grey-2)}
 .tmem .role.out{color:var(--grey-2); border-color:var(--line); border-style:dashed}
+
+/* 앵커 이동 시 고정 헤더에 가리지 않게 */
+html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
