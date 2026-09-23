@@ -1016,3 +1016,8 @@ footer{font-size:15.5px}
 }
 :root[data-theme="dark"] .mk .k{background:var(--silver-sheen); background-size:150% 100%; -webkit-background-clip:text; background-clip:text; filter:none}
 :root[data-theme="dark"] .mk .l{filter:brightness(1)}
+
+/* 서비스 상세 페이지 캡처 — height 속성 때문에 세로로 늘어나던 문제 */
+.shotfig{margin:clamp(28px,4vw,48px) 0 0}
+.shotfig img{width:100%; height:auto; border-radius:var(--r-lg); background:var(--stage)}
+.shotfig figcaption{margin-top:10px; font-size:14px; color:var(--grey-2)}
