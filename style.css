@@ -1037,3 +1037,23 @@ html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
 .mk-mean b{font-size:16px; color:var(--ink); font-weight:700}
 .mk-mean span{font-size:15px; color:var(--grey); line-height:1.5}
 @media (max-width:700px){ .mk-mean{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
+/* ══ 먀 시그니처 — aiaiaiaiaiai먀 ════════════════════════ */
+/* 사방에서 들리는 AI 소음이 이름으로 무너진다. 설명하지 않는다. */
+.sig{display:flex; align-items:baseline; gap:0; margin-bottom:22px;
+  font-weight:700; line-height:1; letter-spacing:-.01em; user-select:none}
+.sig-noise{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:19px; letter-spacing:-.04em; color:var(--grey-2); opacity:.55;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 38%,#000 100%);
+          mask-image:linear-gradient(90deg,transparent 0%,#000 38%,#000 100%)}
+.sig-name{font-size:28px; font-weight:800; color:var(--ink); letter-spacing:-.03em; margin-left:2px}
+@media (prefers-reduced-motion:no-preference){
+  .sig-noise{animation:sigIn 1.1s cubic-bezier(.16,1,.3,1) both}
+  .sig-name{animation:sigPop .5s cubic-bezier(.16,1,.3,1) .55s both}
+}
+@keyframes sigIn{from{opacity:0; letter-spacing:.22em}to{opacity:1; letter-spacing:-.04em}}
+@keyframes sigPop{from{opacity:0; transform:translateY(3px)}to{opacity:1; transform:none}}
+@media (max-width:560px){ .sig-noise{font-size:16px} .sig-name{font-size:22px} }
+/* 먹색 히어로(fx-hero) 위에서는 고정 밝은색 — 테마 토큰이 아니라 */
+.fx-hero .sig-noise{color:#8B95A1; opacity:.5}
+.fx-hero .sig-name{color:#fff}
