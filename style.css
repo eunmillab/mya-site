@@ -1057,3 +1057,6 @@ html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
 /* 먹색 히어로(fx-hero) 위에서는 고정 밝은색 — 테마 토큰이 아니라 */
 .fx-hero .sig-noise{color:#8B95A1; opacity:.5}
 .fx-hero .sig-name{color:#fff}
+.tmem .bio-note{font-size:14px; color:var(--grey-2); margin-top:10px; padding-left:11px; border-left:2px solid var(--line)}
+.sec-note{margin-top:16px; font-size:15px; line-height:1.6; color:var(--grey-2);
+  padding-left:13px; border-left:2px solid var(--line)}
