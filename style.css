@@ -340,6 +340,7 @@ body{padding-bottom:78px}
 /* ── 서비스 브랜드 락업 ── */
 .brandlock{display:flex; align-items:center; gap:14px; margin-bottom:18px}
 .brandlock .bsym{flex:none; display:grid; place-items:center}
+.brandlock .bsym img{display:block; width:auto; height:clamp(30px,4.3vw,43px)}
 .brandlock .bname{font-size:clamp(28px,4vw,40px); font-weight:700; letter-spacing:normal; color:var(--ink); line-height:1}
 .brandlock .bname.thin{font-weight:300; letter-spacing:.02em; color:#4E5A68}
 .brandlock .btag{font-size:13.5px; color:var(--grey); margin-top:6px; letter-spacing:normal}
