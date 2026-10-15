@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="할 일, 일정, 비용, 지금 어느 단계인지까지 한 화면에 챙겨요. 여러 서비스를 굴리는 작은 팀을 위한 작업실.">
+<link rel="canonical" href="https://www.myaaistudio.com/chaenggyeo-intro.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="챙겨">
+<meta property="og:description" content="흩어진 일을 한 화면에 챙겨요.">
+<meta property="og:url" content="https://chaenggyeo.ai.kr/">
+<meta property="og:image" content="https://chaenggyeo.ai.kr/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#1C1F24">
+<title>챙겨 ai 소개 | 먀 AI 스튜디오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap">
+<style>
+:root{
+  --ink:#191F28; --ink2:#333D4B; --sub:#4E5968; --sub2:#6B7684;
+  --mute:#8B95A1; --line:#E5E8EB; --line2:#EAEDF0; --bg:#F2F4F6; --bg2:#F9FAFB; --white:#fff;
+  --gr:#13C97A; --grDark:#0FB46C; --grSoft:#E8F8F0;
+  --bl:#4A7DFF; --blDark:#3765E8; --blSoft:#EDF2FF; --blSoft2:#DCE6FF;
+  --violet:#7C6BF0; --pink:#F06BA8; --orange:#F0904A;
+  --red:#E2574C; --redSoft:#FDEAEC; --redDark:#D7414E;
+  --card:var(--white); --txt:var(--ink);
+  /* 메인 컬러는 은색 크롬 하나로 고정. 서비스별 막대처럼 뜻이 있는 색만 따로 쓴다 */
+  --chrome:linear-gradient(145deg,#FDFDFE 0%,#EBEEF2 18%,#C7CED7 44%,#F4F6F9 58%,#D5DBE2 78%,#AFB8C3 100%);
+  --chromeSoft:linear-gradient(145deg,#FCFCFD 0%,#F1F3F6 48%,#E3E7EC 100%);
+  --chromeLine:#CDD4DC; --chromeLine2:#DDE2E8; --chromeInk:#2B3440; --chromeSub:#5A6472;
+  /* 전반을 그라데이션 바탕으로 깐다 */
+  --ground:linear-gradient(176deg,#FFFFFF 0%,#FCFDFE 40%,#F7F9FB 100%);
+  --grayG:linear-gradient(176deg,#F5F7F9 0%,#F0F3F6 46%,#EBEFF3 100%);
+  --cardG:linear-gradient(170deg,#FFFFFF 0%,#FDFEFE 48%,#F8FAFC 100%);
+  --sunkG:linear-gradient(170deg,#F4F6F9 0%,#ECEFF3 100%);
+  --ruleG:linear-gradient(90deg,rgba(205,212,220,0) 0%,#DEE3E9 18%,#D0D7DF 50%,#DEE3E9 82%,rgba(205,212,220,0) 100%);
+  --cardShadow:0 1px 2px rgba(25,31,40,.03), 0 10px 28px rgba(25,31,40,.04);
+  --sans:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+}
+:root{color-scheme:light}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+html,body{margin:0; padding:0}
+body{background:var(--ground); background-attachment:fixed; color:var(--txt); font-family:var(--sans);
+  font-size:15px; font-weight:500; line-height:1.5;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+a{color:inherit; text-decoration:none}
+h1,h2,h3,h4,p,li,.t,.k,.v{word-break:keep-all; overflow-wrap:break-word}
+:focus-visible{outline:2px solid var(--sub2); outline-offset:3px; border-radius:8px}
+@media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} }
+
+.band{padding:0 20px}
+.inner{max-width:900px; margin:0 auto}
+.gray{background:var(--grayG)}
+
+/* ════ 머리띠 ════ */
+.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:30; background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(1.6) blur(12px); border-bottom:1px solid var(--line2)}
+.top .inner{display:flex; align-items:center; justify-content:space-between; height:60px; gap:12px}
+.top .lg{display:flex; align-items:center; gap:8px; min-width:0}
+.top .lg .sym{width:22px; height:24px; color:var(--ink); flex:0 0 auto}
+.top .lg b{line-height:1}
+.top .lg b{font-size:19px; font-weight:800; letter-spacing:-.03em}
+.top .lg i{font-style:normal; font-family:var(--sans); font-size:12px; font-weight:600;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--sub2)}
+.top .sm{display:inline-flex; align-items:center; height:44px; padding:0 16px; border-radius:999px;
+  background:var(--chrome); color:var(--chromeInk); border:1px solid var(--chromeLine);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95); font-size:13.5px; font-weight:800;
+  letter-spacing:-.02em; flex:0 0 auto}
+
+/* ════ 표지 ════ */
+.hero{position:relative; overflow:hidden; text-align:center; padding-block:56px 0}
+.hero .aura{position:absolute; left:50%; top:-150px; width:min(760px,150%); height:520px;
+  transform:translateX(-50%); pointer-events:none; opacity:.55; filter:blur(40px);
+  background:
+    radial-gradient(34% 36% at 22% 44%, rgba(142,153,167,.52) 0%, rgba(142,153,167,0) 72%),
+    radial-gradient(30% 32% at 70% 34%, rgba(196,205,216,.62) 0%, rgba(196,205,216,0) 72%),
+    radial-gradient(32% 34% at 54% 76%, rgba(110,121,135,.34) 0%, rgba(110,121,135,0) 72%);
+  -webkit-mask-image:radial-gradient(66% 60% at 50% 46%, #000 0%, transparent 100%);
+  mask-image:radial-gradient(66% 60% at 50% 46%, #000 0%, transparent 100%)}
+.hero > .inner{position:relative; z-index:1}
+.hero .eye{font-size:14px; font-weight:800; color:var(--chromeSub); letter-spacing:.02em}
+.hero h1{margin:12px 0 0; font-size:38px; font-weight:800; letter-spacing:-.03em; line-height:1.26}
+.hero h1 span{display:block}
+.hero .sub{margin:18px auto 0; font-size:16.5px; line-height:26px; color:var(--sub); font-weight:500;
+  max-width:28ch}
+.btns{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:24px}
+.btns a{display:inline-flex; align-items:center; justify-content:center; gap:7px; height:50px;
+  padding:0 24px; border-radius:14px; font-size:16px; font-weight:800; letter-spacing:-.025em}
+.btns .pri{background:var(--chrome); color:var(--chromeInk); border:1px solid var(--chromeLine);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95), 0 2px 8px rgba(25,31,40,.10)}
+.btns .sec{background:var(--white); color:var(--chromeSub); border:1px solid var(--chromeLine2)}
+.btns a .go{font-size:15px; opacity:.75}
+
+/* 전화기 ⎯ 앱 홈을 그대로 축소해 그린 것 */
+.phone{width:286px; max-width:100%; zoom:1.2; aspect-ratio:286/586; margin:34px auto 0;
+  background:linear-gradient(160deg,#FDFDFE 0%,#EFF2F5 40%,#DCE1E7 100%);
+  border-radius:42px; border:1px solid #D7DDE4;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95), 0 22px 54px rgba(25,31,40,.16);
+  padding:9px; text-align:left; position:relative; z-index:1; overflow:hidden;
+  display:flex; flex-direction:column}
+.phone .notch{width:58px; height:5px; border-radius:999px; background:#C9D0D8; margin:2px auto 7px;
+  flex:0 0 auto}
+.ph{flex:1; min-height:0; background:var(--grayG); border-radius:34px; padding:11px 10px 0;
+  display:flex; flex-direction:column; gap:7px; overflow:hidden; position:relative}
+.ph::after{content:''; position:absolute; left:50%; bottom:7px; transform:translateX(-50%);
+  width:84px; height:4px; border-radius:999px; background:#C2CAD3}
+.ph .mini{background:var(--cardG); border:1px solid #F1F3F6; border-radius:13px;
+  padding:11px; flex:0 0 auto}
+.ph .mlb{font-size:12px; font-weight:700; color:var(--sub2)}
+.ph .mbig{font-size:22px; font-weight:800; letter-spacing:-.025em; margin-top:1px;
+  font-variant-numeric:tabular-nums}
+.ph .mbig i{font-style:normal; font-size:13px; color:var(--sub2); margin-left:2px}
+.ph .mchg{font-size:12px; font-weight:600; color:var(--sub2); margin-top:4px}
+.ph .mchg b{color:#0A8250; font-weight:800}
+.ph .mban{display:flex; align-items:center; gap:7px; background:var(--sunkG); border-radius:10px;
+  padding:8px 10px; margin-top:9px}
+.ph .mban .mt{flex:1; min-width:0; font-size:12.5px; font-weight:800; letter-spacing:-.02em;
+  line-height:1.4}
+.ph .mban .dd{background:var(--redSoft); color:#C8392F; font-size:11px; font-weight:800;
+  border-radius:5px; padding:2px 5px; flex:0 0 auto}
+.ph .mrow{display:flex; align-items:center; gap:9px; padding:7px 0}
+.ph .mrow + .mrow{border-top:1px solid var(--line2)}
+.ph .mrow .mi{width:30px; height:30px; border-radius:10px; flex:0 0 auto; display:grid;
+  place-items:center; font-size:12.5px; font-weight:800}
+.ph .mrow .mx{flex:1; min-width:0}
+.ph .mrow .mx u{display:block; text-decoration:none; font-size:11.5px; color:var(--sub2); font-weight:600}
+.ph .mrow .mx em{display:block; font-style:normal; font-size:14.5px; font-weight:800;
+  letter-spacing:-.03em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.ph .mrow .mg{font-size:12px; color:var(--sub2); flex:0 0 auto}
+/* 실제 앱의 자동화 띠와 같은 색차례 · 자동(초록) → 승인(파랑) → 같이(보라) → 사람만(회색) */
+.ph .mbar{height:8px; border-radius:999px; margin-top:9px;
+  background:linear-gradient(90deg,#3FB27F 0%,#3FB27F 14%,#4A7DFF 40%,#7C6BF0 66%,#9AA3AE 100%)}
+.ph .mnav{display:flex; justify-content:space-between; background:var(--cardG);
+  border:1px solid #F1F3F6; border-radius:14px;
+  padding:10px 11px; margin-top:auto; margin-bottom:18px; flex:0 0 auto}
+.ph .mnav span{font-size:11.5px; font-weight:700; color:var(--sub2)}
+.ph .mnav span.on{color:var(--ink)}
+
+/* ════ 숫자띠 ════ */
+.proof{padding-block:40px 48px}
+.proof .pl{text-align:center; font-size:15px; font-weight:700; color:var(--sub); margin:0 0 20px}
+.proof .pl b{color:var(--ink); font-weight:800}
+.pn{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:#E6EAEF; box-shadow:var(--cardShadow);
+  border-radius:20px; overflow:hidden}
+.pn .p{background:var(--cardG); padding:20px 18px}
+.pn .p .k{font-size:12.5px; font-weight:600; color:var(--sub2)}
+.pn .p .v{font-size:26px; font-weight:800; letter-spacing:-.03em; margin-top:2px;
+  font-variant-numeric:tabular-nums}
+.pn .p .v i{font-style:normal; font-size:14px; font-weight:700; color:var(--sub2); margin-left:2px}
+.proof .note{margin:14px 0 0; font-size:12.5px; line-height:19px; color:var(--sub2); font-weight:500;
+  text-align:center}
+
+/* 아이콘 바탕은 한 색이 아니라 옅은 데서 진한 데로 흐르게 */
+.g-blue{background:linear-gradient(145deg,#F4F7FF 0%,#DCE6FF 100%); color:#3E63D8}
+.g-green{background:linear-gradient(145deg,#EEFBF4 0%,#D2F1E2 100%); color:#0A8250}
+.g-violet{background:linear-gradient(145deg,#F6F3FF 0%,#E3DDFC 100%); color:#6A58D8}
+.g-orange{background:linear-gradient(145deg,#FFF7EF 0%,#FCE3CC 100%); color:#BE6420}
+.g-pink{background:linear-gradient(145deg,#FEF3F8 0%,#FBDCE9 100%); color:#C44A83}
+.g-gray{background:linear-gradient(145deg,#F8F9FB 0%,#E5E9EE 100%); color:#5A6472}
+
+/* ════ 토막 ════ */
+.sec{padding-block:52px}
+.sec .lb{font-size:13.5px; font-weight:800; color:var(--chromeSub); letter-spacing:.02em; margin:0 0 9px}
+.sec h2{margin:0 0 12px; font-size:28px; font-weight:800; letter-spacing:-.03em; line-height:1.3}
+.sec .ld{margin:0; font-size:16px; line-height:26px; color:var(--sub); font-weight:500; max-width:40ch}
+.sec .ld b{color:var(--ink2); font-weight:800}
+
+/* 기능 묶음 */
+.feat{display:grid; gap:14px; margin-top:24px}
+.fc{background:var(--cardG); border:1px solid #F0F2F5; border-radius:22px; padding:24px 20px;
+  box-shadow:var(--cardShadow)}
+.gray .fc{background:var(--cardG)}
+.fc h3{margin:0 0 8px; font-size:20px; font-weight:800; letter-spacing:-.02em; line-height:1.48}
+.fc h3 em{font-style:normal; line-height:inherit;
+  background:linear-gradient(120deg,#8F99A6 0%,#C3CAD3 28%,#6E7987 58%,#AEB7C2 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent}
+.fc p{margin:0; font-size:14.5px; line-height:23px; color:var(--sub); font-weight:500}
+.fc .vis{margin-top:18px; background:var(--sunkG); border:1px solid #E7EBEF;
+  border-radius:16px; padding:16px}
+.gray .fc .vis{background:var(--sunkG); border-color:#E4E8ED}
+
+/* 담당 칩 */
+.who{display:grid; gap:8px}
+.who .w{display:flex; align-items:center; gap:10px;
+  background:linear-gradient(170deg,#FFFFFF 0%,#FAFBFD 100%); border:1px solid #EEF1F4; border-radius:12px;
+  padding:11px 12px}
+.who .w .wi{width:30px; height:30px; border-radius:10px; display:grid; place-items:center;
+  font-size:12px; font-weight:800; flex:0 0 auto; box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+.who .w .wn{flex:1; min-width:0; font-size:13.5px; font-weight:700; letter-spacing:-.02em}
+.who .w .wv{font-size:12px; font-weight:700; color:var(--sub2); flex:0 0 auto}
+
+/* 비용 막대 */
+.bars{display:grid; gap:11px}
+.bars .b .bt{display:flex; justify-content:space-between; font-size:12.5px; font-weight:700;
+  color:var(--sub); margin-bottom:5px}
+.bars .b .bt b{color:var(--ink); font-weight:800; font-variant-numeric:tabular-nums}
+.bars .b .bb{height:8px; border-radius:999px;
+  background:linear-gradient(180deg,#E4E8ED,#EDF0F4); overflow:hidden}
+.bars .b .bb i{display:block; height:100%; border-radius:999px}
+.bars .b .bb{box-shadow:inset 0 1px 2px rgba(25,31,40,.05)}
+
+/* 버전 띠 */
+.vz{display:grid; gap:12px}
+.vz .vb{height:9px; border-radius:999px;
+  background:linear-gradient(90deg,#E5E8EB 0%,#D2DBF4 28%,#A9BEF3 54%,#7B9DF7 78%,#4A7DFF 100%)}
+.vz .vt{display:flex; justify-content:space-between; font-size:11.5px; font-weight:700;
+  color:var(--sub2); font-family:var(--sans)}
+.vz .vl{display:grid; gap:7px}
+.vz .vl div{display:flex; gap:9px; font-size:13px; line-height:20px; color:var(--sub); font-weight:500}
+.vz .vl div b{font-family:var(--sans); font-weight:600; color:var(--ink); flex:0 0 auto;
+  width:46px}
+
+/* 등급 */
+.gr{display:grid; gap:7px}
+.gr .g{display:flex; align-items:center; gap:10px;
+  background:linear-gradient(170deg,#FFFFFF 0%,#FAFBFD 100%); border:1px solid #EEF1F4; border-radius:12px;
+  padding:11px 13px}
+.gr .g .gn{font-size:13.5px; font-weight:800; letter-spacing:-.02em; width:50px; flex:0 0 auto}
+.gr .g .gv{flex:1; min-width:0; font-size:12.5px; color:var(--sub2); font-weight:600}
+.gr .g .gk{width:7px; height:7px; border-radius:999px; flex:0 0 auto}
+
+/* 다섯 칸 */
+.five{display:grid; gap:12px; margin-top:24px}
+.fv{background:var(--cardG); border:1px solid #F0F2F5; border-radius:20px; padding:20px;
+  display:flex; gap:14px; align-items:flex-start; box-shadow:var(--cardShadow)}
+.fv .ic{width:42px; height:42px; border-radius:13px; flex:0 0 auto; display:grid; place-items:center}
+.fv .ic svg{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.75;
+  stroke-linecap:round; stroke-linejoin:round}
+.fv .ft{flex:1; min-width:0}
+.fv .ft .q{font-size:13px; font-weight:700; color:var(--chromeSub); letter-spacing:-.02em}
+.fv .ft h3{margin:3px 0 6px; font-size:18px; font-weight:800; letter-spacing:-.02em}
+.fv .ft p{margin:0; font-size:14px; line-height:22px; color:var(--sub); font-weight:500}
+
+/* 절차 */
+.steps{display:grid; gap:12px; margin-top:24px}
+.st{background:var(--cardG); border:1px solid #F0F2F5; box-shadow:var(--cardShadow); border-radius:18px; padding:20px; display:flex; gap:14px;
+  align-items:flex-start}
+.st .sn{font-family:var(--sans); font-size:12px; font-weight:700; color:var(--chromeInk);
+  background:var(--chrome); border:1px solid var(--chromeLine);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9); border-radius:999px; height:23px; min-width:23px; padding:0 7px;
+  display:grid; place-items:center; flex:0 0 auto; margin-top:1px}
+.st .sx{flex:1; min-width:0}
+.st .sx b{display:block; font-size:16px; font-weight:800; letter-spacing:-.03em; margin-bottom:4px}
+.st .sx p{margin:0; font-size:14px; line-height:22px; color:var(--sub); font-weight:500}
+
+/* 템플릿 */
+.packs{display:grid; gap:12px; margin-top:24px}
+.pk{background:var(--cardG); border:1px solid #F0F2F5; box-shadow:var(--cardShadow);
+  border-radius:20px; padding:22px 20px; position:relative; overflow:hidden}
+.pk .glow{position:absolute; inset:-40% -25% auto -25%; height:160px; filter:blur(32px);
+  pointer-events:none}
+.pk > *{position:relative}
+.pk .pt{font-size:12px; font-weight:800; color:var(--sub2); letter-spacing:.02em}
+.pk h3{margin:7px 0 7px; font-size:19px; font-weight:800; letter-spacing:-.02em}
+.pk p{margin:0; font-size:14px; line-height:22px; color:var(--sub); font-weight:500}
+
+/* 묻는 말 */
+.qa{display:grid; gap:12px; margin-top:24px}
+.qa details{background:var(--cardG); border:1px solid #F0F2F5; box-shadow:var(--cardShadow);
+  border-radius:18px; padding:0 20px}
+.qa summary{list-style:none; cursor:pointer; padding:20px 0; display:flex; align-items:flex-start;
+  gap:11px; font-size:15.5px; font-weight:800; letter-spacing:-.03em; line-height:23px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary .qm{color:var(--chromeSub); font-family:var(--sans); font-weight:700; flex:0 0 auto}
+.qa summary .qt{flex:1; min-width:0}
+.qa summary .qc{color:var(--sub2); font-size:13px; flex:0 0 auto; transition:transform .18s;
+  margin-top:3px}
+.qa details[open] summary .qc{transform:rotate(180deg)}
+.qa .ans{padding:0 0 20px 24px; margin:0; font-size:14.5px; line-height:23px; color:var(--sub);
+  font-weight:500}
+.qa .ans b{color:var(--ink2); font-weight:800}
+
+/* 마무리 */
+.end{position:relative; overflow:hidden; text-align:center; padding-block:64px 72px}
+.end .glow{position:absolute; left:50%; top:10%; width:min(640px,140%); height:320px;
+  transform:translateX(-50%); filter:blur(40px); opacity:.5; pointer-events:none;
+  background:
+    radial-gradient(34% 44% at 28% 50%, rgba(142,153,167,.48) 0%, rgba(142,153,167,0) 72%),
+    radial-gradient(34% 44% at 70% 50%, rgba(196,205,216,.58) 0%, rgba(196,205,216,0) 72%);
+  -webkit-mask-image:radial-gradient(64% 60% at 50% 50%, #000 0%, transparent 100%);
+  mask-image:radial-gradient(64% 60% at 50% 50%, #000 0%, transparent 100%)}
+.end > .inner{position:relative; z-index:1}
+.end h2{margin:0 0 11px; font-size:29px; font-weight:800; letter-spacing:-.03em; line-height:1.3}
+.end p{margin:0 auto; font-size:16px; line-height:26px; color:var(--sub); font-weight:500; max-width:28ch}
+.foot{background:var(--grayG); border-top:1px solid #E7EBEF; padding:24px 20px 32px}
+.foot .inner{font-size:12.5px; line-height:20px; color:var(--sub2); font-weight:500}
+.foot b{color:var(--sub); font-weight:700}
+
+@media (min-width:720px){
+  .hero{padding-block-start:72px}
+  .hero h1{font-size:52px}
+  .hero .sub{font-size:18px; line-height:29px; max-width:34ch}
+  .phone{width:300px; zoom:1.15; margin-top:42px}
+  .pn{grid-template-columns:repeat(4,1fr)}
+  .sec{padding-block:64px}
+  .sec h2{font-size:34px}
+  /* 2단 격자는 간격을 하나로 맞춰 둘째 칸 시작점을 같게 둔다 */
+  .feat,.five,.steps,.packs,.qa{gap:14px}
+  .feat{grid-template-columns:1fr 1fr}
+  .five{grid-template-columns:1fr 1fr}
+  .five .fv:first-child{grid-column:1 / -1}
+  .steps{grid-template-columns:1fr 1fr}
+  .packs{grid-template-columns:repeat(2,1fr)}
+  .end h2{font-size:36px}
+}
+@media (max-width:400px){
+  .hero h1{font-size:31px}
+  .sec h2{font-size:24px}
+  .end h2{font-size:25px}
+  .fc{padding:20px 18px}
+  .fv,.pk{padding:20px 18px}
+  .st{padding:18px 18px}
+  .qa details{padding:0 18px}
+}
+</style>
+</head>
+<body>
+<header class="top band">
+  <div class="inner">
+    <a class="lg" href="chaenggyeo-intro.html"><svg class="sym" viewBox="196 160 632 704" aria-hidden="true"><g fill="currentColor" stroke="currentColor" stroke-width="10" stroke-linejoin="round"><path d="M528 196H718L513 466H747L602.3 688H412.3L511 558H277Z"/><path d="M369.8 744H559.8L496 828H306Z"/></g></svg><b>챙겨</b><i>Chaenggyeo</i></a>
+    <a class="sm" href="https://chaenggyeo.ai.kr/login">로그인</a>
+  </div>
+</header>
+
+<section class="hero band">
+  <div class="aura"></div>
+  <div class="inner">
+    <p class="eye">여러 서비스를 한 곳에서</p>
+    <h1><span>흩어진 일을</span><span>한 화면에 챙겨요</span></h1>
+    <p class="sub">할 일, 일정, 비용, 지금 어느 단계인지까지. 네 군데를 열지 않아도 돼요.</p>
+    <div class="btns">
+      <a class="pri" href="https://chaenggyeo.ai.kr/login">로그인하고 열기<span class="go">›</span></a>
+      <a class="sec" href="https://claude.ai/artifact/GzTHdvbU92Zr3b7i1Qi8Ej">사용 설명서<span class="go">›</span></a>
+    </div>
+
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="ph">
+        <div class="mini">
+          <div class="mlb">이번 달 나가는 돈</div>
+          <div class="mbig">554,801<i>원</i></div>
+          <div class="mchg">바꾸면 월 <b>204,794원</b> 아껴요</div>
+          <div class="mban">
+            <div class="mt">Claude Max 결제일</div>
+            <div class="dd">D-4</div>
+          </div>
+        </div>
+        <div class="mini">
+          <div class="mlb" style="margin-bottom:4px">서비스 진행</div>
+          <div class="mrow"><div class="mi g-blue">은</div>
+            <div class="mx"><u>오픈 준비</u><em>은밀한연구소</em></div><div class="mg">v0.9.0 ›</div></div>
+          <div class="mrow"><div class="mi g-green">위</div>
+            <div class="mx"><u>돌아가는 중</u><em>은밀위키</em></div><div class="mg">v1.2.0 ›</div></div>
+          <div class="mrow"><div class="mi g-violet">스</div>
+            <div class="mx"><u>만드는 중</u><em>스샷</em></div><div class="mg">v0.8.0 ›</div></div>
+        </div>
+        <div class="mini">
+          <div class="mlb">얼마나 자동으로 도나요</div>
+          <div class="mbar"></div>
+          <div class="mchg" style="margin-top:7px">할 일 <b>61건</b>을 나눠 맡아요</div>
+        </div>
+        <div class="mnav">
+          <span class="on">홈</span><span>서비스</span><span>체크</span><span>캘린더</span><span>채팅</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gray band proof">
+  <div class="inner">
+    <p class="pl">만든 곳인 <b>먀 AI 스튜디오</b>가 자기 일을 먼저 올려두고 써요</p>
+    <div class="pn">
+      <div class="p"><div class="k">돌리는 서비스</div><div class="v">36<i>개</i></div></div>
+      <div class="p"><div class="k">돌고 있는 구독</div><div class="v">7<i>건</i></div></div>
+      <div class="p"><div class="k">옮겨온 결제</div><div class="v">41<i>건</i></div></div>
+      <div class="p"><div class="k">쌓여 있는 할 일</div><div class="v">61<i>건</i></div></div>
+    </div>
+    <p class="note">서비스와 할 일은 먀 템플릿에 든 수고, 구독과 결제는 먀 운영비 시트를 2026-10-14에 읽어 옮긴 값이에요.</p>
+  </div>
+</section>
+
+<section class="band sec">
+  <div class="inner">
+    <p class="lb">왜 필요한가요</p>
+    <h2>한 가지를 알려면<br>네 군데를 열어야 해요</h2>
+    <p class="ld">할 일은 메신저에, 일정은 캘린더에, 비용은 시트에 있어요. 지금 어느 단계인지는 적는 데조차 없고요. <b>챙겨는 이 넷을 한 화면에 올려요.</b></p>
+
+    <div class="feat">
+      <div class="fc">
+        <h3>사람이 한 일인지,<br><em>AI가 한 일인지</em> 보여요</h3>
+        <p>항목마다 담당을 붙이면 어떤 모델이 했는지와 쓴 토큰까지 남아요. 한 달에 사람 손이 어디까지 들어갔는지 숫자로 확인할 수 있어요.</p>
+        <div class="vis"><div class="who">
+          <div class="w"><div class="wi g-orange">사</div>
+            <div class="wn">사람</div><div class="wv">14건</div></div>
+          <div class="w"><div class="wi g-blue">범</div>
+            <div class="wn">범용 AI · Claude Opus</div><div class="wv">1.2M 토큰</div></div>
+          <div class="w"><div class="wi g-violet">로</div>
+            <div class="wn">로컬 AI</div><div class="wv">준비 중</div></div>
+        </div></div>
+      </div>
+
+      <div class="fc">
+        <h3>어느 서비스에<br><em>얼마 썼는지</em> 바로 나와요</h3>
+        <p>결제마다 서비스가 붙어서 자동으로 묶여요. 적는 곳은 그대로 시트고, 챙겨는 그걸 읽어 보여드려요. 두 군데에 적을 일이 없어요.</p>
+        <div class="vis"><div class="bars">
+          <div class="b"><div class="bt"><span>공통</span><b>1,593만원</b></div>
+            <div class="bb"><i style="width:100%;background:linear-gradient(90deg,#A79AF5,#7C6BF0)"></i></div></div>
+          <div class="b"><div class="bt"><span>은밀한연구소</span><b>182만원</b></div>
+            <div class="bb"><i style="width:12%;background:linear-gradient(90deg,#7FA3FF,#4A7DFF)"></i></div></div>
+          <div class="b"><div class="bt"><span>은연</span><b>616,030원</b></div>
+            <div class="bb"><i style="width:5%;background:linear-gradient(90deg,#5FD6A4,#13C97A)"></i></div></div>
+          <div class="b"><div class="bt"><span>스샷</span><b>183,800원</b></div>
+            <div class="bb"><i style="width:4%;background:linear-gradient(90deg,#F6B480,#F0904A)"></i></div></div>
+        </div></div>
+      </div>
+
+      <div class="fc">
+        <h3>지금 어느 단계인지<br><em>숫자 하나로</em> 알 수 있어요</h3>
+        <p>0점대는 아직 안 연 것, 1.0은 연 날이에요. 올릴 때마다 무엇이 바뀌었고 왜 바꿨는지가 한 줄씩 쌓여서 몇 달 뒤에도 되짚을 수 있어요.</p>
+        <div class="vis"><div class="vz">
+          <div class="vb"></div>
+          <div class="vt"><span>0.1</span><span>1.0</span><span>2.0</span></div>
+          <div class="vl">
+            <div><b>0.1~0.9</b><span>아직 안 열었어요</span></div>
+            <div><b>1.0</b><span>밖에 연 날 붙여요</span></div>
+            <div><b>2.0</b><span>쓰던 방식이 바뀌었어요</span></div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="fc">
+        <h3>한 건만 맡은 분께는<br><em>그 서비스만</em> 열어드려요</h3>
+        <p>등급을 올리지 않고도 서비스 하나에만 초대할 수 있어요. 외주나 단건 참여가 많은 팀이라면 이 쪽이 훨씬 편해요.</p>
+        <div class="vis"><div class="gr">
+          <div class="g"><div class="gk" style="background:#4A7DFF"></div><div class="gn">관리자</div>
+            <div class="gv">모두 볼 수 있어요</div></div>
+          <div class="g"><div class="gk" style="background:#13C97A"></div><div class="gn">매니저</div>
+            <div class="gv">맡은 서비스를 다 볼 수 있어요</div></div>
+          <div class="g"><div class="gk" style="background:#F0904A"></div><div class="gn">멤버</div>
+            <div class="gv">공개된 것과 자기 할 일을 봐요</div></div>
+          <div class="g"><div class="gk" style="background:#C6CDD5"></div><div class="gn">게스트</div>
+            <div class="gv">초대받은 서비스만 봐요</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gray band sec">
+  <div class="inner">
+    <p class="lb">화면 구성</p>
+    <h2>다섯 칸이 전부예요</h2>
+    <p class="ld">칸마다 답하는 질문이 하나씩이라 어디를 열지 고민할 일이 없어요.</p>
+    <div class="five">
+      <div class="fv">
+        <div class="ic g-blue"><svg viewBox="0 0 24 24"><path d="M4 10.6 12 4.5l8 6.1V19a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z"/><path d="M9.6 20.5v-6h4.8v6"/></svg></div>
+        <div class="ft"><div class="q">오늘 뭘 봐야 하나요</div><h3>홈</h3>
+          <p>날짜가 가장 가까운 일, 이번 달 나가는 돈, 쓰고 있는 AI, 자동으로 도는 비율이 위에서부터 와요. 큰 숫자를 누르면 그 숫자를 만든 목록으로 바로 들어가요.</p></div>
+      </div>
+      <div class="fv">
+        <div class="ic g-green"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M3.5 9.5h17M9 9.5v10"/></svg></div>
+        <div class="ft"><div class="q">이건 어디까지 왔나요</div><h3>서비스</h3>
+          <p>안 변하는 규칙, 지금 버전과 올라온 기록, 자료함, 멤버가 한 묶음으로 붙어요. 진행 · 예정 · 대행 · 멈춤으로 나눠 보고, 회사별로도 묶어 볼 수 있어요.</p></div>
+      </div>
+      <div class="fv">
+        <div class="ic g-orange"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><path d="m8.4 12.2 2.5 2.5 4.7-5"/></svg></div>
+        <div class="ft"><div class="q">누가 하고 있나요</div><h3>체크리스트</h3>
+          <p>사람인지 범용 AI인지 로컬 AI인지가 붙고, AI면 모델과 토큰까지 남아요. 메모에는 적은 분 이름이 같이 붙어요.</p></div>
+      </div>
+      <div class="fv">
+        <div class="ic g-violet"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8.5 3v4M15.5 3v4"/></svg></div>
+        <div class="ft"><div class="q">언제까지인가요</div><h3>캘린더</h3>
+          <p>금액을 적은 일정은 돈 나가는 일정으로 따로 모여요. 결제일이 가까운 것부터 남은 날이 붙어서, 플랜을 내릴 건 결제 전에 눈에 띄어요.</p></div>
+      </div>
+      <div class="fv">
+        <div class="ic g-pink"><svg viewBox="0 0 24 24"><path d="M20 13.4c0 3.4-3.4 6.1-7.6 6.1-.9 0-1.8-.1-2.6-.4L4.6 20.5l1.3-3.6C4.7 15.9 4 14.7 4 13.4 4 10 7.4 7.3 11.6 7.3S20 10 20 13.4Z"/></svg></div>
+        <div class="ft"><div class="q">어디서 이야기하나요</div><h3>채팅</h3>
+          <p>공지 · 게시판 · 단톡방을 파고 방마다 볼 수 있는 등급을 따로 줘요. 서비스에 붙인 방은 그 서비스에서 바로 들어가요.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band sec">
+  <div class="inner">
+    <p class="lb">시작하기</p>
+    <h2>깔면 비어 있지 않아요</h2>
+    <p class="ld">템플릿 넷 중에 하나를 고르면 바로 채워진 작업실이 열려요. 빈 칸부터 채우는 것보다, 깔린 것에서 안 쓰는 걸 지우는 쪽이 훨씬 빨라요.</p>
+    <div class="steps">
+      <div class="st"><div class="sn">1</div><div class="sx"><b>작업실 이름 적기</b>
+        <p>회사 이름이나 팀 이름을 적어주세요. 나중에 바꿀 수 있어요.</p></div></div>
+      <div class="st"><div class="sn">2</div><div class="sx"><b>템플릿 고르기</b>
+        <p>넷 중에 하나만 고르면 서비스와 체크리스트가 한꺼번에 깔려요.</p></div></div>
+      <div class="st"><div class="sn">3</div><div class="sx"><b>멤버 넣기</b>
+        <p>이름과 등급만 적으면 돼요. 한 건만 맡은 분은 그 서비스에만 넣어주세요.</p></div></div>
+      <div class="st"><div class="sn">4</div><div class="sx"><b>급한 일부터 확인</b>
+        <p>홈 맨 위에 날짜가 가장 가까운 일이 올라와 있어요.</p></div></div>
+    </div>
+
+    <div class="packs">
+      <div class="pk">
+        <div class="glow" style="background:radial-gradient(50% 70% at 30% 50%, rgba(196,205,216,.44) 0%, rgba(196,205,216,0) 70%)"></div>
+        <div class="pt">템플릿 1</div><h3>커머스</h3>
+        <p>상품을 떼어 와 팔고 보내는 회사 모양으로 깔려요. 상품 · 주문 · CS · 정산이 들어와요.</p>
+      </div>
+      <div class="pk">
+        <div class="glow" style="background:radial-gradient(50% 70% at 30% 50%, rgba(142,153,167,.30) 0%, rgba(142,153,167,0) 70%)"></div>
+        <div class="pt">템플릿 2</div><h3>대행사</h3>
+        <p>남의 일을 받아 만들어 주는 회사 모양이에요. 고객사 · 제작 · 검수 · 청구가 들어와요.</p>
+      </div>
+      <div class="pk">
+        <div class="glow" style="background:radial-gradient(50% 70% at 30% 50%, rgba(110,121,135,.26) 0%, rgba(110,121,135,0) 70%)"></div>
+        <div class="pt">템플릿 3</div><h3>먀 AI 스튜디오</h3>
+        <p>서비스 36개와 할 일 61건, 운영비와 구독, 릴리즈 기록이 그대로 들어 있어요. 다 차려진 작업실이 어떤 모양인지 보고 싶을 때 골라주세요.</p>
+      </div>
+      <div class="pk">
+        <div class="glow" style="background:radial-gradient(50% 70% at 30% 50%, rgba(196,205,216,.30) 0%, rgba(196,205,216,0) 70%)"></div>
+        <div class="pt">템플릿 4</div><h3>빈 작업실</h3>
+        <p>아무것도 깔지 않아요. 쓰는 방식이 이미 정해져 있다면 이쪽이 편해요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gray band sec">
+  <div class="inner">
+    <p class="lb">미리 알려드려요</p>
+    <h2>자주 묻는 것들</h2>
+    <p class="ld">쓰기 시작한 다음에 알면 늦는 것만 모았어요.</p>
+    <div class="qa">
+      <details open>
+        <summary><span class="qm">Q</span><span class="qt">등급을 나누면 자료가 안전한가요?</span><span class="qc">⌄</span></summary>
+        <p class="ans">아니요. 등급은 <b>무엇을 화면에 띄울지 고르는 장치</b>라서 자물쇠가 아니에요. 링크를 받은 분은 안에 든 자료에 닿을 수 있어요. 밖에 나가면 안 되는 건 등급으로 막지 마시고 그 작업실에 넣지 않는 쪽을 권해드려요.</p>
+      </details>
+      <details>
+        <summary><span class="qm">Q</span><span class="qt">비용을 챙겨에 바로 적어도 되나요?</span><span class="qc">⌄</span></summary>
+        <p class="ans">적는 곳은 <b>시트 한 군데</b>로 두는 쪽이 좋아요. 챙겨에서 금액을 고치면 시트와 숫자가 둘이 되거든요. 시트를 고치고 다시 읽어오는 순서로 써주세요.</p>
+      </details>
+      <details>
+        <summary><span class="qm">Q</span><span class="qt">PC랑 휴대폰에서 같이 쓸 수 있나요?</span><span class="qc">⌄</span></summary>
+        <p class="ans">네. 같은 링크를 열면 같은 자료를 봐요. 넓은 화면에서는 다섯 칸이 왼쪽 세로줄로 바뀌고 홈이 두세 줄로 눕고, 좁은 화면에서는 아래 띠로 내려와요. <b>적는 건 PC에서, 나가서는 보고 체크만</b> 하는 쪽을 권해드려요.</p>
+      </details>
+      <details>
+        <summary><span class="qm">Q</span><span class="qt">구글 시트에서 자동으로 읽어오나요?</span><span class="qc">⌄</span></summary>
+        <p class="ans">네. <b>2026-10-14 에 실제로 돌려봤어요.</b> 운영비 시트에서 누적 · 월 · 할부잔액 · 절감후월 · 월절약액 · 환율 여섯 칸이 시트와 같은 값으로 들어와요. 받아온 날짜가 화면에 같이 떠서 언제 기준인지 바로 보여요.</p>
+      </details>
+      <details>
+        <summary><span class="qm">Q</span><span class="qt">로컬 AI는 어떤 모델을 쓰나요?</span><span class="qc">⌄</span></summary>
+        <p class="ans">항목에 붙일 칸은 있지만 <b>어떤 모델을 쓸지는 아직 정하지 않았어요.</b> 정해지면 설정에서 고르실 수 있게 할 예정이에요.</p>
+      </details>
+      <details>
+        <summary><span class="qm">Q</span><span class="qt">커머스 쪽에서도 쓸 수 있나요?</span><span class="qc">⌄</span></summary>
+        <p class="ans">네. 커머스 템플릿을 넣어뒀어요. 쇼핑몰 한 곳을 돌리는 꼴로 서비스 11개와 상품 · 주문 · CS · 정산 묶음이 깔려요. 일정은 직접 적어요.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band end">
+  <div class="glow"></div>
+  <div class="inner">
+    <h2>한 번 열어보는 게<br>제일 빨라요</h2>
+    <p>템플릿을 고르면 바로 채워진 상태로 열려요. 둘러보고 안 쓰는 것만 지우면 돼요.</p>
+    <div class="btns">
+      <a class="pri" href="https://chaenggyeo.ai.kr/login">로그인하고 열기<span class="go">›</span></a>
+      <a class="sec" href="https://claude.ai/artifact/GzTHdvbU92Zr3b7i1Qi8Ej">사용 설명서<span class="go">›</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="inner">
+    챙겨 <b>v0.23.4</b> 기준 · 2026-10-15<br>
+    만든 곳 <a href="https://www.myaaistudio.com">먀 AI 스튜디오</a> · 초대받은 계정으로 로그인해야 열려요.
+  </div>
+</footer>
+</body>
+</html>
