@@ -5,433 +5,205 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="캡처 · 카톡방 · 맥 파일에서 치울 것만 골라 주는 정리 앱이에요.">
 <link rel="canonical" href="https://www.myaaistudio.com/goyo-intro.html">
-<meta property="og:type" content="website"><meta property="og:site_name" content="먀 AI 스튜디오"><meta property="og:title" content="고요 ai 소개"><meta property="og:description" content="캡처 · 카톡방 · 맥 파일에서 치울 것만 골라 주는 정리 앱이에요."><meta property="og:url" content="https://www.myaaistudio.com/goyo-intro.html">
+<meta property="og:type" content="website"><meta property="og:title" content="고요 ai 소개"><meta property="og:description" content="캡처 · 카톡방 · 맥 파일에서 치울 것만 골라 주는 정리 앱이에요."><meta property="og:url" content="https://www.myaaistudio.com/goyo-intro.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1C1F24">
 <title>고요 ai 소개 | 먀 AI 스튜디오</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap">
 <style>
 :root{
-  --ink:#191F28; --ink2:#333D4B; --sub:#4E5968; --sub2:#6B7684;
-  --mute:#8B95A1; --line:#E5E8EB; --line2:#EAEDF0; --bg:#F2F4F6; --bg2:#F9FAFB; --white:#fff;
-  --gr:#13C97A; --grDark:#0FB46C; --grSoft:#E8F8F0;
-  --bl:#4A7DFF; --blDark:#3765E8; --blSoft:#EDF2FF; --blSoft2:#DCE6FF;
-  --violet:#7C6BF0; --pink:#F06BA8; --orange:#F0904A;
-  --red:#E2574C; --redSoft:#FDEAEC; --redDark:#D7414E;
-  --card:var(--white); --txt:var(--ink);
-  /* 메인 컬러는 은색 크롬 하나로 고정. 서비스별 막대처럼 뜻이 있는 색만 따로 쓴다 */
+  --ink:#191F28; --ink2:#333D4B; --sub:#4E5968; --sub2:#6B7684; --mute:#8B95A1; --line:#E5E8EB; --line2:#EAEDF0;
+  --bg:#F2F4F6; --bg2:#F9FAFB; --white:#fff; --grText:#0A8250; --redText:#C8392F;
   --chrome:linear-gradient(145deg,#FDFDFE 0%,#EBEEF2 18%,#C7CED7 44%,#F4F6F9 58%,#D5DBE2 78%,#AFB8C3 100%);
-  --chromeSoft:linear-gradient(145deg,#FCFCFD 0%,#F1F3F6 48%,#E3E7EC 100%);
-  --chromeLine:#CDD4DC; --chromeLine2:#DDE2E8; --chromeInk:#2B3440; --chromeSub:#5A6472;
-  /* 전반을 그라데이션 바탕으로 깐다 */
-  --ground:linear-gradient(176deg,#FFFFFF 0%,#FCFDFE 40%,#F7F9FB 100%);
-  --grayG:linear-gradient(176deg,#F5F7F9 0%,#F0F3F6 46%,#EBEFF3 100%);
-  --cardG:linear-gradient(170deg,#FFFFFF 0%,#FDFEFE 48%,#F8FAFC 100%);
-  --sunkG:linear-gradient(170deg,#F4F6F9 0%,#ECEFF3 100%);
-  --ruleG:linear-gradient(90deg,rgba(205,212,220,0) 0%,#DEE3E9 18%,#D0D7DF 50%,#DEE3E9 82%,rgba(205,212,220,0) 100%);
-  --cardShadow:0 1px 2px rgba(25,31,40,.03), 0 10px 28px rgba(25,31,40,.04);
+  --chromeLine:#CDD4DC; --chromeInk:#2B3440; --chromeSub:#5A6472;
   --sans:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+  --sec:64px;
 }
 :root{color-scheme:light}
 *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
 html,body{margin:0; padding:0}
-body{background:var(--ground); background-attachment:fixed; color:var(--txt); font-family:var(--sans);
-  font-size:15px; font-weight:500; line-height:1.5;
-  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+body{background:var(--white); color:var(--ink); font-family:var(--sans); font-size:16px; font-weight:500; line-height:1.55;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; word-break:keep-all; overflow-wrap:break-word}
 a{color:inherit; text-decoration:none}
-h1,h2,h3,h4,p,li,.t,.k,.v{word-break:keep-all; overflow-wrap:break-word}
-:focus-visible{outline:2px solid var(--sub2); outline-offset:3px; border-radius:8px}
-@media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} }
-
+h1,h2,h3,p{margin:0}
+h1,h2{text-wrap:balance}
+:focus-visible{outline:2px solid var(--ink); outline-offset:3px; border-radius:8px}
+@media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} video{display:none} .device .fb{display:block} }
 .band{padding:0 20px}
-.inner{max-width:900px; margin:0 auto}
-.gray{background:var(--grayG)}
-
-/* ════ 머리띠 ════ */
-.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:30; background:rgba(255,255,255,.92);
-  backdrop-filter:saturate(1.6) blur(12px); border-bottom:1px solid var(--line2)}
-.top .inner{display:flex; align-items:center; justify-content:space-between; height:60px; gap:12px}
-.top .lg{display:flex; align-items:center; gap:8px; min-width:0}
-.top .lg .sym{width:22px; height:24px; color:var(--ink); flex:0 0 auto}
-.top .lg b{line-height:1}
+.inner{max-width:1040px; margin:0 auto}
+.sec{padding-block:var(--sec)}
+.gray{background:var(--bg2)}
+.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:30; background:rgba(255,255,255,.92); backdrop-filter:saturate(1.6) blur(12px); border-bottom:1px solid var(--line2)}
+.top .inner{display:flex; align-items:center; justify-content:space-between; height:64px; gap:12px}
+.top .lg{display:flex; align-items:center; gap:9px; min-width:0}
+.top .lg .sym{width:24px; height:26px; color:var(--ink); border-radius:7px}
 .top .lg b{font-size:19px; font-weight:800; letter-spacing:-.03em}
-.top .lg i{font-style:normal; font-family:var(--sans); font-size:12px; font-weight:600;
-  letter-spacing:.1em; text-transform:uppercase; color:var(--sub2)}
-.top .sm{display:inline-flex; align-items:center; height:44px; padding:0 16px; border-radius:999px;
-  background:var(--chrome); color:var(--chromeInk); border:1px solid var(--chromeLine);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.95); font-size:13.5px; font-weight:800;
-  letter-spacing:-.02em; flex:0 0 auto}
-
-/* ════ 표지 ════ */
-.hero{position:relative; overflow:hidden; text-align:center; padding-block:56px 0}
-.hero .aura{position:absolute; left:50%; top:-150px; width:min(760px,150%); height:520px;
-  transform:translateX(-50%); pointer-events:none; opacity:.55; filter:blur(40px);
-  background:
-    radial-gradient(34% 36% at 22% 44%, rgba(142,153,167,.52) 0%, rgba(142,153,167,0) 72%),
-    radial-gradient(30% 32% at 70% 34%, rgba(196,205,216,.62) 0%, rgba(196,205,216,0) 72%),
-    radial-gradient(32% 34% at 54% 76%, rgba(110,121,135,.34) 0%, rgba(110,121,135,0) 72%);
-  -webkit-mask-image:radial-gradient(66% 60% at 50% 46%, #000 0%, transparent 100%);
-  mask-image:radial-gradient(66% 60% at 50% 46%, #000 0%, transparent 100%)}
-.hero > .inner{position:relative; z-index:1}
+.top .lg i{font-style:normal; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--sub2)}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:6px; height:52px; padding:0 22px; border-radius:14px; font-size:16px; font-weight:800; letter-spacing:-.02em; white-space:nowrap}
+.btn .go{font-size:15px; opacity:.7}
+.btn.pri{background:var(--chrome); color:var(--chromeInk); border:1px solid var(--chromeLine); box-shadow:inset 0 1px 0 rgba(255,255,255,.95), 0 2px 8px rgba(25,31,40,.10)}
+.btn.sec2{background:var(--white); color:var(--chromeSub); border:1px solid var(--line)}
+.btn.sm{height:44px; padding:0 16px; font-size:14px; border-radius:999px}
+.btns{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px}
+.hero{padding-block:56px 0; text-align:center; position:relative; overflow:hidden}
 .hero .eye{font-size:14px; font-weight:800; color:var(--chromeSub); letter-spacing:.02em}
-.hero h1{margin:12px 0 0; font-size:38px; font-weight:800; letter-spacing:-.03em; line-height:1.26}
-.hero h1 span{display:block}
-.hero .sub{margin:18px auto 0; font-size:16.5px; line-height:26px; color:var(--sub); font-weight:500;
-  max-width:28ch}
-.btns{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:24px}
-.btns a{display:inline-flex; align-items:center; justify-content:center; gap:7px; height:50px;
-  padding:0 24px; border-radius:14px; font-size:16px; font-weight:800; letter-spacing:-.025em}
-.btns .pri{background:var(--chrome); color:var(--chromeInk); border:1px solid var(--chromeLine);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.95), 0 2px 8px rgba(25,31,40,.10)}
-.btns .sec{background:var(--white); color:var(--chromeSub); border:1px solid var(--chromeLine2)}
-.btns a .go{font-size:15px; opacity:.75}
-
-/* 전화기 ⎯ 앱 홈을 그대로 축소해 그린 것 */
-.phone{width:286px; max-width:100%; zoom:1.2; aspect-ratio:286/586; margin:34px auto 0;
-  background:linear-gradient(160deg,#FDFDFE 0%,#EFF2F5 40%,#DCE1E7 100%);
-  border-radius:42px; border:1px solid #D7DDE4;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.95), 0 22px 54px rgba(25,31,40,.16);
-  padding:9px; text-align:left; position:relative; z-index:1; overflow:hidden;
-  display:flex; flex-direction:column}
-.phone .notch{width:58px; height:5px; border-radius:999px; background:#C9D0D8; margin:2px auto 7px;
-  flex:0 0 auto}
-.ph{flex:1; min-height:0; background:var(--grayG); border-radius:34px; padding:11px 10px 0;
-  display:flex; flex-direction:column; gap:7px; overflow:hidden; position:relative}
-.ph::after{content:''; position:absolute; left:50%; bottom:7px; transform:translateX(-50%);
-  width:84px; height:4px; border-radius:999px; background:#C2CAD3}
-.ph .mini{background:var(--cardG); border:1px solid #F1F3F6; border-radius:13px;
-  padding:11px; flex:0 0 auto}
-.ph .mlb{font-size:12px; font-weight:700; color:var(--sub2)}
-.ph .mbig{font-size:22px; font-weight:800; letter-spacing:-.025em; margin-top:1px;
-  font-variant-numeric:tabular-nums}
-.ph .mbig i{font-style:normal; font-size:13px; color:var(--sub2); margin-left:2px}
-.ph .mchg{font-size:12px; font-weight:600; color:var(--sub2); margin-top:4px}
-.ph .mchg b{color:#0A8250; font-weight:800}
-.ph .mban{display:flex; align-items:center; gap:7px; background:var(--sunkG); border-radius:10px;
-  padding:8px 10px; margin-top:9px}
-.ph .mban .mt{flex:1; min-width:0; font-size:12.5px; font-weight:800; letter-spacing:-.02em;
-  line-height:1.4}
-.ph .mban .dd{background:var(--redSoft); color:#C8392F; font-size:11px; font-weight:800;
-  border-radius:5px; padding:2px 5px; flex:0 0 auto}
-.ph .mrow{display:flex; align-items:center; gap:9px; padding:7px 0}
-.ph .mrow + .mrow{border-top:1px solid var(--line2)}
-.ph .mrow .mi{width:30px; height:30px; border-radius:10px; flex:0 0 auto; display:grid;
-  place-items:center; font-size:12.5px; font-weight:800}
-.ph .mrow .mx{flex:1; min-width:0}
-.ph .mrow .mx u{display:block; text-decoration:none; font-size:11.5px; color:var(--sub2); font-weight:600}
-.ph .mrow .mx em{display:block; font-style:normal; font-size:14.5px; font-weight:800;
-  letter-spacing:-.03em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-.ph .mrow .mg{font-size:12px; color:var(--sub2); flex:0 0 auto}
-/* 실제 앱의 자동화 띠와 같은 색차례 · 자동(초록) → 승인(파랑) → 같이(보라) → 사람만(회색) */
-.ph .mbar{height:8px; border-radius:999px; margin-top:9px;
-  background:linear-gradient(90deg,#3FB27F 0%,#3FB27F 14%,#4A7DFF 40%,#7C6BF0 66%,#9AA3AE 100%)}
-.ph .mnav{display:flex; justify-content:space-between; background:var(--cardG);
-  border:1px solid #F1F3F6; border-radius:14px;
-  padding:10px 11px; margin-top:auto; margin-bottom:18px; flex:0 0 auto}
-.ph .mnav span{font-size:11.5px; font-weight:700; color:var(--sub2)}
-.ph .mnav span.on{color:var(--ink)}
-
-/* ════ 숫자띠 ════ */
-.proof{padding-block:40px 48px}
-.proof .pl{text-align:center; font-size:15px; font-weight:700; color:var(--sub); margin:0 0 20px}
-.proof .pl b{color:var(--ink); font-weight:800}
-.pn{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:#E6EAEF; box-shadow:var(--cardShadow);
-  border-radius:20px; overflow:hidden}
-.pn .p{background:var(--cardG); padding:20px 18px}
-.pn .p .k{font-size:12.5px; font-weight:600; color:var(--sub2)}
-.pn .p .v{font-size:24px; font-weight:800; letter-spacing:-.03em; margin-top:2px;
-  font-variant-numeric:tabular-nums}
-.pn .p .v i{font-style:normal; font-size:14px; font-weight:700; color:var(--sub2); margin-left:2px}
-.proof .note{margin:14px 0 0; font-size:12.5px; line-height:19px; color:var(--sub2); font-weight:500;
-  text-align:center}
-
-/* 아이콘 바탕은 한 색이 아니라 옅은 데서 진한 데로 흐르게 */
-.g-blue{background:linear-gradient(145deg,#F4F7FF 0%,#DCE6FF 100%); color:#3E63D8}
-.g-green{background:linear-gradient(145deg,#EEFBF4 0%,#D2F1E2 100%); color:#0A8250}
-.g-violet{background:linear-gradient(145deg,#F6F3FF 0%,#E3DDFC 100%); color:#6A58D8}
-.g-orange{background:linear-gradient(145deg,#FFF7EF 0%,#FCE3CC 100%); color:#BE6420}
-.g-pink{background:linear-gradient(145deg,#FEF3F8 0%,#FBDCE9 100%); color:#C44A83}
-.g-gray{background:linear-gradient(145deg,#F8F9FB 0%,#E5E9EE 100%); color:#5A6472}
-
-/* ════ 토막 ════ */
-.sec{padding-block:52px}
-.sec .lb{font-size:13.5px; font-weight:800; color:var(--chromeSub); letter-spacing:.02em; margin:0 0 9px}
-.sec h2{margin:0 0 12px; font-size:28px; font-weight:800; letter-spacing:-.03em; line-height:1.3}
-.sec .ld{margin:0; font-size:16px; line-height:26px; color:var(--sub); font-weight:500; max-width:40ch}
-.sec .ld b{color:var(--ink2); font-weight:800}
-
-/* 기능 묶음 */
-.feat{display:grid; gap:14px; margin-top:24px}
-.fc{background:var(--cardG); border:1px solid #F0F2F5; border-radius:22px; padding:24px 20px;
-  box-shadow:var(--cardShadow)}
-.gray .fc{background:var(--cardG)}
-.fc h3{margin:0 0 8px; font-size:20px; font-weight:800; letter-spacing:-.02em; line-height:1.48}
-.fc h3 em{font-style:normal; line-height:inherit;
-  background:linear-gradient(120deg,#8F99A6 0%,#C3CAD3 28%,#6E7987 58%,#AEB7C2 100%);
-  -webkit-background-clip:text; background-clip:text; color:transparent}
-.fc p{margin:0; font-size:14.5px; line-height:23px; color:var(--sub); font-weight:500}
-.fc .vis{margin-top:18px; background:var(--sunkG); border:1px solid #E7EBEF;
-  border-radius:16px; padding:16px}
-.gray .fc .vis{background:var(--sunkG); border-color:#E4E8ED}
-
-/* 담당 칩 */
-.who{display:grid; gap:8px}
-.who .w{display:flex; align-items:center; gap:10px;
-  background:linear-gradient(170deg,#FFFFFF 0%,#FAFBFD 100%); border:1px solid #EEF1F4; border-radius:12px;
-  padding:11px 12px}
-.who .w .wi{width:30px; height:30px; border-radius:10px; display:grid; place-items:center;
-  font-size:12px; font-weight:800; flex:0 0 auto; box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
-.who .w .wn{flex:1; min-width:0; font-size:13.5px; font-weight:700; letter-spacing:-.02em}
-.who .w .wv{font-size:12px; font-weight:700; color:var(--sub2); flex:0 0 auto}
-
-/* 비용 막대 */
-.bars{display:grid; gap:11px}
-.bars .b .bt{display:flex; justify-content:space-between; font-size:12.5px; font-weight:700;
-  color:var(--sub); margin-bottom:5px}
-.bars .b .bt b{color:var(--ink); font-weight:800; font-variant-numeric:tabular-nums}
-.bars .b .bb{height:8px; border-radius:999px;
-  background:linear-gradient(180deg,#E4E8ED,#EDF0F4); overflow:hidden}
-.bars .b .bb i{display:block; height:100%; border-radius:999px}
-.bars .b .bb{box-shadow:inset 0 1px 2px rgba(25,31,40,.05)}
-
-/* 버전 띠 */
-.vz{display:grid; gap:12px}
-.vz .vb{height:9px; border-radius:999px;
-  background:linear-gradient(90deg,#E5E8EB 0%,#D2DBF4 28%,#A9BEF3 54%,#7B9DF7 78%,#4A7DFF 100%)}
-.vz .vt{display:flex; justify-content:space-between; font-size:11.5px; font-weight:700;
-  color:var(--sub2); font-family:var(--sans)}
-.vz .vl{display:grid; gap:7px}
-.vz .vl div{display:flex; gap:9px; font-size:13px; line-height:20px; color:var(--sub); font-weight:500}
-.vz .vl div b{font-family:var(--sans); font-weight:600; color:var(--ink); flex:0 0 auto;
-  width:46px}
-
-/* 등급 */
-.gr{display:grid; gap:7px}
-.gr .g{display:flex; align-items:center; gap:10px;
-  background:linear-gradient(170deg,#FFFFFF 0%,#FAFBFD 100%); border:1px solid #EEF1F4; border-radius:12px;
-  padding:11px 13px}
-.gr .g .gn{font-size:13.5px; font-weight:800; letter-spacing:-.02em; width:50px; flex:0 0 auto}
-.gr .g .gv{flex:1; min-width:0; font-size:12.5px; color:var(--sub2); font-weight:600}
-.gr .g .gk{width:7px; height:7px; border-radius:999px; flex:0 0 auto}
-
-/* 다섯 칸 */
-.five{display:grid; gap:12px; margin-top:24px}
-.fv{background:var(--cardG); border:1px solid #F0F2F5; border-radius:20px; padding:20px;
-  display:flex; gap:14px; align-items:flex-start; box-shadow:var(--cardShadow)}
-.fv .ic{width:42px; height:42px; border-radius:13px; flex:0 0 auto; display:grid; place-items:center}
-.fv .ic svg{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.75;
-  stroke-linecap:round; stroke-linejoin:round}
-.fv .ft{flex:1; min-width:0}
-.fv .ft .q{font-size:13px; font-weight:700; color:var(--chromeSub); letter-spacing:-.02em}
-.fv .ft h3{margin:3px 0 6px; font-size:18px; font-weight:800; letter-spacing:-.02em}
-.fv .ft p{margin:0; font-size:14px; line-height:22px; color:var(--sub); font-weight:500}
-
-/* 절차 */
-.steps{display:grid; gap:12px; margin-top:24px}
-.st{background:var(--cardG); border:1px solid #F0F2F5; box-shadow:var(--cardShadow); border-radius:18px; padding:20px; display:flex; gap:14px;
-  align-items:flex-start}
-.st .sn{font-family:var(--sans); font-size:12px; font-weight:700; color:var(--chromeInk);
-  background:var(--chrome); border:1px solid var(--chromeLine);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.9); border-radius:999px; height:23px; min-width:23px; padding:0 7px;
-  display:grid; place-items:center; flex:0 0 auto; margin-top:1px}
-.st .sx{flex:1; min-width:0}
-.st .sx b{display:block; font-size:16px; font-weight:800; letter-spacing:-.03em; margin-bottom:4px}
-.st .sx p{margin:0; font-size:14px; line-height:22px; color:var(--sub); font-weight:500}
-
-/* 템플릿 */
-.packs{display:grid; gap:12px; margin-top:24px}
-.pk{background:var(--cardG); border:1px solid #F0F2F5; box-shadow:var(--cardShadow);
-  border-radius:20px; padding:22px 20px; position:relative; overflow:hidden}
-.pk .glow{position:absolute; inset:-40% -25% auto -25%; height:160px; filter:blur(32px);
-  pointer-events:none}
-.pk > *{position:relative}
-.pk .pt{font-size:12px; font-weight:800; color:var(--sub2); letter-spacing:.02em}
-.pk h3{margin:7px 0 7px; font-size:19px; font-weight:800; letter-spacing:-.02em}
-.pk p{margin:0; font-size:14px; line-height:22px; color:var(--sub); font-weight:500}
-
-/* 묻는 말 */
-.qa{display:grid; gap:12px; margin-top:24px}
-.qa details{background:var(--cardG); border:1px solid #F0F2F5; box-shadow:var(--cardShadow);
-  border-radius:18px; padding:0 20px}
-.qa summary{list-style:none; cursor:pointer; padding:20px 0; display:flex; align-items:flex-start;
-  gap:11px; font-size:15.5px; font-weight:800; letter-spacing:-.03em; line-height:23px}
+.hero h1{margin-top:12px; font-size:40px; line-height:1.22; font-weight:800; letter-spacing:-.035em}
+.hero .sub{margin:18px auto 0; font-size:17px; line-height:1.6; color:var(--sub); max-width:34ch}
+.hero .btns{justify-content:center}
+.device{width:min(320px,100%); margin:48px auto 0; border-radius:40px; padding:9px; background:linear-gradient(160deg,#FDFDFE 0%,#EFF2F5 40%,#DCE1E7 100%); border:1px solid #D7DDE4;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.95), 0 24px 60px rgba(25,31,40,.16)}
+.device .scr{border-radius:32px; overflow:hidden; background:var(--bg); aspect-ratio:390/844}
+.device video,.device img{display:block; width:100%; height:100%; object-fit:cover}
+.device .fb{display:none}
+.hero .ground{position:absolute; left:0; right:0; bottom:0; height:46%; background:var(--bg2); z-index:-1}
+.stats{display:grid; grid-template-columns:1fr; gap:12px}
+.stat{background:var(--white); border:1px solid var(--line2); border-radius:20px; padding:22px 22px}
+.stat .k{font-size:14px; font-weight:700; color:var(--sub2)}
+.stat .v{margin-top:6px; font-size:34px; font-weight:800; letter-spacing:-.03em; font-variant-numeric:tabular-nums; line-height:1.15}
+.stat .v i{font-style:normal; font-size:16px; font-weight:700; color:var(--sub2); margin-left:4px}
+.stat .d{margin-top:6px; font-size:13.5px; color:var(--sub2)}
+.src{margin-top:14px; font-size:13px; color:var(--mute); text-align:center}
+.lb{font-size:14px; font-weight:800; color:var(--chromeSub); margin-bottom:10px}
+h2{font-size:30px; line-height:1.3; font-weight:800; letter-spacing:-.03em}
+.ld{margin-top:12px; font-size:16.5px; line-height:1.6; color:var(--sub); max-width:46ch}
+.ld b{color:var(--ink2); font-weight:800}
+.cards{display:grid; grid-template-columns:1fr; gap:12px; margin-top:28px}
+.card{background:var(--bg2); border-radius:20px; padding:24px 22px}
+.gray .card{background:var(--white); border:1px solid var(--line2)}
+.card .ic{width:44px; height:44px; border-radius:14px; background:var(--white); border:1px solid var(--line2); display:grid; place-items:center; margin-bottom:16px}
+.gray .card .ic{background:var(--bg2)}
+.card .ic svg{width:22px; height:22px; fill:none; stroke:var(--ink2); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+.card h3{font-size:19px; font-weight:800; letter-spacing:-.025em; line-height:1.4}
+.card p{margin-top:8px; font-size:14.5px; line-height:1.6; color:var(--sub)}
+.card .q{font-size:12.5px; font-weight:700; color:var(--chromeSub); margin-bottom:4px}
+.quote{background:var(--ink); color:#fff; border-radius:24px; padding:32px 26px; margin-top:28px}
+.quote p{font-size:20px; line-height:1.5; font-weight:700; letter-spacing:-.025em}
+.quote .who{margin-top:16px; font-size:13.5px; color:#C9D0D8; font-weight:600}
+.quote .nums{display:flex; flex-wrap:wrap; gap:18px 28px; margin-top:22px; padding-top:20px; border-top:1px solid rgba(255,255,255,.14)}
+.quote .nums div b{display:block; font-size:24px; font-weight:800; letter-spacing:-.02em}
+.quote .nums div span{font-size:12.5px; color:#9AA3AE}
+.steps{display:grid; grid-template-columns:1fr; gap:12px; margin-top:28px}
+.st{display:flex; gap:14px; align-items:flex-start; background:var(--white); border:1px solid var(--line2); border-radius:18px; padding:20px}
+.st .sn{flex:0 0 auto; width:30px; height:30px; border-radius:999px; background:var(--chrome); border:1px solid var(--chromeLine); color:var(--chromeInk); font-size:13px; font-weight:800; display:grid; place-items:center}
+.st b{display:block; font-size:16px; font-weight:800; letter-spacing:-.025em}
+.st p{margin-top:4px; font-size:14px; line-height:1.6; color:var(--sub)}
+.qa{display:grid; gap:10px; margin-top:28px}
+.qa details{background:var(--white); border:1px solid var(--line2); border-radius:18px; padding:0 20px}
+.qa summary{list-style:none; cursor:pointer; padding:18px 0; display:flex; gap:12px; align-items:flex-start; font-size:15.5px; font-weight:800; letter-spacing:-.025em; line-height:1.5}
 .qa summary::-webkit-details-marker{display:none}
-.qa summary .qm{color:var(--chromeSub); font-family:var(--sans); font-weight:700; flex:0 0 auto}
+.qa summary .qm{color:var(--chromeSub); flex:0 0 auto}
 .qa summary .qt{flex:1; min-width:0}
-.qa summary .qc{color:var(--sub2); font-size:13px; flex:0 0 auto; transition:transform .18s;
-  margin-top:3px}
+.qa summary .qc{color:var(--sub2); font-size:13px; flex:0 0 auto; transition:transform .18s; margin-top:3px}
 .qa details[open] summary .qc{transform:rotate(180deg)}
-.qa .ans{padding:0 0 20px 24px; margin:0; font-size:14.5px; line-height:23px; color:var(--sub);
-  font-weight:500}
+.qa .ans{padding:0 0 18px 26px; font-size:14.5px; line-height:1.65; color:var(--sub)}
 .qa .ans b{color:var(--ink2); font-weight:800}
-
-/* 마무리 */
-.end{position:relative; overflow:hidden; text-align:center; padding-block:64px 72px}
-.end .glow{position:absolute; left:50%; top:10%; width:min(640px,140%); height:320px;
-  transform:translateX(-50%); filter:blur(40px); opacity:.5; pointer-events:none;
-  background:
-    radial-gradient(34% 44% at 28% 50%, rgba(142,153,167,.48) 0%, rgba(142,153,167,0) 72%),
-    radial-gradient(34% 44% at 70% 50%, rgba(196,205,216,.58) 0%, rgba(196,205,216,0) 72%);
-  -webkit-mask-image:radial-gradient(64% 60% at 50% 50%, #000 0%, transparent 100%);
-  mask-image:radial-gradient(64% 60% at 50% 50%, #000 0%, transparent 100%)}
-.end > .inner{position:relative; z-index:1}
-.end h2{margin:0 0 11px; font-size:29px; font-weight:800; letter-spacing:-.03em; line-height:1.3}
-.end p{margin:0 auto; font-size:16px; line-height:26px; color:var(--sub); font-weight:500; max-width:28ch}
-.foot{background:var(--grayG); border-top:1px solid #E7EBEF; padding:24px 20px 32px}
-.foot .inner{font-size:12.5px; line-height:20px; color:var(--sub2); font-weight:500}
+.end{text-align:center; padding-block:var(--sec)}
+.end h2{font-size:32px}
+.end p{margin-top:12px; color:var(--sub); font-size:16.5px}
+.end .btns{justify-content:center}
+.foot{background:var(--bg2); border-top:1px solid var(--line2); padding:32px 20px 40px}
+.foot .inner{display:grid; gap:18px; font-size:13px; line-height:1.7; color:var(--sub2)}
 .foot b{color:var(--sub); font-weight:700}
-
+.foot .links a{margin-right:14px; font-weight:700; color:var(--sub)}
+.foot .co{font-size:12.5px}
 @media (min-width:720px){
-  .hero{padding-block-start:72px}
-  .hero h1{font-size:52px}
-  .hero .sub{font-size:18px; line-height:29px; max-width:34ch}
-  .phone{width:300px; zoom:1.15; margin-top:42px}
-  .pn{grid-template-columns:repeat(4,1fr)}
-  .sec{padding-block:64px}
-  .sec h2{font-size:34px}
-  /* 2단 격자는 간격을 하나로 맞춰 둘째 칸 시작점을 같게 둔다 */
-  .feat,.five,.steps,.packs,.qa{gap:14px}
-  .feat{grid-template-columns:1fr 1fr}
-  .five{grid-template-columns:1fr 1fr}
-  .five .fv:first-child{grid-column:1 / -1}
-  .steps{grid-template-columns:1fr 1fr}
-  .packs{grid-template-columns:repeat(2,1fr)}
-  .end h2{font-size:36px}
+  :root{--sec:96px}
+  .hero{padding-block:80px 0}
+  .hero h1{font-size:56px; line-height:1.18}
+  .hero .sub{font-size:20px; max-width:40ch}
+  .device{width:340px; margin-top:56px}
+  .stats{grid-template-columns:repeat(3,1fr); gap:14px}
+  .stat .v{font-size:40px}
+  h2{font-size:40px}
+  .cards{grid-template-columns:repeat(3,1fr); gap:14px}
+  .cards.two{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr); gap:14px}
+  .steps.three{grid-template-columns:repeat(3,1fr)}
+  .quote{padding:44px 44px}
+  .quote p{font-size:26px}
+  .end h2{font-size:44px}
+  .foot .inner{grid-template-columns:1fr 1fr; align-items:start}
 }
-@media (max-width:400px){
-  .hero h1{font-size:31px}
-  .sec h2{font-size:24px}
-  .end h2{font-size:25px}
-  .fc{padding:20px 18px}
-  .fv,.pk{padding:20px 18px}
-  .st{padding:18px 18px}
-  .qa details{padding:0 18px}
-}
-</style>
-<style>
-.top .lg img{width:26px;height:26px;border-radius:7px;display:block}
-.shot{width:min(300px,100%); margin:40px auto 0; border-radius:34px; overflow:hidden; border:1px solid #D7DDE4;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.95), 0 22px 54px rgba(25,31,40,.16); background:#F2F4F6}
-.shot img{display:block;width:100%;height:auto}
-.three{display:grid; gap:14px; margin-top:24px}
-.tc{background:var(--cardG); border:1px solid #F0F2F5; border-radius:22px; padding:22px 20px 0; box-shadow:var(--cardShadow); overflow:hidden}
-.tc .q{font-size:13px; font-weight:700; color:var(--chromeSub)}
-.tc h3{margin:4px 0 8px; font-size:20px; font-weight:800; letter-spacing:-.02em}
-.tc p{margin:0 0 16px; font-size:14.5px; line-height:23px; color:var(--sub); font-weight:500}
-.tc .img{margin:0 -4px -2px; border-radius:18px 18px 0 0; overflow:hidden; border:1px solid #E7EBEF; border-bottom:0; background:#F2F4F6; max-height:300px}
-.tc .img img{display:block; width:100%; height:auto}
-.rulez{display:grid; gap:12px; margin-top:24px}
-.rl{background:var(--cardG); border:1px solid #F0F2F5; border-radius:18px; padding:18px 20px; box-shadow:var(--cardShadow)}
-.rl b{display:block; font-size:16px; font-weight:800; letter-spacing:-.025em; margin-bottom:4px}
-.rl p{margin:0; font-size:14px; line-height:22px; color:var(--sub); font-weight:500}
-@media (min-width:720px){ .three{grid-template-columns:repeat(3,1fr)} .rulez{grid-template-columns:1fr 1fr} .shot{width:320px} }
 </style>
 </head>
 <body>
-<header class="top band">
-  <div class="inner">
-    <div class="lg"><img src="data:image/png;base64,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938//PXLr/7rv7/48xf/8+jRoxcvnoc1SM4ylslvC0MICITMbKzzfrc72+/2ez+dOe/ZmFI159p6Kc1N07rWtGlXb7a8mN8aG4kxHo/zixcvvvvuyV+//PrPX3zx179+9e233714+SKsa875tBlTSe6QshIRsTHW+WnaTWd7DT3OuZJN1I6Ujio6Z511dayTx7HOYetVUUCa3xCalNI8L5eXVz/88MPjx//75Vdf/+XLLx998/iHH364vr4OMbbQs5Fg9Sy8+BQrNt776Wza7dy0K2VcruCYXvn1Wk8ppc0quOxGhH2QHxDxt7AgEYkxLctydXX196fPvvv2yTePHn311TePHj9+8uT7Fy9fzPOix9ZNxgwbsSkxs75073d+2nmFRg1H9blsjPYOfKvwumny3iuGLRe7TeX86o95re+ENVxdH549f/7kyfePH//tm0ePHz/+25MnT549e344HNYQ9JxuK+HGtYIdHGY1C+8nN+2cn5yfhnIJU11rYazxThsq09mkRUs/Tc47651tMpphPHicOHhVALV1XSGEw+Hw9Nmzb7/97tGjx48f/+93T548e/58WQMx+2lia1uPfdwfN8wkooLjnC+4OG/LnG/R5JQqirXWGFf7KFrYPdtNu52fvPfawLTWsiGu+gFqzQ6863rQT6NTRoTTuobDcb66ur68vDrOSxZxfrq4eGCsL7OdMcZYOhFZMghsdlbVyTJrnS11/sFqSimu9QiMK91dv5v8VCvfu2ny3nlvVYel+NDmOMNWvzf3DU2JxzlrMy/EEGMSAWPd/vw8JjHO7872w4Dn2roSbdfVpqOOWMVaVkNNIYEKkjG1A24LOk67lX6a/G6aSsfSe9U8WsNNF9+XgiE0um3uE51yXbOekkbHmADAWjft9iFKBgQ0yDOyJbuateWPukinCRl6mtIVJpueLhkuEpzWzvW16+29300apL33rkhClQ3VuiK2DQ79y70B1HrIMjQWQizbhWKW3FprZVcHG2uzACJx4pTGduh2FQo25RuWVi6zYarHeZFOaGBuJ5effHnEuak0CEw95knT/drd28iWzb3aj1YNch1/jTHFENYGU4qlFaPnFpEpyzqIKG+3L8pNCVPdhMJsyLCxtrZwnfPOeu9r89YpNGWaQl1P4WyVRMI2o9M3WyLe3ynWlhLBsDyvt+3aJDgRGSZrddELMrHhzSaUtkhtyNfboiocdQClZ6ts0Ll67bxXgUnRBxQdpTpWCz+6eKZLVsqc2B20fX7celAgQ19lJf3cVlEAs2FjrU0pC5StHTGZU73BDZl1Ty6K+aguybouuGnoVG2J7T0la0pYbqs/quiyTxAO4qh7POZrTaWsGWtt2C5qcM5myQBATMawi3Xlh246awBtfayJSjZrvLo+ooOiGZdrRmNqZlbEudxXNbbVjUP00SE1c98UqLqaas/LAJqzOfkk2hBnY2NRsLbueR7xKfOZUIeE+qYhs2U91tlywCtxtKZF4oKLKSOCREwEZZyySVOgRZ5eIjd3H3xws4i60XZ9r4xhk6x3AiBExIatNTG6WDcNbQJQ3uzH7fYD0HZQthjUShkFmvJg8yYaqkCNH9R1sYNnNWHY/dSDcBhOLrvL+1YXNmxEvACCIKFKz2NwZTeBrkorxc88bHLcSKqGJbglDDU7KuK2Cs0gdeeyBZbaFsuNpglhVN8OXPo+YhD2+YiqIykdcWRh4brtgYgpGaZoVY1RqIBs1iuP29Wgi56gb8Flapr/4kSmht9mMupSrflWtwtvJhhHdfsooDL3cMK35j+2iSClNqwrn0tLo/TmNUerO+WytEWXnQIV5cYoH2ykri5dpEHbXvOOpk2gum25xZlt0BkXNG/VsGDugwANKisdCUBCAeIsyASA5fjImVOSYY7ghPu0Gb5GgDZssSnbaud6gwhtss8igCuCOMBBg9oDGzYbHfTA5m5j81C8GdueAoJIwEAZQLIgEFFOOTNLFirjOiPx2U4a3vhBzRXqiaZWUq7KQ6fZA4wyb7Wfwa1OuyX3FKTl5GNDZFiTKFRG3zijkCARSc4irODAsPt4+BSFgTDgMAvQNsCO2yGadnvYGoHjquHNEo6N9PHEQNsdc3cNLrjxqSKlL6x1HALMIkBE5XQr6rw2DjvsJZZbP5CjTChK3zXS1cib+aG2Br8/TuPxLb0Rgk1meTr1es9tn6bOozqkW3RvIpgJUDKgiJBQ/0yFzce5bHDZYD+K4se3v9fcccP4+iRF/TfU5K3bwY3bGkvmvpvMUotzkpFJchWSsqjkrB3io9Vg54W37jLBcb8gtplt2SzUG5ybNiMoG2huzGrcM0Byy4f3YPuICBVQIUguL6VOvyGMH/YyxoD2V5tRm76VBYfZtqH70cWZAF34TuMHASGczIgAvAKAsL/7dQ9/m4cGbFtJSDePyvBm1jsnVoPDlPTNAXnZLiFH2AzsDMbUPOqnh5/uHyC4MVg8qNilfmJREZ7hsJ5kO7R5ujOsWszpthfc7gLZfOBWg6mME0n70b9kgv7/AV3c2KwpeT7yAAAAAElFTkSuQmCC" alt=""><b>고요 ai</b><i>Goyo</i></div>
-    <a class="sm" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기</a>
-  </div>
-</header>
+<header class="top band"><div class="inner">
+  <a class="lg" href="goyo-intro.html"><img class="sym" src="data:image/png;base64,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938//PXLr/7rv7/48xf/8+jRoxcvnoc1SM4ylslvC0MICITMbKzzfrc72+/2ez+dOe/ZmFI159p6Kc1N07rWtGlXb7a8mN8aG4kxHo/zixcvvvvuyV+//PrPX3zx179+9e233714+SKsa875tBlTSe6QshIRsTHW+WnaTWd7DT3OuZJN1I6Ujio6Z511dayTx7HOYetVUUCa3xCalNI8L5eXVz/88MPjx//75Vdf/+XLLx998/iHH364vr4OMbbQs5Fg9Sy8+BQrNt776Wza7dy0K2VcruCYXvn1Wk8ppc0quOxGhH2QHxDxt7AgEYkxLctydXX196fPvvv2yTePHn311TePHj9+8uT7Fy9fzPOix9ZNxgwbsSkxs75073d+2nmFRg1H9blsjPYOfKvwumny3iuGLRe7TeX86o95re+ENVxdH549f/7kyfePH//tm0ePHz/+25MnT549e344HNYQ9JxuK+HGtYIdHGY1C+8nN+2cn5yfhnIJU11rYazxThsq09mkRUs/Tc47651tMpphPHicOHhVALV1XSGEw+Hw9Nmzb7/97tGjx48f/+93T548e/58WQMx+2lia1uPfdwfN8wkooLjnC+4OG/LnG/R5JQqirXWGFf7KFrYPdtNu52fvPfawLTWsiGu+gFqzQ6863rQT6NTRoTTuobDcb66ur68vDrOSxZxfrq4eGCsL7OdMcZYOhFZMghsdlbVyTJrnS11/sFqSimu9QiMK91dv5v8VCvfu2ny3nlvVYel+NDmOMNWvzf3DU2JxzlrMy/EEGMSAWPd/vw8JjHO7872w4Dn2roSbdfVpqOOWMVaVkNNIYEKkjG1A24LOk67lX6a/G6aSsfSe9U8WsNNF9+XgiE0um3uE51yXbOekkbHmADAWjft9iFKBgQ0yDOyJbuateWPukinCRl6mtIVJpueLhkuEpzWzvW16+29300apL33rkhClQ3VuiK2DQ79y70B1HrIMjQWQizbhWKW3FprZVcHG2uzACJx4pTGduh2FQo25RuWVi6zYarHeZFOaGBuJ5effHnEuak0CEw95knT/drd28iWzb3aj1YNch1/jTHFENYGU4qlFaPnFpEpyzqIKG+3L8pNCVPdhMJsyLCxtrZwnfPOeu9r89YpNGWaQl1P4WyVRMI2o9M3WyLe3ynWlhLBsDyvt+3aJDgRGSZrddELMrHhzSaUtkhtyNfboiocdQClZ6ts0Ll67bxXgUnRBxQdpTpWCz+6eKZLVsqc2B20fX7celAgQ19lJf3cVlEAs2FjrU0pC5StHTGZU73BDZl1Ty6K+aguybouuGnoVG2J7T0la0pYbqs/quiyTxAO4qh7POZrTaWsGWtt2C5qcM5myQBATMawi3Xlh246awBtfayJSjZrvLo+ooOiGZdrRmNqZlbEudxXNbbVjUP00SE1c98UqLqaas/LAJqzOfkk2hBnY2NRsLbueR7xKfOZUIeE+qYhs2U91tlywCtxtKZF4oKLKSOCREwEZZyySVOgRZ5eIjd3H3xws4i60XZ9r4xhk6x3AiBExIatNTG6WDcNbQJQ3uzH7fYD0HZQthjUShkFmvJg8yYaqkCNH9R1sYNnNWHY/dSDcBhOLrvL+1YXNmxEvACCIKFKz2NwZTeBrkorxc88bHLcSKqGJbglDDU7KuK2Cs0gdeeyBZbaFsuNpglhVN8OXPo+YhD2+YiqIykdcWRh4brtgYgpGaZoVY1RqIBs1iuP29Wgi56gb8Flapr/4kSmht9mMupSrflWtwtvJhhHdfsooDL3cMK35j+2iSClNqwrn0tLo/TmNUerO+WytEWXnQIV5cYoH2ykri5dpEHbXvOOpk2gum25xZlt0BkXNG/VsGDugwANKisdCUBCAeIsyASA5fjImVOSYY7ghPu0Gb5GgDZssSnbaud6gwhtss8igCuCOMBBg9oDGzYbHfTA5m5j81C8GdueAoJIwEAZQLIgEFFOOTNLFirjOiPx2U4a3vhBzRXqiaZWUq7KQ6fZA4wyb7Wfwa1OuyX3FKTl5GNDZFiTKFRG3zijkCARSc4irODAsPt4+BSFgTDgMAvQNsCO2yGadnvYGoHjquHNEo6N9PHEQNsdc3cNLrjxqSKlL6x1HALMIkBE5XQr6rw2DjvsJZZbP5CjTChK3zXS1cib+aG2Br8/TuPxLb0Rgk1meTr1es9tn6bOozqkW3RvIpgJUDKgiJBQ/0yFzce5bHDZYD+K4se3v9fcccP4+iRF/TfU5K3bwY3bGkvmvpvMUotzkpFJchWSsqjkrB3io9Vg54W37jLBcb8gtplt2SzUG5ybNiMoG2huzGrcM0Byy4f3YPuICBVQIUguL6VOvyGMH/YyxoD2V5tRm76VBYfZtqH70cWZAF34TuMHASGczIgAvAKAsL/7dQ9/m4cGbFtJSDePyvBm1jsnVoPDlPTNAXnZLiFH2AzsDMbUPOqnh5/uHyC4MVg8qNilfmJREZ7hsJ5kO7R5ujOsWszpthfc7gLZfOBWg6mME0n70b9kgv7/AV3c2KwpeT7yAAAAAElFTkSuQmCC" alt=""><b>고요 ai</b><i>Goyo</i></a>
+  <a class="btn pri sm" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기</a>
+</div></header>
 
-<section class="hero band">
-  <div class="aura"></div>
-  <div class="inner">
-    <p class="eye">캡처 · 카톡방 · 맥 파일</p>
-    <h1><span>흩어진 걸 모아서</span><span>치울 것만 골라 드려요</span></h1>
-    <p class="sub">들어올 땐 이유가 있었고, 그 이유가 끝났는데 끝났다고 말해 주는 사람이 없어서 쌓여요. 그 판단만 대신해요. 지우는 건 직접 하세요.</p>
-    <div class="btns">
-      <a class="pri" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기<span class="go">›</span></a>
-      <a class="sec" href="#rules">지키는 것<span class="go">›</span></a>
-    </div>
-    <div class="shot"><img src="goyo-intro/home_390.png" alt="고요 ai 홈 화면: 캡처 5장, 카톡방 4개, 맥 파일 9.60GB, 오늘 치울 후보 5건" width="780" height="1688"></div>
-  </div>
-</section>
+<section class="hero band"><div class="ground"></div><div class="inner">
+  <p class="eye">캡처 · 카톡방 · 맥 파일</p>
+  <h1>흩어진 걸 모아서<br>치울 것만 골라 드려요</h1>
+  <p class="sub">들어올 땐 이유가 있었고, 그 이유가 끝났는데 끝났다고 말해 주는 사람이 없어서 쌓여요. 그 판단만 대신해요. 지우는 건 직접 하세요.</p>
+  <div class="btns"><a class="btn pri" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기<span class="go">›</span></a><a class="btn sec2" href="#rules">지키는 것<span class="go">›</span></a></div>
+  <div class="device"><div class="scr"><video autoplay muted loop playsinline poster="media/goyo_poster.png" aria-label="고요 ai 앱이 홈 · 캡처 · 카톡방 · 맥 파일을 차례로 보여 줘요"><source src="media/goyo_flow.mp4" type="video/mp4"><img class="fb" src="media/goyo_flow.webp" alt="고요 ai 앱이 홈 · 캡처 · 카톡방 · 맥 파일을 차례로 보여 줘요"></video></div></div>
+</div></section>
 
-<section class="gray band proof">
-  <div class="inner">
-    <p class="pl">만든 사람 기기 한 대에서 <b>2026년 10월 12일</b>에 나온 숫자예요</p>
-    <div class="pn">
-      <div class="p"><div class="k">바탕화면</div><div class="v">49GB<i>→ 32KB</i></div></div>
-      <div class="p"><div class="k">옮긴 것</div><div class="v">1,607<i>건</i></div></div>
-      <div class="p"><div class="k">휴지통까지만</div><div class="v">23<i>GB</i></div></div>
-      <div class="p"><div class="k">지운 것</div><div class="v">0<i>건</i></div></div>
-    </div>
-    <p class="note">맥 정리 도구가 폴더 18개 · 파일 5,325개를 훑은 결과예요. 예시가 아니라 실제 기기 숫자예요.</p>
+<section class="band sec gray"><div class="inner">
+  <div class="stats">
+    <div class="stat"><div class="k">바탕화면</div><div class="v">49GB<i>→ 32KB</i></div><div class="d">폴더 18개 · 파일 5,325개를 훑음</div></div>
+    <div class="stat"><div class="k">옮긴 것</div><div class="v">1,607<i>건</i></div><div class="d">어디서 어디로 갔는지 한 줄씩 남음</div></div>
+    <div class="stat"><div class="k">지운 것</div><div class="v">0<i>건</i></div><div class="d">23GB 는 휴지통까지만</div></div>
   </div>
-</section>
+  <p class="src">만든 사람 기기 한 대 · 2026-10-12 실측 · 위 화면은 예시 데이터를 넣은 실제 앱이에요</p>
+</div></section>
 
-<section class="band sec">
-  <div class="inner">
-    <p class="lb">왜 필요한가요</p>
-    <h2>버리는 게 어려운 게 아니라<br>버려도 되는지가 어려웠어요</h2>
-    <p class="ld">방 하나를 나가려면 언제 마지막으로 봤는지, 왜 들어갔는지, 나가도 괜찮은지를 다 떠올려야 해요. 그게 안 되니까 방 56개, 캡처 466장이 쌓였어요. <b>고요는 그 판단을 대신하고, 고르는 것만 해요.</b></p>
-    <div class="three">
-      <div class="tc"><div class="q">이 캡처 아직 필요한가요</div><h3>캡처</h3><p>날짜와 내용을 읽어 장소 · 영수증 · 예약 · 대화 · 레퍼런스로 나눠요. 예약일이 지난 캡처는 치울 후보로 올라와요. 장소는 지도에서 바로 찾아요.</p><div class="img"><img src="goyo-intro/cap_390.png" alt="캡처 화면" width="780" height="1688"></div></div>
-      <div class="tc"><div class="q">이 방 아직 보나요</div><h3>카톡방</h3><p>채팅 목록을 붙여 넣거나 캡처로 읽어요. 오래 조용한 방과 안 읽은 게 백 개 넘는 방을 골라 줘요. 나가기는 카카오톡에서 직접 해요.</p><div class="img"><img src="goyo-intro/room_390.png" alt="카톡방 화면" width="780" height="1688"></div></div>
-      <div class="tc"><div class="q">맥에서 뭘 치우나요</div><h3>맥 파일</h3><p>같은 파일이 여러 군데, 통째로 겹친 폴더, 이미 풀린 압축, 묵은 스크린샷을 용량 큰 순으로 보여 줘요. 파일 내용은 안 읽어요.</p><div class="img"><img src="goyo-intro/file_390.png" alt="맥 파일 화면" width="780" height="1688"></div></div>
-    </div>
+<section class="band sec"><div class="inner">
+  <p class="lb">왜 필요한가요</p>
+  <h2>버리는 게 어려운 게 아니라<br>버려도 되는지가 어려웠어요</h2>
+  <p class="ld">방 하나를 나가려면 언제 마지막으로 봤는지, 왜 들어갔는지, 나가도 괜찮은지를 다 떠올려야 해요. 그게 안 되니까 방 56개, 캡처 466장이 쌓였어요. <b>고요는 그 판단을 대신하고 고르는 것만 해요.</b></p>
+  <div class="cards">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="m3.5 15.5 4.6-4.4 3.9 3.6 3-2.6 5.5 4.4"/><circle cx="15.5" cy="9" r="1.4"/></svg></div><div class=q>이 캡처 아직 필요한가요</div><h3>캡처</h3><p>날짜와 내용을 읽어 장소 · 영수증 · 예약 · 대화 · 레퍼런스로 나눠요. 예약일이 지난 캡처는 치울 후보로 올라오고, 장소는 지도에서 바로 찾아요.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M20.5 12.1c0 4.1-3.8 7.4-8.5 7.4a9.9 9.9 0 0 1-2.6-.34L4.5 20.5l1.1-3.2a7 7 0 0 1-2.1-5.2c0-4.1 3.8-7.4 8.5-7.4s8.5 3.3 8.5 7.4Z"/></svg></div><div class=q>이 방 아직 보나요</div><h3>카톡방</h3><p>채팅 목록을 붙여 넣거나 캡처로 읽어요. 오래 조용한 방과 안 읽은 게 백 개 넘는 방을 골라 줘요. 나가기는 카카오톡에서 직접.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></div><div class=q>맥에서 뭘 치우나요</div><h3>맥 파일</h3><p>같은 파일이 여러 군데, 통째로 겹친 폴더, 이미 풀린 압축, 묵은 스크린샷을 용량 큰 순으로 보여 줘요. 파일 내용은 안 읽어요.</p></div>
   </div>
-</section>
+</div></section>
 
-<section class="gray band sec" id="rules">
-  <div class="inner">
-    <p class="lb">지키는 것</p>
-    <h2>지우지 않아요</h2>
-    <p class="ld">정리 앱이 제일 무서운 건 「알아서 지웠다」예요. 고요는 네 가지를 지켜요.</p>
-    <div class="rulez">
-      <div class="rl"><b>아무것도 서버로 안 보내요</b><p>캡처 · 방 · 파일 목록은 이 기기 브라우저에만 있어요. 「AI로 알아보기」를 누를 때만 그 캡처 한 장이 Claude 로 가고, 누를 때마다 허용을 물어요.</p></div>
-      <div class="rl"><b>지우지 않아요</b><p>치울 것을 골라 목록으로 드려요. 복사해서 직접 지우세요. 맥 정리 도구도 휴지통까지만 보내요.</p></div>
-      <div class="rl"><b>되돌릴 수 있어요</b><p>남김 · 치움 표시는 언제든 바꿔요. 옮긴 건 어디서 어디로 갔는지 한 줄씩 남아요.</p></div>
-      <div class="rl"><b>경계는 숫자로만 정하지 않아요</b><p>「60일 안 봤으면 치운다」는 어제 만든 폴더도 치워요. 날짜는 후보를 고르는 기준이고, 내용이 먼저예요.</p></div>
-    </div>
+<section class="band sec gray" id="rules"><div class="inner">
+  <p class="lb">지키는 것</p>
+  <h2>지우지 않아요</h2>
+  <p class="ld">정리 앱이 제일 무서운 건 「알아서 지웠다」예요. 고요는 네 가지를 지켜요.</p>
+  <div class="cards two">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6z"/><path d="m9 12 2 2 4-4.5"/></svg></div><h3>아무것도 서버로 안 보내요</h3><p>캡처 · 방 · 파일 목록은 이 기기 브라우저에만 있어요. 「AI로 알아보기」를 누를 때만 그 캡처 한 장이 Claude 로 가고, 누를 때마다 허용을 물어요.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M9.5 7V4.5h5V7M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg></div><h3>지우지 않아요</h3><p>치울 것을 골라 목록으로 드려요. 복사해서 직접 지우세요. 맥 정리 도구도 휴지통까지만 보내요.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h9.5a6.5 6.5 0 0 1 0 13H9"/></svg></div><h3>되돌릴 수 있어요</h3><p>남김 · 치움 표시는 언제든 바꿔요. 옮긴 건 어디서 어디로 갔는지 한 줄씩 남아요.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3.5 17 9 11.5l3.5 3.5L20.5 7"/><path d="M15 7h5.5v5.5"/></svg></div><h3>경계는 숫자로만 정하지 않아요</h3><p>「60일 안 봤으면 치운다」는 어제 만든 폴더도 치워요. 날짜는 후보를 고르는 기준이고 내용이 먼저예요.</p></div>
   </div>
-</section>
+</div></section>
 
-<section class="band sec">
-  <div class="inner">
-    <p class="lb">시작하기</p>
-    <h2>세 번이면 돼요</h2>
-    <div class="steps">
-      <div class="st"><div class="sn">1</div><div class="sx"><b>넣기</b><p>캡처는 사진에서 고르고, 카톡방은 목록을 붙여 넣고, 맥 파일은 보고서 파일을 올려요.</p></div></div>
-      <div class="st"><div class="sn">2</div><div class="sx"><b>고르기</b><p>묵은 것부터 보여 줘요. 캡처는 AI가 읽어 주고, 남길지 치울지는 한 번 눌러 정해요.</p></div></div>
-      <div class="st"><div class="sn">3</div><div class="sx"><b>직접 치우기</b><p>「치울 목록 복사」를 눌러 받은 목록으로 사진첩 · 카카오톡 · 파인더에서 직접 지워요.</p></div></div>
-    </div>
+<section class="band sec"><div class="inner">
+  <p class="lb">시작하기</p>
+  <h2>세 번이면 돼요</h2>
+  <div class="steps three">
+    <div class="st"><div class="sn">1</div><div><b>넣기</b><p>캡처는 사진에서 고르고, 카톡방은 목록을 붙여 넣고, 맥 파일은 보고서 파일을 올려요.</p></div></div>
+    <div class="st"><div class="sn">2</div><div><b>고르기</b><p>묵은 것부터 보여 줘요. 캡처는 AI가 읽어 주고, 남길지 치울지는 한 번 눌러 정해요.</p></div></div>
+    <div class="st"><div class="sn">3</div><div><b>직접 치우기</b><p>「치울 목록 복사」를 눌러 받은 목록으로 사진첩 · 카카오톡 · 파인더에서 직접 지워요.</p></div></div>
   </div>
-</section>
+</div></section>
 
-<section class="gray band sec">
-  <div class="inner">
-    <p class="lb">미리 알려드려요</p>
-    <h2>자주 묻는 것들</h2>
-    <div class="qa">
-      <details open><summary><span class="qm">Q</span><span class="qt">내 사진이 어디로 가나요?</span><span class="qc">⌄</span></summary><p class="ans">아무 데도 안 가요. 작은 미리보기만 이 기기 브라우저에 남아요. <b>「AI로 알아보기」를 누른 캡처만</b> 그때 한 장씩 Claude 로 가고, 분류와 한 줄 요약만 돌아와요.</p></details>
-      <details><summary><span class="qm">Q</span><span class="qt">카톡방을 자동으로 읽나요?</span><span class="qc">⌄</span></summary><p class="ans">아니요. 카카오톡은 열어 주는 통로가 없어서 <b>채팅 목록을 붙여 넣거나 캡처로</b> 읽어요. 나가기도 카카오톡에서 직접 해요.</p></details>
-      <details><summary><span class="qm">Q</span><span class="qt">맥 파일은 어떻게 읽나요?</span><span class="qc">⌄</span></summary><p class="ans">터미널에서 고요 도구를 한 줄 돌리면 바탕화면에 보고서 파일이 생겨요. 그 파일엔 <b>이름 · 크기 · 날짜만</b> 있고 내용은 없어요. 그걸 앱에 올려요.</p></details>
-      <details><summary><span class="qm">Q</span><span class="qt">스샷은 어디로 갔나요?</span><span class="qc">⌄</span></summary><p class="ans">고요 ai 안으로 들어왔어요. 캡처 칸에서 <b>장소로 읽힌 캡처</b>가 스샷이 하던 일이에요. 심볼과 디자인도 스샷 것을 그대로 이어받았어요.</p></details>
-      <details><summary><span class="qm">Q</span><span class="qt">아이폰 앱 정리는요?</span><span class="qc">⌄</span></summary><p class="ans">아직 못 해요. 아이폰이 앱 목록을 열어 주지 않아요. 「설정 → 일반 → iPhone 저장 공간」 화면을 캡처해서 읽는 방식을 다음 판에서 시험해요.</p></details>
-    </div>
+<section class="band sec gray"><div class="inner">
+  <p class="lb">미리 알려드려요</p>
+  <h2>자주 묻는 것들</h2>
+  <div class="qa">
+    <details open><summary><span class="qm">Q</span><span class="qt">내 사진이 어디로 가나요?</span><span class="qc">⌄</span></summary><p class="ans">아무 데도 안 가요. 작은 미리보기만 이 기기 브라우저에 남아요. <b>「AI로 알아보기」를 누른 캡처만</b> 그때 한 장씩 Claude 로 가고, 분류와 한 줄 요약만 돌아와요.</p></details>
+    <details><summary><span class="qm">Q</span><span class="qt">카톡방을 자동으로 읽나요?</span><span class="qc">⌄</span></summary><p class="ans">아니요. 카카오톡은 열어 주는 통로가 없어서 <b>채팅 목록을 붙여 넣거나 캡처로</b> 읽어요. 나가기도 카카오톡에서 직접 해요.</p></details>
+    <details><summary><span class="qm">Q</span><span class="qt">맥 파일은 어떻게 읽나요?</span><span class="qc">⌄</span></summary><p class="ans">터미널에서 고요 도구를 한 줄 돌리면 바탕화면에 보고서 파일이 생겨요. 그 파일엔 <b>이름 · 크기 · 날짜만</b> 있고 내용은 없어요.</p></details>
+    <details><summary><span class="qm">Q</span><span class="qt">스샷은 어디로 갔나요?</span><span class="qc">⌄</span></summary><p class="ans">고요 ai 안으로 들어왔어요. 캡처 칸에서 <b>장소로 읽힌 캡처</b>가 스샷이 하던 일이에요. 심볼과 디자인도 스샷 것을 이어받았어요.</p></details>
+    <details><summary><span class="qm">Q</span><span class="qt">아이폰 앱 정리는요?</span><span class="qc">⌄</span></summary><p class="ans">아직 못 해요. 아이폰이 앱 목록을 열어 주지 않아요. 「설정 → 일반 → iPhone 저장 공간」 화면을 캡처해서 읽는 방식을 다음 판에서 시험해요.</p></details>
   </div>
-</section>
+</div></section>
 
-<section class="band end">
-  <div class="glow"></div>
-  <div class="inner">
-    <h2>쌓인 것부터<br>한 칸만 덜어 보세요</h2>
-    <p>캡처 열 장만 넣어 봐도 뭘 치워야 할지 보여요.</p>
-    <div class="btns">
-      <a class="pri" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기<span class="go">›</span></a>
-    </div>
-  </div>
-</section>
-
-<footer class="foot">
-  <div class="inner">
-    고요 ai <b>v0.1.0</b> 기준 · 2026-10-15<br>
-    만든 곳 먀 AI 스튜디오 · 링크를 받은 분만 열 수 있어요.
-  </div>
-</footer>
+<section class="band end"><div class="inner">
+  <h2>쌓인 것부터<br>한 칸만 덜어 보세요</h2>
+  <p>캡처 열 장만 넣어 봐도 뭘 치워야 할지 보여요.</p>
+  <div class="btns"><a class="btn pri" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기<span class="go">›</span></a></div>
+</div></section>
+<footer class="foot"><div class="inner">
+  <div><b>고요 ai</b> v0.1.0 기준 · 2026-10-15<div class="links" style="margin-top:8px"><a href="https://www.myaaistudio.com/goyo.html">먀 사이트의 고요 ai</a><a href="https://www.myaaistudio.com/terms.html">이용약관</a><a href="https://www.myaaistudio.com/privacy.html">개인정보처리방침</a></div></div>
+  <div class="co"><b>먀 AI 스튜디오</b> · 대표 이준원 · 사업자등록번호 758-01-03118<br>서울 마포구 월드컵로28길 34 · myaaistudio@gmail.com · 070-4571-8763<br>이 숫자는 전부 실제 운영 데이터예요. 예시가 아니에요.</div>
+</div></footer>
 </body>
 </html>
