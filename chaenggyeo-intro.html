@@ -107,9 +107,20 @@ h2{font-size:30px; line-height:1.3; font-weight:800; letter-spacing:-.03em}
 .foot .inner{display:grid; gap:18px; font-size:13px; line-height:1.7; color:var(--sub2)}
 .foot b{color:var(--sub); font-weight:700}
 .foot .links a{margin-right:14px; font-weight:700; color:var(--sub)}
+
+.plans{display:grid; grid-template-columns:1fr; gap:12px; margin-top:28px}
+.plan{background:var(--white); border:1px solid var(--line2); border-radius:22px; padding:24px 22px; display:flex; flex-direction:column; gap:12px}
+.plan.hot{border-color:#C9D0D8; box-shadow:0 12px 32px rgba(25,31,40,.08)}
+.plan .pn{font-size:13px; font-weight:800; letter-spacing:.08em; color:var(--chromeSub)}
+.plan .pp{font-size:26px; font-weight:800; letter-spacing:-.03em; line-height:1.2}
+.plan .pp small{font-size:13px; font-weight:600; color:var(--sub2); margin-left:4px}
+.plan ul{margin:0; padding-left:0; list-style:none; display:grid; gap:7px; font-size:14px; color:var(--sub); line-height:1.5}
+.plan li::before{content:'·'; margin-right:7px; color:var(--mute)}
+.plan .pw{font-size:13.5px; color:var(--sub2); line-height:1.5}
 .foot .co{font-size:12.5px}
 @media (min-width:720px){
   :root{--sec:96px}
+  .plans{grid-template-columns:repeat(3,1fr); gap:14px}
   .hero{padding-block:80px 0}
   .hero h1{font-size:56px; line-height:1.18}
   .hero .sub{font-size:20px; max-width:40ch}
@@ -176,6 +187,8 @@ h2{font-size:30px; line-height:1.3; font-weight:800; letter-spacing:-.03em}
   </div>
 </div></section>
 
+<section class="band sec gray"><div class="inner"><p class="lb">플랜</p><h2>세 단계로 나눠요</h2><p class="ld">혼자 쓰는 팀도, 열 명 팀도, 고객사마다 다른 카드가 필요한 회사도 같은 챙겨예요.</p><div class="plans"><div class="plan"><div class="pn">BASIC</div><div class="pp">요금 정하는 중<small>작업실 1개 · 3명</small></div><ul><li>템플릿 4 · 체크리스트 · 캘린더</li><li>돈은 시트 읽기</li><li>채팅 방 · 공지</li></ul></div><div class="plan hot"><div class="pn">PRO</div><div class="pp">요금 정하는 중<small>작업실 1개 · 10명</small></div><ul><li>등급 · 서비스별 초대</li><li>시트 자동 읽기 · 찾기 · CSV</li><li>판 번호 기록</li></ul></div><div class="plan"><div class="pn">CUSTOM</div><div class="pp">요금 정하는 중<small>고객사마다</small></div><ul><li>회사별 카드(표 · 링크 묶음 · 요약)</li><li>야간 자동 집계(주문 · 단가)</li><li>온보딩 · 우선 지원</li></ul></div></div><p class="src" style="text-align:left">요금은 아직 정하지 않았어요. 오픈 전 초대 기간엔 전부 무료예요.</p></div></section>
+
 <section class="band sec"><div class="inner">
   <p class="lb">쓰는 회사</p>
   <h2>만든 회사가<br>먼저 올려 두고 써요</h2>
@@ -217,7 +230,7 @@ h2{font-size:30px; line-height:1.3; font-weight:800; letter-spacing:-.03em}
   <div class="btns"><a class="btn pri" href="https://chaenggyeo.ai.kr/login">로그인하고 열기<span class="go">›</span></a><a class="btn sec2" href="https://claude.ai/artifact/GzTHdvbU92Zr3b7i1Qi8Ej">사용 설명서<span class="go">›</span></a></div>
 </div></section>
 <footer class="foot"><div class="inner">
-  <div><b>챙겨</b> v0.23.5 기준 · 2026-10-15<div class="links" style="margin-top:8px"><a href="https://claude.ai/artifact/GzTHdvbU92Zr3b7i1Qi8Ej">사용 설명서</a><a href="https://www.myaaistudio.com/terms.html">이용약관</a><a href="https://www.myaaistudio.com/privacy.html">개인정보처리방침</a></div></div>
+  <div><b>챙겨</b> v0.23.7 기준 · 2026-10-15<div class="links" style="margin-top:8px"><a href="https://claude.ai/artifact/GzTHdvbU92Zr3b7i1Qi8Ej">사용 설명서</a><a href="https://www.myaaistudio.com/terms.html">이용약관</a><a href="https://www.myaaistudio.com/privacy.html">개인정보처리방침</a></div></div>
   <div class="co"><b>먀 AI 스튜디오</b> · 대표 이준원 · 사업자등록번호 758-01-03118<br>서울 마포구 월드컵로28길 34 · myaaistudio@gmail.com · 070-4571-8763<br>이 숫자는 전부 실제 운영 데이터예요. 예시가 아니에요.</div>
 </div></footer>
 </body>
