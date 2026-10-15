@@ -12,6 +12,7 @@ https://myaaistudio.com/*    https://www.myaaistudio.com/:splat    301!
 /brand       /brand.html       200
 /sshot       /sshot.html       200
 /chaenggyeo   /chaenggyeo.html  200
+/goyo         /goyo.html        200
 /lab         /lab.html         200
 /eunyeon     /eunyeon.html     200
 /seonoja     /seonoja.html     200
