@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>돌워리 소개 | 먀 AI 스튜디오</title>
+<meta name="description" content="돌을 쥐고 있는 몇 분 동안 단톡방 · 스샷 · 데스크톱 정리가 뒤에서 돌아요. 돌 14종, 돌 하나에 정리 하나.">
+<link rel="canonical" href="https://www.myaaistudio.com/dolworry-intro.html">
+<meta property="og:type" content="website"><meta property="og:title" content="돌워리 소개"><meta property="og:description" content="돌을 쥐고 있는 몇 분 동안 단톡방 · 스샷 · 데스크톱 정리가 뒤에서 돌아요."><meta property="og:url" content="https://www.myaaistudio.com/dolworry-intro.html">
+<link rel="icon" href="media/dolworry/citrine.webp" type="image/webp">
+<meta name="theme-color" content="#0F1115">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap">
+<style>
+:root{
+  --bg:#0F1115; --bg2:#151921; --glass:rgba(255,255,255,.06); --glassLine:rgba(255,255,255,.10); --glass2:rgba(255,255,255,.09);
+  --tx:#F2F4F6; --tx2:#D5DAE1; --sub:#B8C0CC; --sub2:#A3ACB8;
+  --light:#F2F4F6; --light2:#fff; --ink:#191F28; --ink2:#333D4B; --lsub:#4E5968; --lsub2:#6B7684; --line:#E5E8EB; --line2:#EAEDF0;
+  --citrine:#F2C94C; --ameth:#9A6DB8; --soda:#3C5FA8; --carn:#D86A2A; --aven:#6FAE8C;
+  --sans:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+  --sec:64px;
+}
+:root{color-scheme:dark}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+html{overflow-x:clip}
+html,body{margin:0; padding:0}
+body{background:var(--bg); color:var(--tx); font-family:var(--sans); font-size:16px; font-weight:500; line-height:1.55;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; word-break:keep-all; overflow-wrap:break-word}
+a{color:inherit; text-decoration:none}
+h1,h2,h3,p{margin:0}
+h1,h2{text-wrap:balance}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--citrine); outline-offset:3px; border-radius:8px}
+@media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} }
+.band{padding:0 20px; position:relative}
+.inner{max-width:1040px; margin:0 auto; position:relative}
+.sec{padding-block:var(--sec)}
+/* 어두운 돌: 빛무리 */
+.dark{position:relative; overflow:hidden; isolation:isolate}
+.dark::before{content:''; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:radial-gradient(60% 50% at 12% 0%, rgba(242,201,76,.16), transparent 70%), radial-gradient(45% 40% at 92% 30%, rgba(154,109,184,.14), transparent 70%), radial-gradient(50% 45% at 50% 110%, rgba(60,95,168,.18), transparent 70%)}
+.dark.g2::before{background:radial-gradient(55% 50% at 90% 0%, rgba(216,106,42,.14), transparent 70%), radial-gradient(50% 45% at 5% 80%, rgba(60,95,168,.18), transparent 70%)}
+.dark.g3::before{background:radial-gradient(60% 55% at 50% 0%, rgba(111,174,140,.12), transparent 70%), radial-gradient(45% 45% at 95% 100%, rgba(242,201,76,.12), transparent 70%)}
+/* 밝은 돌 */
+.light{background:var(--light); color:var(--ink)}
+.light .lb{color:var(--lsub)}
+.light .ld{color:var(--lsub)}
+.light .ld b{color:var(--ink2)}
+.light h2{color:var(--ink)}
+/* 머리 */
+.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:30; background:rgba(15,17,21,.80); backdrop-filter:saturate(1.4) blur(14px); -webkit-backdrop-filter:saturate(1.4) blur(14px); border-bottom:1px solid var(--glassLine)}
+.top .inner{display:flex; align-items:center; justify-content:space-between; height:64px; gap:12px}
+.top .lg{display:flex; align-items:center; gap:9px; min-width:0}
+.top .lg img{width:28px; height:28px; object-fit:contain; filter:drop-shadow(0 2px 6px rgba(242,201,76,.45))}
+.top .lg b{font-size:19px; font-weight:800; letter-spacing:-.03em}
+.top .lg i{font-style:normal; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--sub2)}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:6px; height:52px; padding:0 22px; border-radius:14px; font-size:16px; font-weight:800; letter-spacing:-.02em; white-space:nowrap}
+.btn .go{font-size:15px; opacity:.7}
+.btn.pri{background:var(--light); color:var(--ink); border:1px solid #fff; box-shadow:0 2px 10px rgba(242,201,76,.18), 0 10px 30px rgba(0,0,0,.35)}
+.btn.sec2{background:var(--glass); color:var(--tx2); border:1px solid var(--glassLine); backdrop-filter:blur(10px)}
+.light .btn.sec2{background:var(--light2); color:var(--lsub); border-color:var(--line)}
+.btn.sm{height:44px; padding:0 16px; font-size:14px; border-radius:999px}
+.btns{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px}
+/* 히어로 */
+.hero{padding-block:56px 0; text-align:center}
+.hero .eye{font-size:14px; font-weight:800; color:var(--citrine); letter-spacing:.02em}
+.hero h1{margin-top:12px; font-size:40px; line-height:1.22; font-weight:800; letter-spacing:-.035em}
+.hero .sub{margin:18px auto 0; font-size:17px; line-height:1.6; color:var(--sub); max-width:34ch}
+.hero .btns{justify-content:center}
+.device{width:min(320px,100%); margin:48px auto 0; border-radius:40px; padding:9px; background:linear-gradient(160deg,#343A45 0%,#1B1F27 45%,#0F1115 100%); border:1px solid #3B4350;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 30px 80px rgba(0,0,0,.6), 0 0 120px rgba(242,201,76,.10)}
+.device .scr{border-radius:32px; overflow:hidden; background:#0F1115; aspect-ratio:390/844}
+.device img{display:block; width:100%; height:100%; object-fit:cover}
+.hero .ground{position:absolute; left:0; right:0; bottom:0; height:46%; background:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.035) 100%); z-index:-1}
+/* 숫자 */
+.stats{display:grid; grid-template-columns:1fr; gap:12px}
+.stat{background:var(--glass); border:1px solid var(--glassLine); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-radius:20px; padding:22px 22px}
+.stat .k{font-size:14px; font-weight:700; color:var(--sub)}
+.stat .v{margin-top:6px; font-size:34px; font-weight:800; letter-spacing:-.03em; font-variant-numeric:tabular-nums; line-height:1.15}
+.stat .v i{font-style:normal; font-size:16px; font-weight:700; color:var(--sub); margin-left:4px}
+.stat .d{margin-top:6px; font-size:13.5px; color:var(--sub)}
+.src{margin-top:14px; font-size:13px; color:var(--sub2); text-align:center}
+.light .src{color:var(--lsub2)}
+.lb{font-size:14px; font-weight:800; color:var(--citrine); margin-bottom:10px}
+h2{font-size:30px; line-height:1.3; font-weight:800; letter-spacing:-.03em}
+.ld{margin-top:12px; font-size:16.5px; line-height:1.6; color:var(--sub); max-width:46ch}
+.ld b{color:var(--tx); font-weight:800}
+/* 카드 */
+.cards{display:grid; grid-template-columns:1fr; gap:12px; margin-top:28px}
+.card{background:var(--glass); border:1px solid var(--glassLine); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-radius:20px; padding:24px 22px}
+.light .card{background:var(--light2); border:1px solid var(--line2); backdrop-filter:none}
+.card .ic{width:44px; height:44px; border-radius:14px; background:var(--glass2); border:1px solid var(--glassLine); display:grid; place-items:center; margin-bottom:16px}
+.light .card .ic{background:var(--light); border-color:var(--line2)}
+.card .ic svg{width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+.card .ic img{width:30px; height:30px; object-fit:contain}
+.card h3{font-size:19px; font-weight:800; letter-spacing:-.025em; line-height:1.4}
+.card p{margin-top:8px; font-size:14.5px; line-height:1.6; color:var(--sub)}
+.light .card p{color:var(--lsub)}
+.card .q{font-size:12.5px; font-weight:700; color:var(--citrine); margin-bottom:4px}
+.light .card .q{color:var(--lsub2)}
+.sub-h{margin-top:48px; font-size:22px; font-weight:800; letter-spacing:-.03em}
+/* 돌 격자 */
+.stones{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:28px}
+.stone{background:var(--glass); border:1px solid var(--glassLine); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-radius:20px; padding:18px 14px 26px; text-align:center; position:relative; display:flex; flex-direction:column; align-items:center}
+.stone .ph{width:104px; height:104px; position:relative; margin:0 auto 10px}
+.stone .ph::before{content:''; position:absolute; inset:8%; border-radius:50%; background:var(--c); filter:blur(18px); opacity:.45}
+.stone .ph img{position:relative; width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 8px 14px rgba(0,0,0,.45))}
+.stone b{display:block; font-size:15.5px; font-weight:800; letter-spacing:-.025em; line-height:1.3}
+.stone .en{display:block; margin-top:2px; font-size:11.5px; font-weight:600; color:var(--sub2); letter-spacing:.02em}
+.stone .job{margin-top:8px; font-size:13px; line-height:1.45; color:var(--tx2); font-weight:600}
+.stone .where{font-size:12px; color:var(--sub); margin-top:2px}
+.chip{display:inline-flex; align-items:center; height:24px; padding:0 10px; border-radius:999px; font-size:12px; font-weight:800; margin-top:10px}
+.stone .chip{margin-top:auto; padding-top:0; position:relative; top:10px}
+.chip.on{background:var(--light); color:var(--ink)}
+.chip.off{border:1px solid rgba(255,255,255,.22); color:var(--sub)}
+.light .chip.off{border-color:#CED4DA; color:var(--lsub)}
+.legend{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:18px; font-size:13px; color:var(--sub)}
+/* 스토어 */
+.shop{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:24px}
+.shop div{background:var(--glass); border:1px solid var(--glassLine); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-radius:16px; padding:16px 14px; display:flex; flex-direction:column; gap:4px}
+.shop b{font-size:15px; font-weight:800; letter-spacing:-.02em}
+.shop span{font-size:12.5px; color:var(--sub)}
+.shop .chip{margin-top:6px; align-self:flex-start}
+/* 플랜 */
+.plans{display:grid; grid-template-columns:1fr; gap:12px; margin-top:28px}
+.plan{background:var(--light2); border:1px solid var(--line2); border-radius:22px; padding:24px 22px; display:flex; flex-direction:column; gap:12px; color:var(--ink)}
+.plan.hot{border-color:#C9D0D8; box-shadow:0 12px 32px rgba(25,31,40,.10)}
+.plan .pn{font-size:13px; font-weight:800; letter-spacing:.08em; color:var(--lsub2)}
+.plan .pp{font-size:26px; font-weight:800; letter-spacing:-.03em; line-height:1.2}
+.plan .pp small{font-size:13px; font-weight:600; color:var(--lsub2); margin-left:4px}
+.plan ul{margin:0; padding-left:0; list-style:none; display:grid; gap:7px; font-size:14px; color:var(--lsub); line-height:1.5}
+.plan li::before{content:'·'; margin-right:7px; color:var(--lsub2)}
+/* 단계 */
+.steps{display:grid; grid-template-columns:1fr; gap:12px; margin-top:28px}
+.st{display:flex; gap:14px; align-items:flex-start; background:var(--light2); border:1px solid var(--line2); border-radius:18px; padding:20px; color:var(--ink)}
+.st .sn{flex:0 0 auto; width:30px; height:30px; border-radius:999px; background:var(--ink); color:#fff; font-size:13px; font-weight:800; display:grid; place-items:center}
+.st b{display:block; font-size:16px; font-weight:800; letter-spacing:-.025em}
+.st p{margin-top:4px; font-size:14px; line-height:1.6; color:var(--lsub)}
+/* 자주 묻는 것 */
+.qa{display:grid; gap:10px; margin-top:28px}
+.qa details{background:var(--glass); border:1px solid var(--glassLine); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-radius:18px; padding:0 20px}
+.qa summary{list-style:none; cursor:pointer; padding:18px 0; display:flex; gap:12px; align-items:flex-start; font-size:15.5px; font-weight:800; letter-spacing:-.025em; line-height:1.5}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary .qm{color:var(--citrine); flex:0 0 auto}
+.qa summary .qt{flex:1; min-width:0}
+.qa summary .qc{color:var(--sub); font-size:13px; flex:0 0 auto; transition:transform .18s; margin-top:3px}
+.qa details[open] summary .qc{transform:rotate(180deg)}
+.qa .ans{padding:0 0 18px 26px; font-size:14.5px; line-height:1.65; color:var(--sub)}
+.qa .ans b{color:var(--tx); font-weight:800}
+/* 꼬리 */
+.end{text-align:center; padding-block:var(--sec)}
+.end h2{font-size:32px}
+.end p{margin-top:12px; color:var(--sub); font-size:16.5px}
+.end .btns{justify-content:center}
+.end .ph{width:140px; height:140px; margin:0 auto 20px; position:relative}
+.end .ph::before{content:''; position:absolute; inset:5%; border-radius:50%; background:var(--citrine); filter:blur(26px); opacity:.5}
+.end .ph img{position:relative; width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 12px 20px rgba(0,0,0,.5))}
+.foot{background:#0B0D10; border-top:1px solid var(--glassLine); padding:32px 20px 40px}
+.foot .inner{display:grid; gap:18px; font-size:13px; line-height:1.7; color:var(--sub)}
+.foot b{color:var(--tx2); font-weight:700}
+.foot .links a{margin-right:14px; font-weight:700; color:var(--tx2)}
+.foot .co{font-size:12.5px}
+@media (min-width:720px){
+  :root{--sec:96px}
+  .plans{grid-template-columns:repeat(3,1fr); gap:14px}
+  .hero{padding-block:80px 0}
+  .hero h1{font-size:56px; line-height:1.18}
+  .hero .sub{font-size:20px; max-width:40ch}
+  .device{width:340px; margin-top:56px}
+  .stats{grid-template-columns:repeat(3,1fr); gap:14px}
+  .stat .v{font-size:40px}
+  h2{font-size:40px}
+  .cards{grid-template-columns:repeat(3,1fr); gap:14px}
+  .cards.two{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr); gap:14px}
+  .stones{grid-template-columns:repeat(4,1fr); gap:12px}
+  .shop{grid-template-columns:repeat(3,1fr); gap:12px}
+  .end h2{font-size:44px}
+  .foot .inner{grid-template-columns:1fr 1fr; align-items:start}
+}
+@media (min-width:1000px){
+  .stones{grid-template-columns:repeat(7,1fr); gap:10px}
+  .stone .ph{width:96px; height:96px}
+  .shop{grid-template-columns:repeat(6,1fr)}
+}
+</style>
+</head>
+<body>
+<header class="top band"><div class="inner">
+  <a class="lg" href="dolworry-intro.html"><img src="media/dolworry/citrine.webp" alt="" width="28" height="28"><b>돌워리</b><i>Dolworry</i></a>
+  <a class="btn pri sm" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기</a>
+</div></header>
+
+<section class="hero band dark"><div class="ground"></div><div class="inner">
+  <p class="eye">쥐고 있으면 정리돼요</p>
+  <h1>알림 지옥에서<br>꺼내 드려요</h1>
+  <p class="sub">돌을 쥐고 엄지로 문지르는 몇 분 동안, 뒤에서 단톡방 · 스샷 · 데스크톱 정리가 돌아요. 놓으면 치울 후보만 남아요. 지우는 건 직접 하세요.</p>
+  <div class="btns"><a class="btn pri" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기<span class="go">›</span></a><a class="btn sec2" href="#stones">돌 14종 보기<span class="go">›</span></a></div>
+  <div class="device"><div class="scr"><img src="media/dolworry/hero_sess.webp" alt="돌워리 앱의 쥐기 화면. 시트린 돌이 가운데 떠 있고 남은 시간과 문지름 수가 보여요" width="780" height="1688"></div></div>
+</div></section>
+
+<section class="band sec dark g2"><div class="inner">
+  <div class="stats">
+    <div class="stat"><div class="k">돌</div><div class="v">14<i>종</i></div><div class="d">돌 하나가 정리 하나를 맡아요</div></div>
+    <div class="stat"><div class="k">지금 되는 것</div><div class="v">3<i>가지</i></div><div class="d">단톡방 · 스샷 · 데스크톱. 나머지 11은 준비 중</div></div>
+    <div class="stat"><div class="k">쥐는 시간</div><div class="v">1<i>~ 30분</i></div><div class="d">1 · 3 · 5 · 10 · 30분 중에 골라요</div></div>
+  </div>
+  <p class="src">돌워리 0.8 · 2026-10-16 기준 · 위 화면은 예시 데이터를 넣은 실제 앱이에요</p>
+</div></section>
+
+<section class="band sec light"><div class="inner">
+  <p class="lb">왜 돌인가요</p>
+  <h2>주머니 속 돌을<br>엄지로 문지르는 시간이에요</h2>
+  <p class="ld">워리스톤은 엄지가 들어갈 홈이 파인 납작한 돌이에요. 주머니에 넣어 두고 마음이 급할 때 꺼내 문질러요. <b>돌워리는 그 몇 분을 빌려요.</b> 돌을 쥐고 있는 동안 뒤에서 정리가 돌고, 놓으면 치울 후보만 남아요.</p>
+  <div class="cards">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8.5 12.5V5.3a1.6 1.6 0 0 1 3.2 0v5.2"/><path d="M11.7 10V4.1a1.6 1.6 0 0 1 3.2 0V10"/><path d="M14.9 10.5V5.6a1.6 1.6 0 0 1 3.2 0v8.3c0 3.9-2.6 6.6-6.3 6.6-2.7 0-4.4-1.3-5.6-3.3L4 13.4a1.5 1.5 0 0 1 2.5-1.6l2 2.4"/></svg></div><div class=q>1</div><h3>쥐어요</h3><p>몇 분 쥘지 고르고 돌을 켜요. 돌 위를 엄지로 문지르면 결이 쌓이고, 바깥을 끌면 돌이 돌아가요.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v4.5h-4.5"/></svg></div><div class=q>2</div><h3>뒤에서 돌아요</h3><p>쥐고 있는 동안 켜 둔 돌이 맡은 것을 다시 봐요. 묵은 캡처, 오래 조용한 방, 같은 파일이 여러 군데.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg></div><div class=q>3</div><h3>고르기만 해요</h3><p>끝나면 치울 후보가 목록으로 나와요. 남길지 치울지는 한 번 눌러 정하고, 지우는 건 직접 해요.</p></div>
+  </div>
+</div></section>
+
+<section class="band sec dark" id="stones"><div class="inner">
+  <p class="lb">돌 14종</p>
+  <h2>돌 하나가<br>정리 하나를 맡아요</h2>
+  <p class="ld">색은 그 서비스 색이에요. 카카오톡 노랑은 시트린, 파인더 파랑은 소달라이트. 이름은 워리스톤 판매명 방식 그대로예요. <b>효능은 없어요. 맡는 일만 있어요.</b></p>
+  <div class="stones">
+    <div class="stone" style="--c:#F2C94C"><div class="ph"><img src="media/dolworry/citrine.webp" alt="시트린 워리스톤" loading="lazy" width="512" height="512"></div><b>시트린</b><span class="en">Citrine</span><div class="job">단톡방 안 읽음</div><div class="where">카카오톡</div><span class="chip on">됨</span></div><div class="stone" style="--c:#D9A94C"><div class="ph"><img src="media/dolworry/yjasper.webp" alt="옐로우 재스퍼 워리스톤" loading="lazy" width="512" height="512"></div><b>옐로우 재스퍼</b><span class="en">Yellow Jasper</span><div class="job">나에게 보내기</div><div class="where">카카오톡 셀프 채팅</div><span class="chip off">준비 중</span></div><div class="stone" style="--c:#F1F3F5"><div class="ph"><img src="media/dolworry/clear.webp" alt="백수정 워리스톤" loading="lazy" width="512" height="512"></div><b>백수정</b><span class="en">Clear Quartz</span><div class="job">스크린샷</div><div class="where">사진 앱</div><span class="chip on">됨</span></div><div class="stone" style="--c:#9A6DB8"><div class="ph"><img src="media/dolworry/ameth.webp" alt="아메시스트 워리스톤" loading="lazy" width="512" height="512"></div><b>아메시스트</b><span class="en">Amethyst</span><div class="job">인스타 저장 · DM</div><div class="where">인스타그램</div><span class="chip off">준비 중</span></div><div class="stone" style="--c:#B8382B"><div class="ph"><img src="media/dolworry/jasper.webp" alt="레드 재스퍼 워리스톤" loading="lazy" width="512" height="512"></div><b>레드 재스퍼</b><span class="en">Red Jasper</span><div class="job">나중에 볼 동영상 · 구독</div><div class="where">유튜브</div><span class="chip off">준비 중</span></div><div class="stone" style="--c:#D86A2A"><div class="ph"><img src="media/dolworry/carn.webp" alt="카넬리언 워리스톤" loading="lazy" width="512" height="512"></div><b>카넬리언</b><span class="en">Carnelian</span><div class="job">뉴스레터 · 프로모션 메일</div><div class="where">지메일</div><span class="chip off">준비 중</span></div><div class="stone" style="--c:#4E6FB0"><div class="ph"><img src="media/dolworry/baven.webp" alt="블루 아벤츄린 워리스톤" loading="lazy" width="512" height="512"></div><b>블루 아벤츄린</b><span class="en">Blue Aventurine</span><div class="job">열어 둔 탭</div><div class="where">사파리</div><span class="chip off">준비 중</span></div><div class="stone" style="--c:#C7A982"><div class="ph"><img src="media/dolworry/agate.webp" alt="마노 워리스톤" loading="lazy" width="512" height="512"></div><b>마노</b><span class="en">Agate</span><div class="job">한 줄짜리 메모</div><div class="where">메모 앱</div><span class="chip off">준비 중</span></div><div class="stone" style="--c:#F0E6DC"><div class="ph"><img src="media/dolworry/cherry.webp" alt="벚꽃 마노 워리스톤" loading="lazy" width="512" height="512"></div><b>벚꽃 마노</b><span class="en">Cherry Blossom Agate</span><div class="job">연사 · 비슷한 사진</div><div class="where">사진 앱</div><span class="chip off">준비 중</span></div><div class="stone" style="--c:#3C5FA8"><div class="ph"><img src="media/dolworry/soda.webp" alt="소달라이트 워리스톤" loading="lazy" width="512" height="512"></div><b>소달라이트</b><span class="en">Sodalite</span><div class="job">바탕화면 · 다운로드</div><div class="where">맥 파인더</div><span class="chip on">됨</span></div><div class="stone" style="--c:#6FAE8C"><div class="ph"><img src="media/dolworry/aven.webp" alt="그린 아벤츄린 워리스톤" loading="lazy" width="512" height="512"></div><b>그린 아벤츄린</b><span class="en">Green Aventurine</span><div class="job">안 쓰는 정기 결제</div><div class="where">결제 앱 · 카드</div><span class="chip off">준비 중</span></div><div class="stone" style="--c:#9A9DA6"><div class="ph"><img src="media/dolworry/gchal.webp" alt="그레이 칼세도니 워리스톤" loading="lazy" width="512" height="512"></div><b>그레이 칼세도니</b><span class="en">Grey Chalcedony</span><div class="job">누군지 모르는 번호</div><div class="where">연락처</div><span class="chip off">준비 중</span></div><div class="stone" style="--c:#2B4B8C"><div class="ph"><img src="media/dolworry/lapis.webp" alt="라피스 라줄리 워리스톤" loading="lazy" width="512" height="512"></div><b>라피스 라줄리</b><span class="en">Lapis Lazuli</span><div class="job">앱 배지 · 앱 정리</div><div class="where">홈 화면</div><span class="chip off">준비 중</span></div><div class="stone" style="--c:#4A2A22"><div class="ph"><img src="media/dolworry/mahog.webp" alt="마호가니 흑요석 워리스톤" loading="lazy" width="512" height="512"></div><b>마호가니 흑요석</b><span class="en">Mahogany Obsidian</span><div class="job">안 읽은 채널 · 멘션</div><div class="where">슬랙</div><span class="chip off">준비 중</span></div>
+  </div>
+  <div class="legend"><span><span class="chip on" style="margin:0 6px 0 0">됨</span>지금 돼요 3</span><span><span class="chip off" style="margin:0 6px 0 0">준비 중</span>순서대로 붙여요 11</span></div>
+  <p class="src">다음 판 후보: 캘린더 · 문자 · 음성 메모 · 장바구니 · 쿠폰 · 읽다 만 책</p>
+</div></section>
+
+<section class="band sec light" id="rules"><div class="inner">
+  <p class="lb">쥐는 동안</p>
+  <h2>손은 돌에,<br>정리는 뒤에서</h2>
+  <p class="ld">지금 되는 세 가지는 이렇게 읽어요. 어느 것도 자동으로 열어 보지 않아요. 넣어 준 것만 봐요.</p>
+  <div class="cards">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M20.5 12.1c0 4.1-3.8 7.4-8.5 7.4a9.9 9.9 0 0 1-2.6-.34L4.5 20.5l1.1-3.2a7 7 0 0 1-2.1-5.2c0-4.1 3.8-7.4 8.5-7.4s8.5 3.3 8.5 7.4Z"/></svg></div><div class=q>시트린</div><h3>단톡방</h3><p>채팅 목록을 붙여 넣거나 캡처로 읽어요. 오래 조용한 방과 안 읽은 게 많이 쌓인 방을 골라 줘요. 나가기는 카카오톡에서 직접.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="m3.5 15.5 4.6-4.4 3.9 3.6 3-2.6 5.5 4.4"/><circle cx="15.5" cy="9" r="1.4"/></svg></div><div class=q>백수정</div><h3>스샷</h3><p>사진에서 고른 캡처 중 묵은 것을 다시 봐요. 장소 · 영수증 · 예약처럼 나눠서, 날이 지난 것부터 치울 후보로 올려요.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></div><div class=q>소달라이트</div><h3>데스크톱</h3><p>맥에서 보고서 파일을 한 번 올려요. 같은 파일이 여러 군데, 묵은 스크린샷을 용량 큰 순으로 보여 줘요. 파일 내용은 안 읽어요.</p></div>
+  </div>
+  <h3 class="sub-h">지키는 것</h3>
+  <div class="cards">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6z"/><path d="m9 12 2 2 4-4.5"/></svg></div><h3>서버로 안 보내요</h3><p>캡처 · 채팅방 · 데스크톱 목록은 이 기기 브라우저에만 있어요. AI 가 읽게 직접 고른 것만 그때 한 건씩 Claude 로 가요.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M9.5 7V4.5h5V7M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg></div><h3>지우지 않아요</h3><p>치울 후보를 목록으로 드려요. 복사해서 사진첩 · 카카오톡 · 파인더에서 직접 지우세요.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h9.5a6.5 6.5 0 0 1 0 13H9"/></svg></div><h3>되돌릴 수 있어요</h3><p>남김 · 치움 표시는 언제든 바꿔요. 돌을 쥐다 멈춰도 결은 그대로 남아요.</p></div>
+  </div>
+</div></section>
+
+<section class="band sec dark g3"><div class="inner">
+  <p class="lb">커스텀 돌</p>
+  <h2>내 돌을 만들어요</h2>
+  <p class="ld">돌 하나에 기능 하나예요. 바탕 돌을 고르고 이름과 맡을 것을 적으면 그 돌이 홈과 쥐기 화면에 들어가요.</p>
+  <div class="cards">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M10.5 9.2 12.5 8v8"/></svg></div><h3>기능 하나</h3><p>뭘 치우고 싶은지 한 줄로 적어요. 돌 하나가 그 한 가지만 맡아요.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 8.5a2 2 0 0 1 2-2h2.2l1.3-2h5l1.3 2H18a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.2"/></svg></div><h3>사진은 실물 그대로</h3><p>바탕 돌은 워리스톤 사진 그대로예요. 눈 · 입 같은 그림을 덧씌우지 않아요.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3.5 13.9 9l5.6 1.9-5.6 1.9L12 18.4l-1.9-5.6-5.6-1.9L10.1 9z"/><path d="M19 3.5v3M17.5 5h3"/></svg></div><h3>개발사 모드 · AI 모드</h3><p>지금은 요청을 복사해 보내면 개발사가 만들어 붙여요. AI 모드로 바꾸면 맡을 것을 읽어 치울 후보를 Claude 가 골라요.</p></div>
+  </div>
+  <h3 class="sub-h">스토어</h3>
+  <p class="ld">앱 속 돌을 손에 쥘 수 있게 팔아요. 지금은 둘러보기만 되고, 값과 입고일은 정해지는 대로 올려요.</p>
+  <div class="shop">
+    <div><b>실물 워리스톤</b><span>앱 속 돌 그대로</span><span class="chip off">준비 중</span></div>
+    <div><b>야돔</b><span class="chip off">준비 중</span></div>
+    <div><b>비강 확장기</b><span class="chip off">준비 중</span></div>
+    <div><b>안마기</b><span class="chip off">준비 중</span></div>
+    <div><b>명상</b><span class="chip off">준비 중</span></div>
+    <div><b>호텔</b><span class="chip off">준비 중</span></div>
+  </div>
+</div></section>
+
+<section class="band sec light"><div class="inner">
+  <p class="lb">플랜</p>
+  <h2>세 단계로 나눠요</h2>
+  <p class="ld">혼자 쥐는 사람부터 내 돌을 만드는 사람까지. 어느 단계든 지우는 건 직접이에요.</p>
+  <div class="plans">
+    <div class="plan"><div class="pn">BASIC</div><div class="pp">요금 정하는 중<small>혼자</small></div><ul><li>쥐기 1 · 3 · 5분</li><li>지금 되는 돌 전부(단톡방 · 스샷 · 데스크톱)</li><li>결 쌓기 · 문지름 수</li></ul></div>
+    <div class="plan hot"><div class="pn">PRO</div><div class="pp">요금 정하는 중<small>오래 쥐는 사람</small></div><ul><li>쥐기 10 · 30분</li><li>나머지 항목은 정하는 중</li></ul></div>
+    <div class="plan"><div class="pn">CUSTOM</div><div class="pp">요금 정하는 중<small>내 돌 만드는 사람</small></div><ul><li>커스텀 돌 · AI 모드</li><li>실물 돌 주문 연결은 정하는 중</li></ul></div>
+  </div>
+  <p class="src" style="text-align:left">요금은 아직 정하지 않았어요. 정해지면 이 자리에 올려요.</p>
+</div></section>
+
+<section class="band sec dark g2"><div class="inner">
+  <p class="lb">미리 알려드려요</p>
+  <h2>자주 묻는 것들</h2>
+  <div class="qa">
+    <details open><summary><span class="qm">Q</span><span class="qt">돌을 쥐면 뭐가 정리되나요?</span><span class="qc">⌄</span></summary><p class="ans">쥐기 전에 켜 둔 돌이 맡은 것만요. 시트린이면 조용한 단톡방, 백수정이면 묵은 캡처, 소달라이트면 같은 파일 · 묵은 스크린샷. 끝나면 <b>치울 후보 목록</b>이 나와요.</p></details>
+    <details><summary><span class="qm">Q</span><span class="qt">진짜 지워 주나요?</span><span class="qc">⌄</span></summary><p class="ans">아니요. 치울 후보를 목록으로 드려요. 복사해서 사진첩 · 카카오톡 · 파인더에서 <b>직접</b> 지우세요. 맥 정리 도구도 휴지통까지만 보내요.</p></details>
+    <details><summary><span class="qm">Q</span><span class="qt">내 사진 · 채팅이 어디로 가나요?</span><span class="qc">⌄</span></summary><p class="ans">아무 데도 안 가요. 이 기기 브라우저에만 있어요. <b>AI 가 읽게 직접 고른 것만</b> 그때 한 건씩 Claude 로 가고, 분류와 한 줄 요약만 돌아와요.</p></details>
+    <details><summary><span class="qm">Q</span><span class="qt">앱 속 돌은 진짜 돌 사진인가요?</span><span class="qc">⌄</span></summary><p class="ans">실물 워리스톤처럼 납작한 타원에 엄지 홈이 있는 모양으로 만든 원석 사진이에요. 그림이나 캐릭터를 덧씌우지 않아요. 실물 돌은 스토어에서 준비 중이에요.</p></details>
+    <details><summary><span class="qm">Q</span><span class="qt">준비 중인 돌은 언제 되나요?</span><span class="qc">⌄</span></summary><p class="ans">되는 대로 앱에 올려요. 순서는 아직 안 정했어요. 지금 되는 건 단톡방 · 스샷 · 데스크톱 셋이고, 나머지 {prep}은 「준비 중」으로 표시돼 있어요.</p></details>
+  </div>
+</div></section>
+
+<section class="band end dark"><div class="inner">
+  <div class="ph"><img src="media/dolworry/citrine.webp" alt="시트린 워리스톤" width="512" height="512" loading="lazy"></div>
+  <h2>돌 하나,<br>3분만 쥐어 보세요</h2>
+  <p>단톡방 돌 하나만 켜도 조용한 방이 보여요.</p>
+  <div class="btns"><a class="btn pri" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기<span class="go">›</span></a></div>
+</div></section>
+
+<footer class="foot"><div class="inner">
+  <div><b>돌워리</b> v0.8 기준 · 2026-10-16<div class="links" style="margin-top:8px"><a href="https://dolworry.com">dolworry.com</a><a href="https://www.myaaistudio.com/terms.html">이용약관</a><a href="https://www.myaaistudio.com/privacy.html">개인정보처리방침</a></div></div>
+  <div class="co"><b>먀 AI 스튜디오</b> · 대표 이준원 · 사업자등록번호 758-01-03118<br>서울 마포구 월드컵로28길 34 · myaaistudio@gmail.com · 070-4571-8763<br>화면 속 결 · 문지름 숫자는 예시예요. 요금과 실물 돌 값은 아직 정해지지 않았어요.</div>
+</div></footer>
+</body>
+</html>
