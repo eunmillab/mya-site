@@ -6,3 +6,4 @@ Disallow: /palette.html
 Disallow: /ref-pouch-261013.jpg
 
 Sitemap: https://www.myaaistudio.com/sitemap.xml
+Disallow: /d/
