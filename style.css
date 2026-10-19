@@ -263,7 +263,7 @@ footer{border-top:1px solid var(--line); padding-block:36px 64px; font-size:14px
   .frow{grid-template-columns:1fr; gap:4px}
   .frow .go{grid-column:1}
   .mcta{display:block}
-  body{padding-bottom:80px}
+  body{padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))}
   .stat-row{gap:28px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
@@ -327,7 +327,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .stickybar .in{max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; gap:14px; justify-content:space-between}
 .stickybar .txt{font-size:15px; font-weight:700; color:var(--ink); letter-spacing:normal}
 .stickybar .btn{border-radius:999px; height:44px; padding:0 22px; font-size:15px}
-body{padding-bottom:78px}
+body{padding-bottom:calc(86px + env(safe-area-inset-bottom,0px))}
 .mcta{display:none!important}
 
 @media (max-width:860px){
@@ -673,6 +673,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 @media (max-width:820px){ .sec-head{grid-template-columns:1fr; gap:14px} }
 
 /* ══ 자체 서비스 — 풀폭 2단 ═══════════════════════════════ */
+/* 서비스 묶음 머리 (먀 / 은밀한연구소) */
+.svc-group{padding:clamp(28px,3.4vw,44px) 0 0; border-top:2px solid var(--ink,#111)}
+.svc-group.first{border-top:0; padding-top:0}
+.svc-group .eyebrow{margin:0 0 10px}
+.svc-group-t{margin:0 0 8px; font-size:clamp(20px,2.3vw,28px); line-height:1.3; letter-spacing:-.02em}
+.svc-group-d{margin:0; max-width:52ch; color:var(--grey-2); font-size:var(--t6,15px); line-height:1.65}
+.svc-group + .svc-row{border-top:0; padding-top:clamp(20px,2.6vw,32px)}
 .svc-rows{display:flex; flex-direction:column; gap:clamp(40px,5.5vw,72px); margin-top:clamp(36px,4.6vw,60px)}
 .svc-row{display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(26px,4vw,52px); align-items:center;
   border-top:1px solid var(--line-2); padding-top:clamp(28px,3.6vw,48px)}
