@@ -84,3 +84,15 @@ a.ax-card:hover{border-color:var(--ink)}
 .ax-card .ax-kpi b{display:block; font-size:var(--t4); line-height:var(--t4l); color:var(--ink); font-variant-numeric:tabular-nums}
 .ax-card .ax-src{font-size:var(--t7); line-height:var(--t7l); color:var(--grey)}
 .ax-card .ax-thumb{display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:var(--r-sm); margin-bottom:6px}
+
+/* 자체 서비스: 서비스 명 → 한 줄 요약 → 사진 → 상세 설명, 네 서비스 같은 틀 (261104 대표 「전체 통일」) */
+.svc-rows .svc-row{grid-template-columns:1.1fr 1fr; grid-template-areas:"vis meta" "vis name" "vis line" "vis body"; grid-template-rows:auto auto auto 1fr; row-gap:0; align-items:start}
+.svc-row .sr-meta{grid-area:meta}
+.svc-row .sr-name{grid-area:name; margin-top:10px; font-size:clamp(24px,2.8vw,32px); line-height:1.25}
+.svc-row .sr-line{grid-area:line}
+.svc-row .sr-vis{grid-area:vis}
+.svc-row .sr-body{grid-area:body}
+@media (max-width:860px){
+  .svc-rows .svc-row{grid-template-columns:1fr; grid-template-areas:"meta" "name" "line" "vis" "body"; grid-template-rows:none}
+  .svc-row .sr-vis{margin-top:18px}
+}
