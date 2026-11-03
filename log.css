@@ -29,3 +29,117 @@
 .lg-more{padding-block:30px 80px}
 .lg-more h2{font-size:var(--t3); margin-bottom:16px}
 @media (max-width:860px){ .lg-grid{grid-template-columns:1fr} }
+
+/* v2 (261104) · 코멜 결 본문 + 디에디트 결 갈래 메뉴 · 하단 사이트맵 */
+:root{ --mk:#DCE3EB; --mk-line:#8B95A1; --say-me:#191F28; --say-me-ink:#F2F4F6; --say-ai:#F2F4F6 }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --mk:rgba(196,206,220,.24); --mk-line:#7C8792; --say-me:#F2F4F6; --say-me-ink:#191F28; --say-ai:#202226 } }
+:root[data-theme="dark"]{ --mk:rgba(196,206,220,.24); --mk-line:#7C8792; --say-me:#F2F4F6; --say-me-ink:#191F28; --say-ai:#202226 }
+
+/* 갈래 메뉴: 굵은 영문 대문자 줄 (디에디트) */
+.lg-list .lg-chips{gap:4px 22px; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:34px}
+.lg-list .lg-chip{height:auto; padding:6px 0; border:0; border-radius:0; background:none; font-size:clamp(18px,2.2vw,24px); font-weight:800; letter-spacing:.02em; color:var(--grey-2); text-decoration:none; display:inline-flex; align-items:baseline; gap:6px}
+.lg-list .lg-chip span{font-size:var(--t7); font-weight:600; letter-spacing:0}
+.lg-list .lg-chip i{font-style:normal; font-size:12px; font-weight:600; font-variant-numeric:tabular-nums}
+.lg-list .lg-chip:hover,.lg-list .lg-chip[aria-current="true"]{color:var(--ink); background:none}
+.lg-list .lg-chip[aria-current="true"]{box-shadow:inset 0 -3px 0 var(--ink)}
+.lg-h{font-size:var(--t7); font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--grey); margin:0 0 14px}
+.lg-h ~ .lg-h{margin-top:56px}
+.lg-meta b{letter-spacing:.06em}
+.lg-meta b + span{color:var(--ink-2); font-weight:600}
+.lg-meta b + span::after{content:"·"; margin-left:8px; color:var(--grey-2)}
+
+/* 제작기 큰 카드 */
+.lg-feats{display:grid; grid-template-columns:repeat(2,1fr); gap:36px 24px}
+.lg-feat{display:flex; flex-direction:column; gap:10px; color:var(--ink)}
+.lg-feat img{width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:var(--r-sm); background:var(--bg-2); transition:transform .3s}
+.lg-feat:hover img{transform:scale(1.015)}
+.lg-feat h3{font-size:var(--t3); line-height:var(--t3l); text-wrap:balance}
+.lg-feat p{font-size:var(--t6); line-height:1.6; color:var(--ink-2); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden}
+.lg-mini{font-size:12px; color:var(--grey); font-variant-numeric:tabular-nums}
+.lg-feats .lg-feat:first-child{grid-column:1/-1; display:grid; grid-template-columns:1.3fr 1fr; gap:10px 28px; align-items:center}
+.lg-feats .lg-feat:first-child img{grid-row:1/5}
+.lg-feats .lg-feat:first-child h3{font-size:var(--d3); line-height:1.3}
+.lg-feat:focus-visible{outline:2px solid var(--ink); outline-offset:4px}
+.lv-sub{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:56px; padding:26px 28px; border-radius:var(--r-lg); background:var(--stage-2,#0B0B0C); color:#F2F4F6}
+.lv-sub b{font-size:var(--t4)}
+.lv-sub span{padding:10px 18px; border-radius:999px; background:var(--silver-sheen); color:#191F28; font-weight:700; white-space:nowrap}
+
+/* 제작기 본문 (코멜) */
+.lv .lg-art{max-width:740px}
+.lv .lg-art h1{font-size:clamp(30px,4.2vw,46px)}
+.lv-cover{margin:30px 0 0}
+.lv-cover img{border-radius:var(--r-lg)!important}
+mark{background:linear-gradient(transparent 55%, var(--mk) 55%); color:inherit; border-bottom:1.5px dotted var(--mk-line); padding:0 1px; font-weight:700}
+.lv-sec{margin-top:72px}
+.lv-num{font-size:44px; font-weight:200; line-height:1; letter-spacing:-.02em; color:var(--ink); padding-bottom:16px; border-bottom:1px solid var(--ink); margin:0 0 18px!important}
+.lv .lv-sec h2{font-size:clamp(22px,2.6vw,28px); line-height:1.35; text-wrap:balance; margin-bottom:6px}
+.lv .lv-sec > p{margin-top:16px; font-size:16.5px; line-height:1.85; color:var(--ink-2)}
+.lv-quote{margin:44px 0; padding:0 12px; text-align:center; font-size:clamp(20px,2.4vw,25px); line-height:1.5; font-weight:800; color:var(--ink); text-wrap:balance}
+.lv-quote::before{content:"“"; display:block; font-size:44px; line-height:.6; color:var(--grey-2); margin-bottom:8px}
+.lv-q{margin:44px 0 6px; text-align:center}
+.lv-q span{display:inline; font-size:var(--t3); line-height:1.6; font-weight:800; background:linear-gradient(transparent 50%, var(--mk) 50%); padding:0 4px}
+.lv-say{display:flex; flex-direction:column; gap:4px; margin-top:12px; max-width:86%}
+.lv-say .who{font-size:12px; font-weight:700; color:var(--grey); font-variant-numeric:tabular-nums}
+.lv-say p{margin:0!important; padding:12px 16px; border-radius:18px; font-size:15.5px!important; line-height:1.6!important; text-wrap:pretty}
+.lv-say.me{margin-left:auto; align-items:flex-end}
+.lv-say.me p{background:var(--say-me); color:var(--say-me-ink)!important; border-bottom-right-radius:4px}
+.lv-say.ai p{background:var(--say-ai); color:var(--ink)!important; border-bottom-left-radius:4px}
+.lv-say.ai .who::before{content:""; display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--silver-sheen); margin-right:6px; vertical-align:0}
+.lv-step{margin-top:30px; padding:24px; border-radius:var(--r-lg); background:var(--bg-2)}
+.lv-step-h{display:flex; flex-wrap:wrap; align-items:center; gap:10px}
+.lv-step-h .n{font-size:12px; font-weight:800; letter-spacing:.08em; padding:4px 10px; border-radius:999px; background:var(--ink); color:var(--bg)}
+.lv-step-h b{font-size:var(--t4); line-height:var(--t4l)}
+.lv-tool{display:inline-block; margin-top:12px; font-size:12px; font-weight:600; color:var(--ink-2); padding:4px 10px; border:1px solid var(--line); border-radius:6px; background:var(--bg)}
+.lv-step dl{margin:16px 0 0; display:grid; grid-template-columns:auto 1fr; gap:12px 14px}
+.lv-step dt{font-size:12px; font-weight:800; padding:3px 9px; border-radius:6px; height:fit-content; white-space:nowrap; background:var(--bg); color:var(--ink); border:1px solid var(--line)}
+.lv-step dd{margin:0; font-size:15px; line-height:1.75; color:var(--ink-2)}
+.lv-step figure{margin-top:18px!important}
+.lv-figs{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:28px}
+.lv-figs figure{margin:0!important}
+.lv-note{margin-top:18px!important; padding:12px 14px; border-left:2px solid var(--line); font-size:13.5px!important; line-height:1.7!important; color:var(--grey)!important}
+.lv-making{margin-top:34px; padding:24px; border:1px solid var(--line); border-radius:var(--r-lg)}
+.lv-mk-t{font-size:12px; font-weight:800; letter-spacing:.1em; color:var(--grey); margin:0}
+.lv-mk-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:16px; margin:14px 0 6px}
+.lv-mk-grid span{display:block; font-size:12px; color:var(--grey)}
+.lv-mk-grid b{display:block; margin-top:4px; font-size:var(--t5); font-variant-numeric:tabular-nums}
+.lv-mk-row{display:grid; grid-template-columns:44px 1fr; gap:12px; padding-top:12px; margin-top:12px; border-top:1px solid var(--line-2)}
+.lv-mk-row b{font-size:13px}
+.lv-mk-row ul{margin:0; padding:0; list-style:none; font-size:13.5px; line-height:1.7; color:var(--ink-2)}
+.lv-next{display:block; margin-top:48px; padding:26px 28px; border-radius:var(--r-lg); background:var(--bg-2); color:var(--ink)}
+.lv-next span{font-size:12px; font-weight:800; letter-spacing:.14em; color:var(--grey)}
+.lv-next b{display:block; margin-top:8px; font-size:var(--t3); line-height:var(--t3l)}
+.lv-next i{display:block; margin-top:6px; font-style:normal; font-size:13px; color:var(--grey)}
+.lv-next:hover{background:var(--line)}
+
+/* 하단 사이트맵 (코멜 하단 결) */
+.sm-foot{padding-block:48px 110px}
+.sm-cols{display:grid; grid-template-columns:repeat(5,1fr); gap:28px 20px}
+.sm-cols div{display:flex; flex-direction:column; gap:9px}
+.sm-cols b{font-size:14px; color:var(--ink); margin-bottom:4px}
+.sm-cols a{font-size:14px; color:var(--grey)}
+.sm-cols a:hover{color:var(--ink)}
+.sm-co{margin-top:40px; padding-top:22px; border-top:1px solid var(--line); font-size:13px; line-height:1.8; color:var(--grey)}
+.sm-co b{font-size:14px; color:var(--ink)}
+@media (max-width:860px){
+  .lg-feats,.lg-feats .lg-feat:first-child{grid-template-columns:1fr}
+  .lg-feats .lg-feat:first-child img{grid-row:auto}
+  .sm-cols{grid-template-columns:repeat(2,1fr)}
+  .lv-say{max-width:94%}
+  .lv-figs{grid-template-columns:1fr}
+  .lv-sub{flex-direction:column; align-items:flex-start}
+}
+@media (prefers-reduced-motion: reduce){ .lg-feat img{transition:none} }
+.sb-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-bottom:48px}
+.sb-grid b{font-size:36px; font-weight:200; display:block; padding-bottom:10px; border-bottom:1px solid var(--ink)}
+.sb-grid h3{margin-top:14px; font-size:var(--t4)}
+.sb-grid p{margin-top:8px; font-size:var(--t6); line-height:1.7; color:var(--ink-2)}
+.sb-cta{margin:0 0 56px}
+.sb-cta p{margin-top:6px; font-size:14px; color:#C4CAD2}
+@media (max-width:860px){ .sb-grid{grid-template-columns:1fr} }
+/* 전역 section 여백 · 줄 끄기 (글 안 섹션은 번호 줄로 나눈다) */
+.lg-art section,.lv-sec{padding-block:0; border-top:0}
+.lv-sec{margin-top:88px}
+.lv-mk-grid > div:first-child{grid-column:1/-1}
+.lv-mk-grid > div:first-child b{font-size:var(--t6)}
+.lv figure img{max-height:620px; object-fit:contain; background:var(--bg-2)}
+.lv-cover img{max-height:none}
