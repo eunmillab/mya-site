@@ -1,5 +1,6 @@
 /* AX 리뉴얼 (261104) · 로고 · 명함과 같은 결
-   기준: 먀 디자인 시스템 README (무채색만, 브랜드 자리는 stage 먹색 + 흰 선 「빛 틈」, 로고 판은 네모, 금색은 유심 칩에만) */
+   기준: 먀 디자인 시스템 README (무채색만, 브랜드 자리는 stage 먹색 + 흰 선 「빛 틈」, 로고 판은 네모)
+   261104 대표 「브랜드 톤을 실버 크롬으로」: 금색 폐기, 강조는 style.css 의 --silver-sheen 하나 */
 
 body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
 
@@ -16,8 +17,14 @@ body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFo
 .ax-hero .lead{color:#C4CAD2; max-width:34em}
 .ax-hero .hero-btns{display:flex; flex-wrap:wrap; gap:10px; margin-top:30px}
 .ax-hero .btn.line{color:#fff; border-color:#3A3D42}
+.btn.onstage,.stickybar .btn{background:var(--silver-sheen); color:var(--g900); box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 1px 2px rgba(11,11,12,.12)}
 .ax-sim{display:flex; align-items:center; gap:12px; margin-top:34px; color:#B0B8C1; font-size:var(--t7); line-height:var(--t7l)}
 .ax-sim img{width:44px; height:44px; flex:none}
+/* 헤더는 일반 타이포 락업 (261104 대표 「위에는 일반 타이포로」) */
+.logo .wm-nav{height:30px}
+@media (max-width:640px){ .logo .wm-nav{height:24px} }
+/* 모바일은 메뉴가 숨어서 문의 단추가 로고에 붙는다 (261104 대표 「배치가 이상해」): 오른쪽 끝으로 */
+@media (max-width:860px){ .nav-in > .btn{margin-left:auto} }
 
 /* 섹션 머리 */
 .ax-h{font-size:var(--d2); line-height:1.3}
