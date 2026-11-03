@@ -70,3 +70,9 @@ a.ax-card:hover{border-color:var(--ink)}
 }
 .ax-hero .hero-btns{justify-content:flex-start}
 .ax-hero .btn{border-radius:var(--r-sm)}
+
+/* 외주 카드: 맡은 뒤 달라진 숫자 */
+.ax-card .ax-kpi{list-style:none; margin:8px 0 0; padding:12px 0 0; border-top:1px solid var(--line); display:grid; gap:10px}
+.ax-card .ax-kpi li{margin:0; font-size:var(--t7); line-height:var(--t7l); color:var(--ink-2)}
+.ax-card .ax-kpi b{display:block; font-size:var(--t4); line-height:var(--t4l); color:var(--ink); font-variant-numeric:tabular-nums}
+.ax-card .ax-src{font-size:var(--t7); line-height:var(--t7l); color:var(--grey)}
