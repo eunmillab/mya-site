@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI로 만든 앱을 내 도메인에 연결해야 할 때 | 먀 AI 스튜디오</title>
+<meta name="description" content="챙겨 앱 본체는 Claude 아티팩트 주소에 있어 도메인으로 옮길 수 없었고, 소개 → 로그인 관문 → 앱 세 겹으로 사이트를 짰어요.">
+<link rel="canonical" href="https://www.myaaistudio.com/log/b-app-behind-domain-gate.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="먀 AI 스튜디오">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="AI로 만든 앱을 내 도메인에 연결해야 할 때">
+<meta property="og:description" content="챙겨 앱 본체는 Claude 아티팩트 주소에 있어 도메인으로 옮길 수 없었고, 소개 → 로그인 관문 → 앱 세 겹으로 사이트를 짰어요.">
+<meta property="og:url" content="https://www.myaaistudio.com/log/b-app-behind-domain-gate.html">
+<meta property="og:image" content="https://www.myaaistudio.com/og.jpg">
+<meta name="theme-color" content="#0B0B0C">
+<base href="../">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css?v=1790434343">
+<link rel="stylesheet" href="ax.css?v=7">
+<link rel="stylesheet" href="log.css?v=1">
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html" aria-label="먀 AI STUDIO 홈"><picture><source srcset="logo/lockup-dark.svg" media="(prefers-color-scheme: dark)"><img class="wm-nav" src="logo/lockup-light.svg" alt="먀 AI STUDIO" width="154" height="36"></picture></a>
+    <nav class="nav-links">
+      <a href="index.html#ax">AX 구독</a>
+      <a href="log.html">AX 기록</a>
+      <a href="index.html#clients">외주</a>
+      <a href="team.html">팀</a>
+    </nav>
+    <a class="btn sm silver" href="index.html#contact">문의하기</a>
+  </div>
+</header>
+<main class="lg-post">
+  <article class="wrap lg-art">
+    <p class="lg-meta"><b>사이트 · 몰</b>챙겨 · 2026.10.15</p>
+    <h1>AI로 만든 앱을 내 도메인에 연결해야 할 때</h1>
+    <p class="lg-lead">챙겨 앱 본체는 Claude 아티팩트 주소에 있어 도메인으로 옮길 수 없었고, 소개 → 로그인 관문 → 앱 세 겹으로 사이트를 짰어요.</p>
+    <section><h2>무슨 일이 있었나요</h2><p>챙겨 도메인을 샀지만, 앱 본체는 Claude 아티팩트 주소로만 열렸어요. 자체 회원가입과 로그인은 아직 정하지 않은 상태였어요.</p></section>
+    
+    <section><h2>왜 그랬나요</h2><p>앱이 아티팩트 안에서 돌아서 도메인 서버로 그대로 옮길 수 없었어요. 앱 주소를 소개 페이지 곳곳에 박아 두면, 나중에 호스팅을 옮길 때 그 링크를 다 찾아 바꿔야 해요.</p></section>
+    <section><h2>이렇게 바꿨어요</h2><p>사이트를 소개, 로그인 관문, 앱 세 겹으로 나눴어요. 소개 페이지의 시작 단추 3곳은 전부 /login 으로 보내고, 소개에는 앱 주소를 하나도 넣지 않았어요.</p><p>관문 페이지에는 「Claude 계정으로 로그인」, 「먼저 설명서 읽기」, 초대 받는 법 3단계만 두고 검색에서 빼게 했어요. /app · /guide 는 넘겨주기 규칙으로 처리했어요.</p><p>관문 아이콘이 흰 바탕으로 보이던 문제도 잡았어요. SVG 크기를 바꾸는 치환이 배경 사각형에도 걸려 배경 크기가 사라졌던 거라, 배경 사각형만 되돌렸어요.</p></section>
+    <section><h2>달라진 것</h2><p>사이트 폴더 하나가 원본이 되고, 아티팩트 미리보기판은 상대 주소만 바꿔 같이 돌아가요. 먀 사이트에도 챙겨 페이지를 올려 정상으로 열리는 걸 확인했어요.</p><p>앱 주소가 바뀌어도 관문 한 곳만 고치면 되게 됐어요. 도메인 연결은 대표 계정 작업으로 남아 있어요.</p></section>
+    <aside class="lg-rule"><b>다음에도 쓰는 기준</b><p>앱 주소가 바뀔 수 있으면 손님에게는 관문 주소 하나만 알려 주고, 실제 앱 주소는 관문 뒤에서 바꾼다.</p></aside>
+    <p class="lg-back"><a href="log.html">AX 기록 전체 보기</a></p>
+  </article>
+  <section class="wrap lg-more"><h2>같은 갈래의 기록</h2><div class="lg-grid"><a class="lg-card" href="log/d-catalog-guide-mismatch.html" data-cat="사이트 · 몰"><span class="lg-meta"><b>사이트 · 몰</b>은밀한연구소 · 2026.10.28</span><h3>상품 수천 개의 설명을 한 번에 만들 때 생기는 일</h3><p>상품 3,816건 상세를 자동으로 만들자 가이드가 엉뚱한 상품에 붙는 오류가 나왔고, 원인을 코드 줄 단위로 찾아 전수 검사로 막았어요.</p></a><a class="lg-card" href="log/d-cafe24-category-tree.html" data-cat="사이트 · 몰"><span class="lg-meta"><b>사이트 · 몰</b>은밀한연구소 · 2026.10.27</span><h3>쇼핑몰 분류를 옮겼는데 저장이 안 됐을 때</h3><p>화면에선 옮겨진 분류가 서버엔 저장되지 않던 문제를, 네트워크 요청으로 성공을 판단하는 방식으로 풀었어요.</p></a><a class="lg-card" href="log/d-cafe24-adult-badge.html" data-cat="사이트 · 몰"><span class="lg-meta"><b>사이트 · 몰</b>은밀한연구소 · 2026.10.26</span><h3>성인 상품 사진이 마우스만 올려도 보일 때</h3><p>카페24가 걸러 내는 스타일 대신 스크립트로 19 표시를 바꾸고, 마우스를 올리면 실제 사진이 드러나던 구멍까지 막았어요.</p></a></div></section>
+</main>
+<footer>
+  <div class="wrap foot-in">
+    <div><b>먀 AI 스튜디오 · MYA AI STUDIO</b><p><a href="mailto:myaaistudio@gmail.com">myaaistudio@gmail.com</a> · <a href="tel:07045718763">070-4571-8763</a></p></div>
+    <div><p><a href="index.html">홈</a> · <a href="log.html">AX 기록</a> · <a href="team.html">팀</a> · <a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a></p></div>
+  </div>
+</footer>
+<div class="stickybar"><div class="in"><span class="txt">비슷한 일로 막혀 있다면 30분이면 정리해 드려요</span><a class="btn" href="index.html#contact">문의하기</a></div></div>
+</html>

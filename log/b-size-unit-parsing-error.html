@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>치수를 자동으로 뽑았더니 4cm 가 40cm 로 바뀔 때 | 먀 AI 스튜디오</title>
+<meta name="description" content="상품 설명에서 치수를 자동으로 뽑다가 단위 오류가 났고, 카테고리마다 세 개씩 사람이 보는 확인 시트로 잡아냈어요.">
+<link rel="canonical" href="https://www.myaaistudio.com/log/b-size-unit-parsing-error.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="먀 AI 스튜디오">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="치수를 자동으로 뽑았더니 4cm 가 40cm 로 바뀔 때">
+<meta property="og:description" content="상품 설명에서 치수를 자동으로 뽑다가 단위 오류가 났고, 카테고리마다 세 개씩 사람이 보는 확인 시트로 잡아냈어요.">
+<meta property="og:url" content="https://www.myaaistudio.com/log/b-size-unit-parsing-error.html">
+<meta property="og:image" content="https://www.myaaistudio.com/og.jpg">
+<meta name="theme-color" content="#0B0B0C">
+<base href="../">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css?v=1790434343">
+<link rel="stylesheet" href="ax.css?v=7">
+<link rel="stylesheet" href="log.css?v=1">
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html" aria-label="먀 AI STUDIO 홈"><picture><source srcset="logo/lockup-dark.svg" media="(prefers-color-scheme: dark)"><img class="wm-nav" src="logo/lockup-light.svg" alt="먀 AI STUDIO" width="154" height="36"></picture></a>
+    <nav class="nav-links">
+      <a href="index.html#ax">AX 구독</a>
+      <a href="log.html">AX 기록</a>
+      <a href="index.html#clients">외주</a>
+      <a href="team.html">팀</a>
+    </nav>
+    <a class="btn sm silver" href="index.html#contact">문의하기</a>
+  </div>
+</header>
+<main class="lg-post">
+  <article class="wrap lg-art">
+    <p class="lg-meta"><b>자동화</b>은밀한연구소 · 2026.10.14</p>
+    <h1>치수를 자동으로 뽑았더니 4cm 가 40cm 로 바뀔 때</h1>
+    <p class="lg-lead">상품 설명에서 치수를 자동으로 뽑다가 단위 오류가 났고, 카테고리마다 세 개씩 사람이 보는 확인 시트로 잡아냈어요.</p>
+    <section><h2>무슨 일이 있었나요</h2><p>상품 설명 글에서 치수를 자동으로 뽑아 사이즈 안내를 만들었어요. 대표가 「카테고리별로 사람의 체크가 필요할 거 같다」고 해서 확인 시트를 만들었더니 바로 오류가 하나 나왔어요.</p><p>원문에 「세로 1cm 가로 3.8cm」 뒤에 「40 × 14mm」가 이어지는 상품이었는데, 40 이 40cm 로 읽혀서 400mm 가 됐어요. 손에 쥐는 작은 제품이 40cm 일 수는 없었어요.</p></section>
+    
+    <section><h2>왜 그랬나요</h2><p>한 줄에 cm 가 하나라도 있으면 단위 없는 숫자를 전부 cm 로 보는 「줄 전체 기본 단위」 규칙을 쓰고 있었어요.</p></section>
+    <section><h2>이렇게 바꿨어요</h2><p>단위 없는 숫자는 바로 뒤에 나오는 가장 가까운 단위를 따르게 바꿨어요.</p><p>6개 카테고리마다 가장 작은 것 · 중앙값 · 가장 큰 것 세 개를 뽑아 그림 시트로 만들고, 사람이 눈으로 보게 했어요. 이상한 값은 대개 맨 끝에 몰려 있어서 세 개만 봐도 잡혀요.</p></section>
+    <section><h2>달라진 것</h2><p>한 카테고리의 최댓값이 400 에서 40 으로 바로잡혔어요. 치수가 있는 상품 1,262건을 6개 카테고리 시트로 남겨 다음 점검에도 써요.</p></section>
+    <aside class="lg-rule"><b>다음에도 쓰는 기준</b><p>자동으로 뽑은 숫자는 카테고리마다 최소 · 중앙 · 최대 세 개를 사람이 본다. 단위는 줄 전체가 아니라 가장 가까운 단위를 따른다.</p></aside>
+    <p class="lg-back"><a href="log.html">AX 기록 전체 보기</a></p>
+  </article>
+  <section class="wrap lg-more"><h2>같은 갈래의 기록</h2><div class="lg-grid"><a class="lg-card" href="log/d-chaenggyeo-erp-v3.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>챙겨 · 2026.11.03</span><h3>남이 만든 사내 시스템을 보고 우리 것을 고칠 때</h3><p>다른 회사의 AI 업무 시스템 영상을 기능 단위로 뜯어 챙겨와 비교하고, 근본 차이를 정리한 뒤 고객사별 업무 앱으로 넓혔어요.</p></a><a class="lg-card" href="log/d-care-monthly-report.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>케어콘돔 · 2026.11.01</span><h3>고객사 광고 보고서가 불친절하다는 말을 들을 때</h3><p>숫자만 늘어놓던 보고서를 해석 상자와 용어 풀이가 붙은 월간 보고서로 바꾸고, 다음 달부터 명령 한 줄로 나오게 했어요.</p></a><a class="lg-card" href="log/d-care-ad-bot.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>케어콘돔 · 2026.11.01</span><h3>AI만으로 광고 소재를 뽑으려다 지칠 때</h3><p>소재 한 장이 나오기까지 거친 길을 9단계 공정으로 적고, 사람이 꼭 끼는 자리를 셋으로 고정해 품목마다 돌리는 스킬로 묶었어요.</p></a></div></section>
+</main>
+<footer>
+  <div class="wrap foot-in">
+    <div><b>먀 AI 스튜디오 · MYA AI STUDIO</b><p><a href="mailto:myaaistudio@gmail.com">myaaistudio@gmail.com</a> · <a href="tel:07045718763">070-4571-8763</a></p></div>
+    <div><p><a href="index.html">홈</a> · <a href="log.html">AX 기록</a> · <a href="team.html">팀</a> · <a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a></p></div>
+  </div>
+</footer>
+<div class="stickybar"><div class="in"><span class="txt">비슷한 일로 막혀 있다면 30분이면 정리해 드려요</span><a class="btn" href="index.html#contact">문의하기</a></div></div>
+</html>

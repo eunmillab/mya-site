@@ -1,0 +1,31 @@
+/* AX 기록 (261104) · 목록 카드 + 글 본문 */
+.lg-hero h1{color:#fff; font-size:var(--d1); line-height:1.25; margin-top:14px}
+.lg-list{padding-block:40px 80px}
+.lg-chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px}
+.lg-chip{height:36px; padding:0 14px; border:1px solid var(--line); border-radius:999px; background:var(--bg); color:var(--ink-2); font:inherit; font-size:var(--t7); font-weight:700; cursor:pointer}
+.lg-chip[aria-pressed="true"]{background:var(--silver-sheen); color:var(--g900); border-color:transparent}
+.lg-chip:focus-visible,.lg-card:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+.lg-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+.lg-card{display:flex; flex-direction:column; gap:8px; padding:22px; border:1px solid var(--line); border-radius:var(--r-lg); background:var(--bg); color:var(--ink)}
+.lg-card:hover{border-color:var(--ink)}
+.lg-card h3{font-size:var(--t4); line-height:var(--t4l); text-wrap:balance}
+.lg-card p{font-size:var(--t7); line-height:var(--t7l); color:var(--ink-2)}
+.lg-meta{display:flex; flex-wrap:wrap; gap:8px; align-items:center; font-size:var(--t7); color:var(--grey)}
+.lg-meta b{color:var(--ink); font-weight:700}
+.lg-post{padding-block:40px 40px}
+.lg-art{max-width:720px}
+.lg-art h1{font-size:var(--d2); line-height:1.3; margin-top:12px; text-wrap:balance}
+.lg-lead{margin-top:14px; font-size:var(--t5); line-height:1.6; color:var(--ink-2)}
+.lg-art section{margin-top:36px}
+.lg-art h2{font-size:var(--t4); line-height:var(--t4l)}
+.lg-art section p{margin-top:10px; font-size:var(--t6); line-height:1.75; color:var(--ink-2)}
+.lg-art figure{margin:28px 0 0}
+.lg-art figure img{display:block; width:100%; height:auto; border-radius:var(--r-sm); border:1px solid var(--line)}
+.lg-art figcaption{margin-top:8px; font-size:var(--t7); color:var(--grey)}
+.lg-rule{margin-top:36px; padding:20px 22px; border:1px solid var(--line); border-radius:var(--r-lg)}
+.lg-rule b{font-size:var(--t7); color:var(--grey)}
+.lg-rule p{margin-top:6px; font-size:var(--t5); line-height:1.55; font-weight:700; color:var(--ink)}
+.lg-back{margin-top:30px; font-weight:700}
+.lg-more{padding-block:30px 80px}
+.lg-more h2{font-size:var(--t3); margin-bottom:16px}
+@media (max-width:860px){ .lg-grid{grid-template-columns:1fr} }

@@ -96,3 +96,12 @@ a.ax-card:hover{border-color:var(--ink)}
   .svc-rows .svc-row{grid-template-columns:1fr; grid-template-areas:"meta" "name" "line" "vis" "body"; grid-template-rows:none}
   .svc-row .sr-vis{margin-top:18px}
 }
+
+/* 히어로 사정 칸 (261104, 코멜 결의 「고민 한 줄」) */
+.ax-worry{margin-top:26px; max-width:560px}
+.ax-worry-k{font-size:var(--t7); color:#B0B8C1}
+.ax-worry-box{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:8px; min-height:60px; padding:10px 10px 10px 18px; border:1px solid #3A3D42; border-radius:var(--r-lg); background:rgba(255,255,255,.04); color:#fff; font-size:var(--t5); font-weight:600}
+.ax-worry-box:hover{border-color:#8A929C}
+.ax-worry-box:focus-visible{outline:2px solid #fff; outline-offset:2px}
+.ax-worry-go{flex:none; display:grid; place-items:center; width:40px; height:40px; border-radius:999px; background:var(--silver-sheen); color:var(--g900); font-weight:700}
+.ax-price{margin-top:16px; font-size:var(--t7); color:var(--grey)}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>상품 크기 데이터에 무게가 섞여 있을 때 | 먀 AI 스튜디오</title>
+<meta name="description" content="치수 파서가 「450g」을 높이 450mm로 읽고 있었고, 규칙 네 가지로 다시 짜서 1,261건에 사이즈 안내를 넣었어요.">
+<link rel="canonical" href="https://www.myaaistudio.com/log/a-size-data-weight-as-height.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="먀 AI 스튜디오">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="상품 크기 데이터에 무게가 섞여 있을 때">
+<meta property="og:description" content="치수 파서가 「450g」을 높이 450mm로 읽고 있었고, 규칙 네 가지로 다시 짜서 1,261건에 사이즈 안내를 넣었어요.">
+<meta property="og:url" content="https://www.myaaistudio.com/log/a-size-data-weight-as-height.html">
+<meta property="og:image" content="https://www.myaaistudio.com/og.jpg">
+<meta name="theme-color" content="#0B0B0C">
+<base href="../">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css?v=1790434343">
+<link rel="stylesheet" href="ax.css?v=7">
+<link rel="stylesheet" href="log.css?v=1">
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html" aria-label="먀 AI STUDIO 홈"><picture><source srcset="logo/lockup-dark.svg" media="(prefers-color-scheme: dark)"><img class="wm-nav" src="logo/lockup-light.svg" alt="먀 AI STUDIO" width="154" height="36"></picture></a>
+    <nav class="nav-links">
+      <a href="index.html#ax">AX 구독</a>
+      <a href="log.html">AX 기록</a>
+      <a href="index.html#clients">외주</a>
+      <a href="team.html">팀</a>
+    </nav>
+    <a class="btn sm silver" href="index.html#contact">문의하기</a>
+  </div>
+</header>
+<main class="lg-post">
+  <article class="wrap lg-art">
+    <p class="lg-meta"><b>자동화</b>은밀한연구소 · 2026.10.13</p>
+    <h1>상품 크기 데이터에 무게가 섞여 있을 때</h1>
+    <p class="lg-lead">치수 파서가 「450g」을 높이 450mm로 읽고 있었고, 규칙 네 가지로 다시 짜서 1,261건에 사이즈 안내를 넣었어요.</p>
+    <section><h2>무슨 일이 있었나요</h2><p>상세페이지에 사이즈 안내를 넣으려고 치수 데이터를 보니, 원문 「160 x 70 x 70mm (450g)」의 높이가 450mm로 잡혀 있었어요.</p><p>무게 표기가 든 행 267건 중 233건(전체 1,285건의 18%)이 무게를 치수로 읽었고, 높이가 실제로 틀어진 것은 158건이었어요.</p></section>
+    
+    <section><h2>왜 그랬나요</h2><p>기존 파서는 5~600 사이 숫자를 단위와 상관없이 전부 치수로 봤어요.</p><p>한 줄에 「길이 15cm 폭 6.5cm」처럼 단위가 섞이거나, 단위 없이 「16.5 x 7.5 x 7.5」로 적힌 것도 있었어요. 내부 길이나 케이블 길이 같은 보조 치수도 섞여 있었어요.</p></section>
+    <section><h2>이렇게 바꿨어요</h2><p>규칙을 네 가지로 다시 짰어요. 무게를 먼저 지우고, 보조 치수를 지우고, 숫자마다 뒤의 단위를 보고, 단위가 없고 숫자가 모두 작으면 cm로 읽어요.</p><p>허용 범위는 10~1500mm로 넓혔어요. 실제로 70~120cm인 상품이 있어 상한 600으로는 담을 수 없었어요.</p><p>기계로 가를 수 없는 경고 21건은 자동 삽입에서 빼고 대표 확인으로 넘겼어요.</p><p>상세설명 맨 아래에 치수 원문 한 줄과 도식을 붙이고, 표식 주석으로 중복 삽입을 막아 다시 돌려도 안전하게 했어요. 기존 설명은 건드리지 않았어요.</p></section>
+    <section><h2>달라진 것</h2><p>정상으로 읽힌 1,262건 중 1,261건에 넣었고 실패는 0이었어요. 남은 1건은 미리 시험으로 넣어 둔 상품이에요.</p><p>정상 높이 분포가 최소 35mm, 중앙 153mm, 최대 550mm가 되면서 전에 있던 1,900mm 같은 값이 사라졌어요.</p></section>
+    <aside class="lg-rule"><b>다음에도 쓰는 기준</b><p>숫자를 읽을 때는 단위를 같이 읽는다. 무게처럼 다른 단위의 숫자는 먼저 걷어낸다.</p></aside>
+    <p class="lg-back"><a href="log.html">AX 기록 전체 보기</a></p>
+  </article>
+  <section class="wrap lg-more"><h2>같은 갈래의 기록</h2><div class="lg-grid"><a class="lg-card" href="log/d-chaenggyeo-erp-v3.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>챙겨 · 2026.11.03</span><h3>남이 만든 사내 시스템을 보고 우리 것을 고칠 때</h3><p>다른 회사의 AI 업무 시스템 영상을 기능 단위로 뜯어 챙겨와 비교하고, 근본 차이를 정리한 뒤 고객사별 업무 앱으로 넓혔어요.</p></a><a class="lg-card" href="log/d-care-monthly-report.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>케어콘돔 · 2026.11.01</span><h3>고객사 광고 보고서가 불친절하다는 말을 들을 때</h3><p>숫자만 늘어놓던 보고서를 해석 상자와 용어 풀이가 붙은 월간 보고서로 바꾸고, 다음 달부터 명령 한 줄로 나오게 했어요.</p></a><a class="lg-card" href="log/d-care-ad-bot.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>케어콘돔 · 2026.11.01</span><h3>AI만으로 광고 소재를 뽑으려다 지칠 때</h3><p>소재 한 장이 나오기까지 거친 길을 9단계 공정으로 적고, 사람이 꼭 끼는 자리를 셋으로 고정해 품목마다 돌리는 스킬로 묶었어요.</p></a></div></section>
+</main>
+<footer>
+  <div class="wrap foot-in">
+    <div><b>먀 AI 스튜디오 · MYA AI STUDIO</b><p><a href="mailto:myaaistudio@gmail.com">myaaistudio@gmail.com</a> · <a href="tel:07045718763">070-4571-8763</a></p></div>
+    <div><p><a href="index.html">홈</a> · <a href="log.html">AX 기록</a> · <a href="team.html">팀</a> · <a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a></p></div>
+  </div>
+</footer>
+<div class="stickybar"><div class="in"><span class="txt">비슷한 일로 막혀 있다면 30분이면 정리해 드려요</span><a class="btn" href="index.html#contact">문의하기</a></div></div>
+</html>

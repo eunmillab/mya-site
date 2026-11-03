@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>카톡방 · 캡처 · 맥 파일 정리를 서버 없이 시작할 때 | 먀 AI 스튜디오</title>
+<meta name="description" content="정리 앱 고요의 첫 판에서 카톡을 자동으로 못 읽고 글자 인식 라이브러리도 못 쓰는 벽에 막혔고, 붙여넣기와 누를 때만 AI 보기로 풀었어요.">
+<link rel="canonical" href="https://www.myaaistudio.com/log/b-cleanup-app-without-server.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="먀 AI 스튜디오">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="카톡방 · 캡처 · 맥 파일 정리를 서버 없이 시작할 때">
+<meta property="og:description" content="정리 앱 고요의 첫 판에서 카톡을 자동으로 못 읽고 글자 인식 라이브러리도 못 쓰는 벽에 막혔고, 붙여넣기와 누를 때만 AI 보기로 풀었어요.">
+<meta property="og:url" content="https://www.myaaistudio.com/log/b-cleanup-app-without-server.html">
+<meta property="og:image" content="https://www.myaaistudio.com/og.jpg">
+<meta name="theme-color" content="#0B0B0C">
+<base href="../">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css?v=1790434343">
+<link rel="stylesheet" href="ax.css?v=7">
+<link rel="stylesheet" href="log.css?v=1">
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html" aria-label="먀 AI STUDIO 홈"><picture><source srcset="logo/lockup-dark.svg" media="(prefers-color-scheme: dark)"><img class="wm-nav" src="logo/lockup-light.svg" alt="먀 AI STUDIO" width="154" height="36"></picture></a>
+    <nav class="nav-links">
+      <a href="index.html#ax">AX 구독</a>
+      <a href="log.html">AX 기록</a>
+      <a href="index.html#clients">외주</a>
+      <a href="team.html">팀</a>
+    </nav>
+    <a class="btn sm silver" href="index.html#contact">문의하기</a>
+  </div>
+</header>
+<main class="lg-post">
+  <article class="wrap lg-art">
+    <p class="lg-meta"><b>자동화</b>고요 · 2026.10.15</p>
+    <h1>카톡방 · 캡처 · 맥 파일 정리를 서버 없이 시작할 때</h1>
+    <p class="lg-lead">정리 앱 고요의 첫 판에서 카톡을 자동으로 못 읽고 글자 인식 라이브러리도 못 쓰는 벽에 막혔고, 붙여넣기와 누를 때만 AI 보기로 풀었어요.</p>
+    <section><h2>무슨 일이 있었나요</h2><p>고요는 쌓인 스크린샷 · 카톡방 · 맥 파일 가운데 치울 것만 골라 주는 앱이에요. 그런데 첫 판부터 세 군데가 막혀 있었어요.</p><p>카톡은 자동으로 읽을 약관 · API 가 없고, 사진 속 글자 인식 라이브러리는 앱이 도는 화면의 보안 정책 때문에 쓸 수 없었어요. 아이폰 앱 정리는 iOS 제약으로 아예 안 됐어요.</p></section>
+    <figure><img src="log/img/b-cleanup-app-without-server-1.jpg" alt="고요 0.1 네 칸 화면(시험용 데이터). 홈 · 캡처 · 카톡방 · 맥 파일" loading="lazy"><figcaption>고요 0.1 네 칸 화면(시험용 데이터). 홈 · 캡처 · 카톡방 · 맥 파일</figcaption></figure>
+    <section><h2>왜 그랬나요</h2><p>플랫폼이 막아 둔 길을 그대로 뚫으려 하면 약관이나 보안 정책을 어기게 돼요. 개인 기기 데이터를 서버로 보내지 않는다는 원칙도 지켜야 했어요.</p></section>
+    <section><h2>이렇게 바꿨어요</h2><p>카톡은 채팅방 목록을 글로 붙여넣으면 줄마다 방 이름 · 마지막 날짜 · 안 읽음 수를 읽는 파서를 만들었어요. 「2026.7.3」 「10월 14일」 「어제」 「오후 9:12」 같은 꼴을 다 읽어요.</p><p>캡처는 「AI로 알아보기」를 누를 때만 그 한 장을 줄여 Claude 가 장소 · 영수증 · 예약 · 대화 · 레퍼런스로 나누게 했어요. 기한이 지난 예약은 자동으로 치울 후보가 돼요.</p><p>맥 파일은 맥에서 도는 작은 도구가 이름 · 크기 · 날짜만 담은 보고서를 만들고, 그 파일을 앱에 끌어다 놓으면 중복 · 겹친 폴더 · 풀린 압축 · 묵은 스크린샷으로 묶어 보여 줘요.</p><p>저장은 브라우저에만 하고, 앱은 아무것도 지우지 않아요. 치울 목록을 복사해 주면 지우는 건 사람이 직접 해요.</p></section>
+    <section><h2>달라진 것</h2><p>채팅방 목록 6줄 시험을 전부 맞게 읽었고, 세 가지 폭에서 콘솔 오류 0 으로 첫 판을 냈어요.</p><p>이 첫 판이 다음 날 돌을 쥐는 정리 앱 「돌워리」로 이어졌어요.</p></section>
+    <aside class="lg-rule"><b>다음에도 쓰는 기준</b><p>플랫폼이 막아 둔 건 뚫지 말고 사람이 붙여넣는 길을 만든다. 정리 앱은 지우지 않고 치울 목록만 건넨다.</p></aside>
+    <p class="lg-back"><a href="log.html">AX 기록 전체 보기</a></p>
+  </article>
+  <section class="wrap lg-more"><h2>같은 갈래의 기록</h2><div class="lg-grid"><a class="lg-card" href="log/d-chaenggyeo-erp-v3.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>챙겨 · 2026.11.03</span><h3>남이 만든 사내 시스템을 보고 우리 것을 고칠 때</h3><p>다른 회사의 AI 업무 시스템 영상을 기능 단위로 뜯어 챙겨와 비교하고, 근본 차이를 정리한 뒤 고객사별 업무 앱으로 넓혔어요.</p></a><a class="lg-card" href="log/d-care-monthly-report.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>케어콘돔 · 2026.11.01</span><h3>고객사 광고 보고서가 불친절하다는 말을 들을 때</h3><p>숫자만 늘어놓던 보고서를 해석 상자와 용어 풀이가 붙은 월간 보고서로 바꾸고, 다음 달부터 명령 한 줄로 나오게 했어요.</p></a><a class="lg-card" href="log/d-care-ad-bot.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>케어콘돔 · 2026.11.01</span><h3>AI만으로 광고 소재를 뽑으려다 지칠 때</h3><p>소재 한 장이 나오기까지 거친 길을 9단계 공정으로 적고, 사람이 꼭 끼는 자리를 셋으로 고정해 품목마다 돌리는 스킬로 묶었어요.</p></a></div></section>
+</main>
+<footer>
+  <div class="wrap foot-in">
+    <div><b>먀 AI 스튜디오 · MYA AI STUDIO</b><p><a href="mailto:myaaistudio@gmail.com">myaaistudio@gmail.com</a> · <a href="tel:07045718763">070-4571-8763</a></p></div>
+    <div><p><a href="index.html">홈</a> · <a href="log.html">AX 기록</a> · <a href="team.html">팀</a> · <a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a></p></div>
+  </div>
+</footer>
+<div class="stickybar"><div class="in"><span class="txt">비슷한 일로 막혀 있다면 30분이면 정리해 드려요</span><a class="btn" href="index.html#contact">문의하기</a></div></div>
+</html>

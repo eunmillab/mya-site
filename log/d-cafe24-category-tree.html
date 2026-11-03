@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>쇼핑몰 분류를 옮겼는데 저장이 안 됐을 때 | 먀 AI 스튜디오</title>
+<meta name="description" content="화면에선 옮겨진 분류가 서버엔 저장되지 않던 문제를, 네트워크 요청으로 성공을 판단하는 방식으로 풀었어요.">
+<link rel="canonical" href="https://www.myaaistudio.com/log/d-cafe24-category-tree.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="먀 AI 스튜디오">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="쇼핑몰 분류를 옮겼는데 저장이 안 됐을 때">
+<meta property="og:description" content="화면에선 옮겨진 분류가 서버엔 저장되지 않던 문제를, 네트워크 요청으로 성공을 판단하는 방식으로 풀었어요.">
+<meta property="og:url" content="https://www.myaaistudio.com/log/d-cafe24-category-tree.html">
+<meta property="og:image" content="https://www.myaaistudio.com/og.jpg">
+<meta name="theme-color" content="#0B0B0C">
+<base href="../">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css?v=1790434343">
+<link rel="stylesheet" href="ax.css?v=7">
+<link rel="stylesheet" href="log.css?v=1">
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html" aria-label="먀 AI STUDIO 홈"><picture><source srcset="logo/lockup-dark.svg" media="(prefers-color-scheme: dark)"><img class="wm-nav" src="logo/lockup-light.svg" alt="먀 AI STUDIO" width="154" height="36"></picture></a>
+    <nav class="nav-links">
+      <a href="index.html#ax">AX 구독</a>
+      <a href="log.html">AX 기록</a>
+      <a href="index.html#clients">외주</a>
+      <a href="team.html">팀</a>
+    </nav>
+    <a class="btn sm silver" href="index.html#contact">문의하기</a>
+  </div>
+</header>
+<main class="lg-post">
+  <article class="wrap lg-art">
+    <p class="lg-meta"><b>사이트 · 몰</b>은밀한연구소 · 2026.10.27</p>
+    <h1>쇼핑몰 분류를 옮겼는데 저장이 안 됐을 때</h1>
+    <p class="lg-lead">화면에선 옮겨진 분류가 서버엔 저장되지 않던 문제를, 네트워크 요청으로 성공을 판단하는 방식으로 풀었어요.</p>
+    <section><h2>무슨 일이 있었나요</h2><p>쇼핑몰 메뉴의 「연구실」을 누르면 옛 분류가 나오고, 실제 상품 3,865건이 붙은 새 8대분류는 메뉴에 없었어요. 분류가 두 벌로 존재했어요.</p><p>카페24 분류 트리는 끌어다 놓기만 되고 상위 분류를 바꾸는 입력칸이 없었어요. 자동화 도구로 끌어다 놓아도 트리가 움직이지 않았어요.</p></section>
+    
+    <section><h2>왜 그랬나요</h2><p>트리 객체를 직접 잡아 옮기면 화면은 바뀌는데, 「분류이동저장」을 눌러도 서버로 요청이 나가지 않았어요. 카페24가 자기 드롭 콜백 안에서 변경을 기록하기 때문이었어요. 화면이 바뀐 것만 보고 성공이라고 두 번 잘못 판단했어요.</p></section>
+    <section><h2>이렇게 바꿨어요</h2><p>트리의 드롭 콜백을 직접 부른 뒤 저장 버튼을 눌러, 저장 요청(CategorySave)이 네트워크에 찍히는지로 성공을 판단했어요. 한 번에 다 안 옮겨지면 여러 번 반복했어요.</p><p>확인 창이 뜨는 일괄 처리(판매함 · 진열안함 등)는 자동화 도구가 누를 수 없는 창이라, 엑셀 일괄 수정이나 대표 클릭으로 돌릴 목록을 따로 만들었어요.</p></section>
+    <section><h2>달라진 것</h2><p>새 8대분류는 「연구실」 아래로, 옛 분류는 「미진열」 아래로 정리됐고, 상품 목록 페이지 제목이 「연구실 - 분류명」으로 바뀐 것까지 확인했어요. 헤더 메뉴 하나는 별도 메뉴 설정에서 오는 것으로 보여 미해결로 남겼어요.</p></section>
+    <aside class="lg-rule"><b>다음에도 쓰는 기준</b><p>관리자 화면 자동화는 화면 변화가 아니라 서버로 나간 요청으로 성공을 판단한다.</p></aside>
+    <p class="lg-back"><a href="log.html">AX 기록 전체 보기</a></p>
+  </article>
+  <section class="wrap lg-more"><h2>같은 갈래의 기록</h2><div class="lg-grid"><a class="lg-card" href="log/d-catalog-guide-mismatch.html" data-cat="사이트 · 몰"><span class="lg-meta"><b>사이트 · 몰</b>은밀한연구소 · 2026.10.28</span><h3>상품 수천 개의 설명을 한 번에 만들 때 생기는 일</h3><p>상품 3,816건 상세를 자동으로 만들자 가이드가 엉뚱한 상품에 붙는 오류가 나왔고, 원인을 코드 줄 단위로 찾아 전수 검사로 막았어요.</p></a><a class="lg-card" href="log/d-cafe24-adult-badge.html" data-cat="사이트 · 몰"><span class="lg-meta"><b>사이트 · 몰</b>은밀한연구소 · 2026.10.26</span><h3>성인 상품 사진이 마우스만 올려도 보일 때</h3><p>카페24가 걸러 내는 스타일 대신 스크립트로 19 표시를 바꾸고, 마우스를 올리면 실제 사진이 드러나던 구멍까지 막았어요.</p></a><a class="lg-card" href="log/b-site-looks-ai-made.html" data-cat="사이트 · 몰"><span class="lg-meta"><b>사이트 · 몰</b>먀 자체 · 2026.10.15</span><h3>사이트가 보자마자 AI가 만든 티가 날 때</h3><p>AI 티를 없애 준다는 디자인 레포 다섯 개를 설치하지 않고, 기계로 가를 수 있는 규칙만 빌려 우리 페이지를 검사하고 고쳤어요.</p></a></div></section>
+</main>
+<footer>
+  <div class="wrap foot-in">
+    <div><b>먀 AI 스튜디오 · MYA AI STUDIO</b><p><a href="mailto:myaaistudio@gmail.com">myaaistudio@gmail.com</a> · <a href="tel:07045718763">070-4571-8763</a></p></div>
+    <div><p><a href="index.html">홈</a> · <a href="log.html">AX 기록</a> · <a href="team.html">팀</a> · <a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a></p></div>
+  </div>
+</footer>
+<div class="stickybar"><div class="in"><span class="txt">비슷한 일로 막혀 있다면 30분이면 정리해 드려요</span><a class="btn" href="index.html#contact">문의하기</a></div></div>
+</html>

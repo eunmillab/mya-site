@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>카톡에 적어 둔 할 일을 앱으로 가져올 수 없을 때 | 먀 AI 스튜디오</title>
+<meta name="description" content="카카오톡 「나에게 보내기」는 API로 읽을 수 없어서, 끌어오기 대신 붙여넣기와 AI 쪼개기로 먼저 풀었어요.">
+<link rel="canonical" href="https://www.myaaistudio.com/log/a-kakao-todo-paste.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="먀 AI 스튜디오">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="카톡에 적어 둔 할 일을 앱으로 가져올 수 없을 때">
+<meta property="og:description" content="카카오톡 「나에게 보내기」는 API로 읽을 수 없어서, 끌어오기 대신 붙여넣기와 AI 쪼개기로 먼저 풀었어요.">
+<meta property="og:url" content="https://www.myaaistudio.com/log/a-kakao-todo-paste.html">
+<meta property="og:image" content="https://www.myaaistudio.com/og.jpg">
+<meta name="theme-color" content="#0B0B0C">
+<base href="../">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css?v=1790434343">
+<link rel="stylesheet" href="ax.css?v=7">
+<link rel="stylesheet" href="log.css?v=1">
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html" aria-label="먀 AI STUDIO 홈"><picture><source srcset="logo/lockup-dark.svg" media="(prefers-color-scheme: dark)"><img class="wm-nav" src="logo/lockup-light.svg" alt="먀 AI STUDIO" width="154" height="36"></picture></a>
+    <nav class="nav-links">
+      <a href="index.html#ax">AX 구독</a>
+      <a href="log.html">AX 기록</a>
+      <a href="index.html#clients">외주</a>
+      <a href="team.html">팀</a>
+    </nav>
+    <a class="btn sm silver" href="index.html#contact">문의하기</a>
+  </div>
+</header>
+<main class="lg-post">
+  <article class="wrap lg-art">
+    <p class="lg-meta"><b>자동화</b>챙겨 · 2026.10.13</p>
+    <h1>카톡에 적어 둔 할 일을 앱으로 가져올 수 없을 때</h1>
+    <p class="lg-lead">카카오톡 「나에게 보내기」는 API로 읽을 수 없어서, 끌어오기 대신 붙여넣기와 AI 쪼개기로 먼저 풀었어요.</p>
+    <section><h2>무슨 일이 있었나요</h2><p>체크리스트 앱 챙겨에 카카오톡 「나에게 보내기」로 적어 둔 할 일을 가져오고 싶었어요.</p></section>
+    
+    <section><h2>왜 그랬나요</h2><p>카카오톡 메시지 API는 같은 서비스 사용자끼리 보내는 것만 지원해요. 261013에 공식 문서와 API 카탈로그 전체를 확인했는데 메시지를 읽는 API가 없었어요.</p></section>
+    <section><h2>이렇게 바꿨어요</h2><p>끌어오기 대신 붙여넣기로 갔어요. 「카톡에서 붙여넣기」 버튼을 누르고 덩어리째 붙여넣으면 AI가 할 일 단위로 쪼개요. 따로 서버가 필요 없어요.</p><p>AI가 없거나 실패해도 동작하게 규칙 기반 경로를 같이 넣었어요. 불릿 · 번호 · 카톡 말머리(오후 3:12 같은 시각)를 떼고 링크만 있는 줄은 버려요.</p><p>미리보기에서 뺄 것을 체크 해제한 뒤 추가하고, 추가한 항목은 기기 간에 동기화되게 했어요.</p><p>양방향 동기화는 톡캘린더 할 일 API나 채널 챗봇 웹훅이 맞다고 보고 별도 건으로 뺐어요. 톡캘린더 쪽은 비즈 앱 전환과 심사가 필요해요.</p></section>
+    <section><h2>달라진 것</h2><p>불릿과 번호가 섞인 4줄을 넣으면 링크 줄을 버리고 할 일 3개로 쪼개졌어요. 추가하면 「붙여넣어 만든 것」 묶음이 맨 위에 생겼어요. 로컬에서 실제로 돌려 확인했어요.</p></section>
+    <aside class="lg-rule"><b>다음에도 쓰는 기준</b><p>API가 읽기를 열어 주지 않으면 붙여넣기로 먼저 간다. AI 기능에는 AI 없이도 도는 규칙 경로를 같이 둔다.</p></aside>
+    <p class="lg-back"><a href="log.html">AX 기록 전체 보기</a></p>
+  </article>
+  <section class="wrap lg-more"><h2>같은 갈래의 기록</h2><div class="lg-grid"><a class="lg-card" href="log/d-chaenggyeo-erp-v3.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>챙겨 · 2026.11.03</span><h3>남이 만든 사내 시스템을 보고 우리 것을 고칠 때</h3><p>다른 회사의 AI 업무 시스템 영상을 기능 단위로 뜯어 챙겨와 비교하고, 근본 차이를 정리한 뒤 고객사별 업무 앱으로 넓혔어요.</p></a><a class="lg-card" href="log/d-care-monthly-report.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>케어콘돔 · 2026.11.01</span><h3>고객사 광고 보고서가 불친절하다는 말을 들을 때</h3><p>숫자만 늘어놓던 보고서를 해석 상자와 용어 풀이가 붙은 월간 보고서로 바꾸고, 다음 달부터 명령 한 줄로 나오게 했어요.</p></a><a class="lg-card" href="log/d-care-ad-bot.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>케어콘돔 · 2026.11.01</span><h3>AI만으로 광고 소재를 뽑으려다 지칠 때</h3><p>소재 한 장이 나오기까지 거친 길을 9단계 공정으로 적고, 사람이 꼭 끼는 자리를 셋으로 고정해 품목마다 돌리는 스킬로 묶었어요.</p></a></div></section>
+</main>
+<footer>
+  <div class="wrap foot-in">
+    <div><b>먀 AI 스튜디오 · MYA AI STUDIO</b><p><a href="mailto:myaaistudio@gmail.com">myaaistudio@gmail.com</a> · <a href="tel:07045718763">070-4571-8763</a></p></div>
+    <div><p><a href="index.html">홈</a> · <a href="log.html">AX 기록</a> · <a href="team.html">팀</a> · <a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a></p></div>
+  </div>
+</footer>
+<div class="stickybar"><div class="in"><span class="txt">비슷한 일로 막혀 있다면 30분이면 정리해 드려요</span><a class="btn" href="index.html#contact">문의하기</a></div></div>
+</html>

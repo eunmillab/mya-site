@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>성인 상품 사진이 마우스만 올려도 보일 때 | 먀 AI 스튜디오</title>
+<meta name="description" content="카페24가 걸러 내는 스타일 대신 스크립트로 19 표시를 바꾸고, 마우스를 올리면 실제 사진이 드러나던 구멍까지 막았어요.">
+<link rel="canonical" href="https://www.myaaistudio.com/log/d-cafe24-adult-badge.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="먀 AI 스튜디오">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="성인 상품 사진이 마우스만 올려도 보일 때">
+<meta property="og:description" content="카페24가 걸러 내는 스타일 대신 스크립트로 19 표시를 바꾸고, 마우스를 올리면 실제 사진이 드러나던 구멍까지 막았어요.">
+<meta property="og:url" content="https://www.myaaistudio.com/log/d-cafe24-adult-badge.html">
+<meta property="og:image" content="https://www.myaaistudio.com/og.jpg">
+<meta name="theme-color" content="#0B0B0C">
+<base href="../">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css?v=1790434343">
+<link rel="stylesheet" href="ax.css?v=7">
+<link rel="stylesheet" href="log.css?v=1">
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html" aria-label="먀 AI STUDIO 홈"><picture><source srcset="logo/lockup-dark.svg" media="(prefers-color-scheme: dark)"><img class="wm-nav" src="logo/lockup-light.svg" alt="먀 AI STUDIO" width="154" height="36"></picture></a>
+    <nav class="nav-links">
+      <a href="index.html#ax">AX 구독</a>
+      <a href="log.html">AX 기록</a>
+      <a href="index.html#clients">외주</a>
+      <a href="team.html">팀</a>
+    </nav>
+    <a class="btn sm silver" href="index.html#contact">문의하기</a>
+  </div>
+</header>
+<main class="lg-post">
+  <article class="wrap lg-art">
+    <p class="lg-meta"><b>사이트 · 몰</b>은밀한연구소 · 2026.10.26</p>
+    <h1>성인 상품 사진이 마우스만 올려도 보일 때</h1>
+    <p class="lg-lead">카페24가 걸러 내는 스타일 대신 스크립트로 19 표시를 바꾸고, 마우스를 올리면 실제 사진이 드러나던 구멍까지 막았어요.</p>
+    <section><h2>무슨 일이 있었나요</h2><p>한 분류 페이지 1쪽 상품 20개 중 16개가 성인인증 없이 실제 상품 사진 그대로 보였어요. 상품마다 성인인증 설정이 달랐어요.</p><p>가려진 상품도 마우스를 올리면 미리보기 사진이 드러났어요. 19 표시는 카페24 기본 빨간색이었는데 관리자에 바꾸는 메뉴가 없었어요.</p></section>
+    
+    <section><h2>왜 그랬나요</h2><p>스킨 파일에 넣은 `&lt;style&gt;`은 저장 요청이 성공했는데도 실제 페이지에 나오지 않았어요. 카페24가 모듈 파일 안의 스타일을 걸러 내는 것으로 보였어요.</p><p>footer 파일에만 넣었을 땐 상품 목록에서 먹지 않았어요. 메인과 하위 페이지가 서로 다른 레이아웃 파일을 썼기 때문이에요.</p></section>
+    <section><h2>이렇게 바꿨어요</h2><p>`&lt;style&gt;` 대신 `&lt;script&gt;`를 넣었어요. 19 이미지 주소를 브랜드 실버 뱃지로 바꾸고, 늦게 불러오는 이미지까지 잡도록 화면 변화를 감시해요. 마우스 오버 미리보기 요소는 숨겨요.</p><p>메인용 footer, 상품 분류 화면, 상품 상세 화면 세 곳에 넣었어요. 상품별 성인인증 설정은 팝업 창이라 자동화가 안 돼서, 엑셀 일괄 수정을 대안으로 적었어요.</p></section>
+    <section><h2>달라진 것</h2><p>같은 분류 페이지에서 20개 전부 실버 뱃지, 빨간 표시 0, 사진 노출 0, 마우스 오버 미리보기 20개 전부 숨김을 확인했어요.</p><p>다음 날 카페24 운영을 접기로 해서 이 작업은 거기서 멈췄지만, 원본 파일을 바꿀 수 없는 화면을 스크립트로 덮는 방법과 확인 절차는 기록으로 남겼어요.</p></section>
+    <aside class="lg-rule"><b>다음에도 쓰는 기준</b><p>플랫폼이 막아 둔 화면은 저장 성공 메시지가 아니라 실제 페이지에서 결과를 세어 확인한다.</p></aside>
+    <p class="lg-back"><a href="log.html">AX 기록 전체 보기</a></p>
+  </article>
+  <section class="wrap lg-more"><h2>같은 갈래의 기록</h2><div class="lg-grid"><a class="lg-card" href="log/d-catalog-guide-mismatch.html" data-cat="사이트 · 몰"><span class="lg-meta"><b>사이트 · 몰</b>은밀한연구소 · 2026.10.28</span><h3>상품 수천 개의 설명을 한 번에 만들 때 생기는 일</h3><p>상품 3,816건 상세를 자동으로 만들자 가이드가 엉뚱한 상품에 붙는 오류가 나왔고, 원인을 코드 줄 단위로 찾아 전수 검사로 막았어요.</p></a><a class="lg-card" href="log/d-cafe24-category-tree.html" data-cat="사이트 · 몰"><span class="lg-meta"><b>사이트 · 몰</b>은밀한연구소 · 2026.10.27</span><h3>쇼핑몰 분류를 옮겼는데 저장이 안 됐을 때</h3><p>화면에선 옮겨진 분류가 서버엔 저장되지 않던 문제를, 네트워크 요청으로 성공을 판단하는 방식으로 풀었어요.</p></a><a class="lg-card" href="log/b-site-looks-ai-made.html" data-cat="사이트 · 몰"><span class="lg-meta"><b>사이트 · 몰</b>먀 자체 · 2026.10.15</span><h3>사이트가 보자마자 AI가 만든 티가 날 때</h3><p>AI 티를 없애 준다는 디자인 레포 다섯 개를 설치하지 않고, 기계로 가를 수 있는 규칙만 빌려 우리 페이지를 검사하고 고쳤어요.</p></a></div></section>
+</main>
+<footer>
+  <div class="wrap foot-in">
+    <div><b>먀 AI 스튜디오 · MYA AI STUDIO</b><p><a href="mailto:myaaistudio@gmail.com">myaaistudio@gmail.com</a> · <a href="tel:07045718763">070-4571-8763</a></p></div>
+    <div><p><a href="index.html">홈</a> · <a href="log.html">AX 기록</a> · <a href="team.html">팀</a> · <a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보처리방침</a></p></div>
+  </div>
+</footer>
+<div class="stickybar"><div class="in"><span class="txt">비슷한 일로 막혀 있다면 30분이면 정리해 드려요</span><a class="btn" href="index.html#contact">문의하기</a></div></div>
+</html>
