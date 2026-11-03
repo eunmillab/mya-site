@@ -2,15 +2,15 @@
 <html lang="ko">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>치수를 자동으로 뽑았더니 4cm 가 40cm 로 바뀔 때 | 먀 AI 스튜디오</title>
-<meta name="description" content="상품 설명에서 치수를 자동으로 뽑다가 단위 오류가 났고, 카테고리마다 세 개씩 사람이 보는 확인 시트로 잡아냈어요.">
-<link rel="canonical" href="https://www.myaaistudio.com/log/b-size-unit-parsing-error.html">
+<title>AI에게 바탕화면 정리를 맡길 때 아무것도 지우지 않게 한 방법 | 먀 AI 스튜디오</title>
+<meta name="description" content="없는 기능으로 정리하라는 지시를 먼저 바로잡고, 파일을 옮기기만 해서 낱개 23개를 0개로 만들고 되돌리기 스크립트를 남겼어요.">
+<link rel="canonical" href="https://www.myaaistudio.com/log/c-desktop-cleanup-no-delete.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="먀 AI 스튜디오">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="치수를 자동으로 뽑았더니 4cm 가 40cm 로 바뀔 때">
-<meta property="og:description" content="상품 설명에서 치수를 자동으로 뽑다가 단위 오류가 났고, 카테고리마다 세 개씩 사람이 보는 확인 시트로 잡아냈어요.">
-<meta property="og:url" content="https://www.myaaistudio.com/log/b-size-unit-parsing-error.html">
+<meta property="og:title" content="AI에게 바탕화면 정리를 맡길 때 아무것도 지우지 않게 한 방법">
+<meta property="og:description" content="없는 기능으로 정리하라는 지시를 먼저 바로잡고, 파일을 옮기기만 해서 낱개 23개를 0개로 만들고 되돌리기 스크립트를 남겼어요.">
+<meta property="og:url" content="https://www.myaaistudio.com/log/c-desktop-cleanup-no-delete.html">
 <meta property="og:image" content="https://www.myaaistudio.com/og.jpg">
 <meta name="theme-color" content="#0B0B0C">
 <base href="../">
@@ -34,15 +34,15 @@
 </header>
 <main class="lg-post">
   <article class="wrap lg-art">
-    <p class="lg-meta"><b>자동화</b>은밀한연구소 · 2026.10.14</p>
-    <h1>치수를 자동으로 뽑았더니 4cm 가 40cm 로 바뀔 때</h1>
-    <p class="lg-lead">상품 설명에서 치수를 자동으로 뽑다가 단위 오류가 났고, 카테고리마다 세 개씩 사람이 보는 확인 시트로 잡아냈어요.</p>
-    <section><h2>무슨 일이 있었나요</h2><p>상품 설명 글에서 치수를 자동으로 뽑아 사이즈 안내를 만들었어요. 대표가 「카테고리별로 사람의 체크가 필요할 거 같다」고 해서 확인 시트를 만들었더니 바로 오류가 하나 나왔어요.</p><p>원문에 「세로 1cm 가로 3.8cm」 뒤에 「40 × 14mm」가 이어지는 상품이었는데, 40 이 40cm 로 읽혀서 400mm 가 됐어요. 손에 쥐는 작은 제품이 40cm 일 수는 없었어요.</p></section>
+    <p class="lg-meta"><b>자동화</b>먀 자체 · 2026.10.20</p>
+    <h1>AI에게 바탕화면 정리를 맡길 때 아무것도 지우지 않게 한 방법</h1>
+    <p class="lg-lead">없는 기능으로 정리하라는 지시를 먼저 바로잡고, 파일을 옮기기만 해서 낱개 23개를 0개로 만들고 되돌리기 스크립트를 남겼어요.</p>
+    <section><h2>무슨 일이 있었나요</h2><p>대표가 「챙겨 통해서 바탕화면이랑 다운로드 파일 좀 정리해주고 영상으로 찍어줘」라고 했어요. 바탕화면에는 낱개 파일 21개, 다운로드에는 2개가 흩어져 있었어요.</p></section>
     
-    <section><h2>왜 그랬나요</h2><p>한 줄에 cm 가 하나라도 있으면 단위 없는 숫자를 전부 cm 로 보는 「줄 전체 기본 단위」 규칙을 쓰고 있었어요.</p></section>
-    <section><h2>이렇게 바꿨어요</h2><p>단위 없는 숫자는 바로 뒤에 나오는 가장 가까운 단위를 따르게 바꿨어요.</p><p>6개 카테고리마다 가장 작은 것 · 중앙값 · 가장 큰 것 세 개를 뽑아 그림 시트로 만들고, 사람이 눈으로 보게 했어요. 이상한 값은 대개 맨 끝에 몰려 있어서 세 개만 봐도 잡혀요.</p></section>
-    <section><h2>달라진 것</h2><p>한 카테고리의 최댓값이 400 에서 40 으로 바로잡혔어요. 치수가 있는 상품 1,262건을 6개 카테고리 시트로 남겨 다음 점검에도 써요.</p></section>
-    <aside class="lg-rule"><b>다음에도 쓰는 기준</b><p>자동으로 뽑은 숫자는 카테고리마다 최소 · 중앙 · 최대 세 개를 사람이 본다. 단위는 줄 전체가 아니라 가장 가까운 단위를 따른다.</p></aside>
+    <section><h2>왜 그랬나요</h2><p>챙겨는 할 일 · 일정 · 비용을 챙기는 작업실이라 파일 정리 기능이 없었어요. 소스 363KB를 검색해 파일 접근 관련 코드가 0건인 걸 확인했어요. 없는 기능으로 했다고 하면 거짓 보고가 돼요.</p><p>파일 정리는 잘못 지우면 되돌릴 수 없어서, 정리 방식 자체가 안전해야 했어요.</p></section>
+    <section><h2>이렇게 바꿨어요</h2><p>챙겨에 기능이 없다는 걸 먼저 알리고, 정리는 셸로 직접 했어요. 지우지 않고 종류별 폴더로 옮기기만 했고, 폴더 이름은 다운로드에 이미 있던 방식을 따랐어요.</p><p>내용이 같은 파일은 sha256으로 대조해 1건을 찾았지만 지우지 않고 「중복_확인후삭제」 폴더에 넣었어요. 이름만 비슷하고 크기가 다른 파일은 중복으로 보지 않았어요. 옮긴 기록을 남기고, 23개를 원래 자리로 돌리는 스크립트를 만들어 문법 검사까지 했어요.</p></section>
+    <section><h2>달라진 것</h2><p>바탕화면과 다운로드의 낱개 파일이 0개가 됐고, 지운 파일은 0개예요. 옮긴 자리에 23개가 모두 있는 것도 확인했어요.</p><p>시연 영상은 실제 파일 이름과 실제 분류 결과로 그렸어요.</p></section>
+    <aside class="lg-rule"><b>다음에도 쓰는 기준</b><p>AI에게 파일 정리를 맡길 땐 옮기기만 시키고, 지우기는 사람이 확인한 뒤에 한다. 되돌리기 방법을 먼저 만든다.</p></aside>
     <p class="lg-back"><a href="log.html">AX 기록 전체 보기</a></p>
   </article>
   <section class="wrap lg-more"><h2>같은 갈래의 기록</h2><div class="lg-grid"><a class="lg-card" href="log/d-chaenggyeo-erp-v3.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>챙겨 · 2026.11.03</span><h3>남이 만든 사내 시스템을 보고 우리 것을 고칠 때</h3><p>다른 회사의 AI 업무 시스템 영상을 기능 단위로 뜯어 챙겨와 비교하고, 근본 차이를 정리한 뒤 고객사별 업무 앱으로 넓혔어요.</p></a><a class="lg-card" href="log/d-care-monthly-report.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>케어콘돔 · 2026.11.01</span><h3>고객사 광고 보고서가 불친절하다는 말을 들을 때</h3><p>숫자만 늘어놓던 보고서를 해석 상자와 용어 풀이가 붙은 월간 보고서로 바꾸고, 다음 달부터 명령 한 줄로 나오게 했어요.</p></a><a class="lg-card" href="log/d-care-ad-bot.html" data-cat="자동화"><span class="lg-meta"><b>자동화</b>케어콘돔 · 2026.11.01</span><h3>AI만으로 광고 소재를 뽑으려다 지칠 때</h3><p>소재 한 장이 나오기까지 거친 길을 9단계 공정으로 적고, 사람이 꼭 끼는 자리를 셋으로 고정해 품목마다 돌리는 스킬로 묶었어요.</p></a></div></section>
