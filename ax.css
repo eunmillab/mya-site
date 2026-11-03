@@ -76,3 +76,4 @@ a.ax-card:hover{border-color:var(--ink)}
 .ax-card .ax-kpi li{margin:0; font-size:var(--t7); line-height:var(--t7l); color:var(--ink-2)}
 .ax-card .ax-kpi b{display:block; font-size:var(--t4); line-height:var(--t4l); color:var(--ink); font-variant-numeric:tabular-nums}
 .ax-card .ax-src{font-size:var(--t7); line-height:var(--t7l); color:var(--grey)}
+.ax-card .ax-thumb{display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:var(--r-sm); margin-bottom:6px}
