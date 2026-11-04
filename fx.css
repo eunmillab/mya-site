@@ -15,13 +15,13 @@
 /* ---------- 헤더: 히어로 위에서는 먹색 유리 ---------- */
 html.fx .nav{transition:background .35s ease, border-color .35s ease}
 html.fx .nav.fx-dark{background:rgba(11,11,12,.72); -webkit-backdrop-filter:blur(14px) saturate(140%); backdrop-filter:blur(14px) saturate(140%); border-bottom-color:rgba(255,255,255,.06)}
-html.fx .nav.fx-dark .logo,html.fx .nav.fx-dark .mk{color:#fff}
+html.fx .nav.fx-dark .logo,html.fx .nav.fx-dark .mk{color:var(--paper)}
 /* 브랜드 가이드의 '먹색 면 위 반전' 규칙을 어두운 헤더에도 적용 */
 html.fx .nav.fx-dark .mk .k{background:var(--silver-sheen); background-size:150% 100%; -webkit-background-clip:text; background-clip:text; filter:none}
 html.fx .nav.fx-dark .mk .l{filter:brightness(1)}
 html.fx .nav.fx-dark .mk .sl{color:var(--silver-200)}
 html.fx .nav.fx-dark .nav-links{color:#9AA3AE}
-html.fx .nav.fx-dark .nav-links a:hover{color:#fff}
+html.fx .nav.fx-dark .nav-links a:hover{color:var(--paper)}
 
 /* ---------- 히어로 ---------- */
 .fx-hero{position:relative; isolation:isolate; overflow:hidden; background:var(--fx-ink); color:#C4CAD2;
@@ -32,15 +32,15 @@ html.fx .nav.fx-dark .nav-links a:hover{color:#fff}
 .fx-hero::after{content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
   background:linear-gradient(90deg,rgba(11,11,12,.92) 0%,rgba(11,11,12,.72) 38%,rgba(11,11,12,.12) 72%,rgba(11,11,12,.35) 100%),
              linear-gradient(0deg,rgba(11,11,12,.9),rgba(11,11,12,0) 22%)}
-.fx-hero h1{color:#fff; font-size:clamp(34px,4.6vw,58px) !important; line-height:1.22 !important; letter-spacing:-.02em}
+.fx-hero h1{color:var(--paper); font-size:clamp(34px,4.6vw,58px) !important; line-height:1.22 !important; letter-spacing:-.02em}
 .fx-hero .eyebrow{color:#B6BCC4}
 .fx-hero .lead{color:#AEB5BD}
 .fx-hero .hero-ent{color:#8B95A1}
-.fx-hero .linkout{color:#fff; border-bottom-color:rgba(255,255,255,.4)}
-.fx-hero .linkout:hover{border-bottom-color:#fff}
+.fx-hero .linkout{color:var(--paper); border-bottom-color:rgba(255,255,255,.4)}
+.fx-hero .linkout:hover{border-bottom-color:var(--paper)}
 .fx-hero .vis-cap{color:#C4CAD2; text-shadow:0 1px 12px rgba(0,0,0,.9), 0 0 2px rgba(0,0,0,.8)}
 .fx-hero .hero-btns .btn{background:var(--fx-chrome); background-size:220% 100%; color:var(--fx-ink); box-shadow:0 10px 40px -10px rgba(214,219,225,.45)}
-.fx-hero .hero-btns .btn.silver{background:rgba(255,255,255,.08); color:#fff; box-shadow:inset 0 0 0 1px rgba(255,255,255,.28); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px)}
+.fx-hero .hero-btns .btn.silver{background:rgba(255,255,255,.08); color:var(--paper); box-shadow:inset 0 0 0 1px rgba(255,255,255,.28); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px)}
 
 /* 흐르는 크롬 글자 */
 .fx-sheen{background:var(--fx-chrome); background-size:220% 100%; -webkit-background-clip:text; background-clip:text; color:transparent;
@@ -56,11 +56,11 @@ html.fx .nav.fx-dark .nav-links a:hover{color:#fff}
 @keyframes fx-float{50%{transform:translateY(-10px) rotateX(2deg)}}
 .fx-hero .screen-top{background:rgba(255,255,255,.04); border-bottom-color:rgba(255,255,255,.08)}
 .fx-hero .screen-top b{color:#C4CAD2}
-.fx-hero .msg .who,.fx-hero .msg h4{color:#fff}
+.fx-hero .msg .who,.fx-hero .msg h4{color:var(--paper)}
 .fx-hero .msg .av{background:var(--fx-chrome); background-size:200% 100%; color:var(--fx-ink); font-weight:900}
 .fx-hero .tasklist li{color:#C4CAD2}
-.fx-hero .tasklist li.warn{color:#fff}
-.fx-hero .tasklist li.warn::before{color:#fff}
+.fx-hero .tasklist li.warn{color:var(--paper)}
+.fx-hero .tasklist li.warn::before{color:var(--paper)}
 .fx-hero .screen-foot{border-top-color:rgba(255,255,255,.08)}
 .fx-hero .pillnote,.fx-hero .screen-top .ch-meta{color:#8B95A1}
 .fx-hero .tasklist li{opacity:1}

@@ -13,10 +13,10 @@ body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFo
 .ax-hero{background:var(--stage); color:var(--on-dark); padding:clamp(40px,6vw,72px) 0 clamp(56px,8vw,96px); border-top:0}
 .ax-hero .wm-hero{display:block; width:100%; height:auto; border-radius:0}
 .ax-hero .eyebrow{color:#B0B8C1; margin:clamp(28px,4vw,44px) 0 0}
-.ax-hero h1{color:#fff; font-size:var(--d1); line-height:1.2; margin-top:14px}
+.ax-hero h1{color:var(--paper); font-size:var(--d1); line-height:1.2; margin-top:14px}
 .ax-hero .lead{color:#C4CAD2; max-width:34em}
 .ax-hero .hero-btns{display:flex; flex-wrap:wrap; gap:10px; margin-top:30px}
-.ax-hero .btn.line{color:#fff; border-color:#3A3D42}
+.ax-hero .btn.line{color:var(--paper); border-color:#3A3D42}
 .btn.onstage,.stickybar .btn{background:var(--silver-sheen); color:var(--g900); box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 1px 2px rgba(11,11,12,.12)}
 .ax-sim{display:flex; align-items:center; gap:12px; margin-top:34px; color:#B0B8C1; font-size:var(--t7); line-height:var(--t7l)}
 .ax-sim img{width:44px; height:44px; flex:none}
@@ -31,7 +31,7 @@ body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFo
 
 /* 맡는 일 표 */
 .ax-list{margin-top:34px; border-top:1px solid var(--line)}
-.ax-row{display:grid; grid-template-columns:120px 1fr auto; gap:6px 24px; align-items:baseline; padding:20px 0; border-bottom:1px solid var(--line)}
+.ax-row{display:grid; grid-template-columns:120px minmax(0,1fr) auto; gap:6px 24px; align-items:baseline; padding:20px 0; border-bottom:1px solid var(--line)}
 .ax-row .k{font-size:var(--t7); font-weight:700; color:var(--grey)}
 .ax-row h3{font-size:var(--t4); line-height:var(--t4l)}
 .ax-row p{grid-column:2; color:var(--ink-2); font-size:var(--t6); line-height:var(--t6l); max-width:40em}
@@ -39,7 +39,7 @@ body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFo
 a.ax-row:hover h3{text-decoration:underline; text-underline-offset:4px}
 
 /* 일하는 순서 01 02 03 */
-.ax-steps{display:grid; grid-template-columns:repeat(3,1fr); margin-top:34px; border:1px solid var(--line)}
+.ax-steps{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:34px; border:1px solid var(--line)}
 .ax-step{padding:26px 24px 30px; border-left:1px solid var(--line)}
 .ax-step:first-child{border-left:0}
 .ax-step b{display:block; font-size:var(--d2); line-height:1; font-weight:700; color:var(--ink); font-variant-numeric:tabular-nums}
@@ -47,8 +47,8 @@ a.ax-row:hover h3{text-decoration:underline; text-underline-offset:4px}
 .ax-step p{margin-top:10px; font-size:var(--t6); line-height:var(--t6l)}
 
 /* 외주 · 팀 카드 */
-.ax-cards{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:34px}
-.ax-cards.three{grid-template-columns:repeat(3,1fr)}
+.ax-cards{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:34px}
+.ax-cards.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .ax-card{display:flex; flex-direction:column; gap:8px; padding:24px; background:var(--bg); border:1px solid var(--line); border-radius:var(--r-lg)}
 .ax-card .k{font-size:var(--t7); font-weight:700; color:var(--grey)}
 .ax-card h3{font-size:var(--t3); line-height:var(--t3l)}
@@ -65,10 +65,10 @@ a.ax-card:hover{border-color:var(--ink)}
 .ax-direct a:hover{border-color:var(--ink)}
 
 @media (max-width:760px){
-  .ax-steps,.ax-cards,.ax-cards.three{grid-template-columns:1fr}
+  .ax-steps,.ax-cards,.ax-cards.three{grid-template-columns:minmax(0,1fr)}
   .ax-step{border-left:0; border-top:1px solid var(--line)}
   .ax-step:first-child{border-top:0}
-  .ax-row{grid-template-columns:1fr auto}
+  .ax-row{grid-template-columns:minmax(0,1fr) auto}
   .ax-row .k{grid-column:1 / -1}
   .ax-row h3{grid-column:1}
   .ax-row .go{grid-row:2; grid-column:2}
@@ -86,22 +86,24 @@ a.ax-card:hover{border-color:var(--ink)}
 .ax-card .ax-thumb{display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:var(--r-sm); margin-bottom:6px}
 
 /* 자체 서비스: 서비스 명 → 한 줄 요약 → 사진 → 상세 설명, 네 서비스 같은 틀 (261104 대표 「전체 통일」) */
-.svc-rows .svc-row{grid-template-columns:1.1fr 1fr; grid-template-areas:"vis meta" "vis name" "vis line" "vis body"; grid-template-rows:auto auto auto 1fr; row-gap:0; align-items:start}
+.svc-rows .svc-row{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); grid-template-areas:"vis meta" "vis name" "vis line" "vis body"; grid-template-rows:auto auto auto 1fr; row-gap:0; align-items:start}
 .svc-row .sr-meta{grid-area:meta}
 .svc-row .sr-name{grid-area:name; margin-top:10px; font-size:clamp(24px,2.8vw,32px); line-height:1.25}
 .svc-row .sr-line{grid-area:line}
 .svc-row .sr-vis{grid-area:vis}
 .svc-row .sr-body{grid-area:body}
 @media (max-width:860px){
-  .svc-rows .svc-row{grid-template-columns:1fr; grid-template-areas:"meta" "name" "line" "vis" "body"; grid-template-rows:none}
+  .svc-rows .svc-row{grid-template-columns:minmax(0,1fr); grid-template-areas:"meta" "name" "line" "vis" "body"; grid-template-rows:none}
   .svc-row .sr-vis{margin-top:18px}
 }
 
 /* 히어로 사정 칸 (261104, 코멜 결의 「고민 한 줄」) */
 .ax-worry{margin-top:26px; max-width:560px}
 .ax-worry-k{font-size:var(--t7); color:#B0B8C1}
-.ax-worry-box{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:8px; min-height:60px; padding:10px 10px 10px 18px; border:1px solid #3A3D42; border-radius:var(--r-lg); background:rgba(255,255,255,.04); color:#fff; font-size:var(--t5); font-weight:600}
+.ax-worry-box{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:8px; min-height:60px; padding:10px 10px 10px 18px; border:1px solid #3A3D42; border-radius:var(--r-lg); background:rgba(255,255,255,.04); color:var(--paper); font-size:var(--t5); font-weight:600}
 .ax-worry-box:hover{border-color:#8A929C}
-.ax-worry-box:focus-visible{outline:2px solid #fff; outline-offset:2px}
+.ax-worry-box:focus-visible{outline:2px solid var(--paper); outline-offset:2px}
 .ax-worry-go{flex:none; display:grid; place-items:center; width:40px; height:40px; border-radius:999px; background:var(--silver-sheen); color:var(--g900); font-weight:700}
 .ax-price{margin-top:16px; font-size:var(--t7); color:var(--grey)}
+/* Hallmark 정리 (261104): 화살표 대신 동사 */
+.ax-worry-go{width:auto; height:40px; padding:0 16px; font-size:var(--t7)}

@@ -41,7 +41,7 @@ img{max-width:100%}
 /* 어두운 돌: 빛무리 */
 .dark{position:relative; overflow:hidden; isolation:isolate}
 .dark::before{content:''; position:absolute; inset:0; z-index:-1; pointer-events:none;
-  background:radial-gradient(60% 50% at 12% 0%, rgba(242,201,76,.16), transparent 70%), radial-gradient(45% 40% at 92% 30%, rgba(154,109,184,.14), transparent 70%), radial-gradient(50% 45% at 50% 110%, rgba(60,95,168,.18), transparent 70%)}
+  background:radial-gradient(60% 50% at 12% 0%, rgba(242,201,76,.16), transparent 70%), radial-gradient(45% 40% at 92% 30%, rgba(216,106,42,.12), transparent 70%), radial-gradient(50% 45% at 50% 110%, rgba(60,95,168,.18), transparent 70%)}
 .dark.g2::before{background:radial-gradient(55% 50% at 90% 0%, rgba(216,106,42,.14), transparent 70%), radial-gradient(50% 45% at 5% 80%, rgba(60,95,168,.18), transparent 70%)}
 .dark.g3::before{background:radial-gradient(60% 55% at 50% 0%, rgba(111,174,140,.12), transparent 70%), radial-gradient(45% 45% at 95% 100%, rgba(242,201,76,.12), transparent 70%)}
 /* 밝은 돌 */
@@ -187,6 +187,7 @@ h2{font-size:30px; line-height:1.3; font-weight:800; letter-spacing:-.03em}
   .shop{grid-template-columns:repeat(6,1fr)}
 }
 </style>
+<style>/* Hallmark 정리 (261104) */ .plan .pn,.top .lg i{letter-spacing:0;text-transform:none} html,body{overflow-x:clip}</style>
 </head>
 <body>
 <header class="top band"><div class="inner">
@@ -198,7 +199,7 @@ h2{font-size:30px; line-height:1.3; font-weight:800; letter-spacing:-.03em}
   <p class="eye">쥐고 있으면 정리돼요</p>
   <h1>알림 지옥에서<br>꺼내 드려요</h1>
   <p class="sub">돌을 쥐고 엄지로 문지르는 몇 분 동안, 뒤에서 단톡방 · 스샷 · 데스크톱 정리가 돌아요. 놓으면 치울 후보만 남아요. 지우는 건 직접 하세요.</p>
-  <div class="btns"><a class="btn pri" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기<span class="go">›</span></a><a class="btn sec2" href="#stones">돌 14종 보기<span class="go">›</span></a></div>
+  <div class="btns"><a class="btn pri" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기</a><a class="btn sec2" href="#stones">돌 14종 보기</a></div>
   <div class="device"><div class="scr"><img src="media/dolworry/hero_sess.webp" alt="돌워리 앱의 쥐기 화면. 시트린 돌이 가운데 떠 있고 남은 시간과 문지름 수가 보여요" width="780" height="1688"></div></div>
 </div></section>
 
@@ -216,9 +217,9 @@ h2{font-size:30px; line-height:1.3; font-weight:800; letter-spacing:-.03em}
   <h2>주머니 속 돌을<br>엄지로 문지르는 시간이에요</h2>
   <p class="ld">워리스톤은 엄지가 들어갈 홈이 파인 납작한 돌이에요. 주머니에 넣어 두고 마음이 급할 때 꺼내 문질러요. <b>돌워리는 그 몇 분을 빌려요.</b> 돌을 쥐고 있는 동안 뒤에서 정리가 돌고, 놓으면 치울 후보만 남아요.</p>
   <div class="cards">
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8.5 12.5V5.3a1.6 1.6 0 0 1 3.2 0v5.2"/><path d="M11.7 10V4.1a1.6 1.6 0 0 1 3.2 0V10"/><path d="M14.9 10.5V5.6a1.6 1.6 0 0 1 3.2 0v8.3c0 3.9-2.6 6.6-6.3 6.6-2.7 0-4.4-1.3-5.6-3.3L4 13.4a1.5 1.5 0 0 1 2.5-1.6l2 2.4"/></svg></div><div class=q>1</div><h3>쥐어요</h3><p>몇 분 쥘지 고르고 돌을 켜요. 돌 위를 엄지로 문지르면 결이 쌓이고, 바깥을 끌면 돌이 돌아가요.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v4.5h-4.5"/></svg></div><div class=q>2</div><h3>뒤에서 돌아요</h3><p>쥐고 있는 동안 켜 둔 돌이 맡은 것을 다시 봐요. 묵은 캡처, 오래 조용한 방, 같은 파일이 여러 군데.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg></div><div class=q>3</div><h3>고르기만 해요</h3><p>끝나면 치울 후보가 목록으로 나와요. 남길지 치울지는 한 번 눌러 정하고, 지우는 건 직접 해요.</p></div>
+    <div class="card"><div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8.5 12.5V5.3a1.6 1.6 0 0 1 3.2 0v5.2"/><path d="M11.7 10V4.1a1.6 1.6 0 0 1 3.2 0V10"/><path d="M14.9 10.5V5.6a1.6 1.6 0 0 1 3.2 0v8.3c0 3.9-2.6 6.6-6.3 6.6-2.7 0-4.4-1.3-5.6-3.3L4 13.4a1.5 1.5 0 0 1 2.5-1.6l2 2.4"/></svg></div><div class=q>1</div><h3>쥐어요</h3><p>몇 분 쥘지 고르고 돌을 켜요. 돌 위를 엄지로 문지르면 결이 쌓이고, 바깥을 끌면 돌이 돌아가요.</p></div>
+    <div class="card"><div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v4.5h-4.5"/></svg></div><div class=q>2</div><h3>뒤에서 돌아요</h3><p>쥐고 있는 동안 켜 둔 돌이 맡은 것을 다시 봐요. 묵은 캡처, 오래 조용한 방, 같은 파일이 여러 군데.</p></div>
+    <div class="card"><div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg></div><div class=q>3</div><h3>고르기만 해요</h3><p>끝나면 치울 후보가 목록으로 나와요. 남길지 치울지는 한 번 눌러 정하고, 지우는 건 직접 해요.</p></div>
   </div>
 </div></section>
 
@@ -238,15 +239,15 @@ h2{font-size:30px; line-height:1.3; font-weight:800; letter-spacing:-.03em}
   <h2>손은 돌에,<br>정리는 뒤에서</h2>
   <p class="ld">지금 되는 세 가지는 이렇게 읽어요. 어느 것도 자동으로 열어 보지 않아요. 넣어 준 것만 봐요.</p>
   <div class="cards">
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M20.5 12.1c0 4.1-3.8 7.4-8.5 7.4a9.9 9.9 0 0 1-2.6-.34L4.5 20.5l1.1-3.2a7 7 0 0 1-2.1-5.2c0-4.1 3.8-7.4 8.5-7.4s8.5 3.3 8.5 7.4Z"/></svg></div><div class=q>시트린</div><h3>단톡방</h3><p>채팅 목록을 붙여 넣거나 캡처로 읽어요. 오래 조용한 방과 안 읽은 게 많이 쌓인 방을 골라 줘요. 나가기는 카카오톡에서 직접.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="m3.5 15.5 4.6-4.4 3.9 3.6 3-2.6 5.5 4.4"/><circle cx="15.5" cy="9" r="1.4"/></svg></div><div class=q>백수정</div><h3>스샷</h3><p>사진에서 고른 캡처 중 묵은 것을 다시 봐요. 장소 · 영수증 · 예약처럼 나눠서, 날이 지난 것부터 치울 후보로 올려요.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></div><div class=q>소달라이트</div><h3>데스크톱</h3><p>맥에서 보고서 파일을 한 번 올려요. 같은 파일이 여러 군데, 묵은 스크린샷을 용량 큰 순으로 보여 줘요. 파일 내용은 안 읽어요.</p></div>
+    <div class="card"><div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 12.1c0 4.1-3.8 7.4-8.5 7.4a9.9 9.9 0 0 1-2.6-.34L4.5 20.5l1.1-3.2a7 7 0 0 1-2.1-5.2c0-4.1 3.8-7.4 8.5-7.4s8.5 3.3 8.5 7.4Z"/></svg></div><div class=q>시트린</div><h3>단톡방</h3><p>채팅 목록을 붙여 넣거나 캡처로 읽어요. 오래 조용한 방과 안 읽은 게 많이 쌓인 방을 골라 줘요. 나가기는 카카오톡에서 직접.</p></div>
+    <div class="card"><div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="m3.5 15.5 4.6-4.4 3.9 3.6 3-2.6 5.5 4.4"/><circle cx="15.5" cy="9" r="1.4"/></svg></div><div class=q>백수정</div><h3>스샷</h3><p>사진에서 고른 캡처 중 묵은 것을 다시 봐요. 장소 · 영수증 · 예약처럼 나눠서, 날이 지난 것부터 치울 후보로 올려요.</p></div>
+    <div class="card"><div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg></div><div class=q>소달라이트</div><h3>데스크톱</h3><p>맥에서 보고서 파일을 한 번 올려요. 같은 파일이 여러 군데, 묵은 스크린샷을 용량 큰 순으로 보여 줘요. 파일 내용은 안 읽어요.</p></div>
   </div>
   <h3 class="sub-h">지키는 것</h3>
   <div class="cards">
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6z"/><path d="m9 12 2 2 4-4.5"/></svg></div><h3>서버로 안 보내요</h3><p>캡처 · 채팅방 · 데스크톱 목록은 이 기기 브라우저에만 있어요. AI 가 읽게 직접 고른 것만 그때 한 건씩 Claude 로 가요.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M9.5 7V4.5h5V7M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg></div><h3>지우지 않아요</h3><p>치울 후보를 목록으로 드려요. 복사해서 사진첩 · 카카오톡 · 파인더에서 직접 지우세요.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h9.5a6.5 6.5 0 0 1 0 13H9"/></svg></div><h3>되돌릴 수 있어요</h3><p>남김 · 치움 표시는 언제든 바꿔요. 돌을 쥐다 멈춰도 결은 그대로 남아요.</p></div>
+    <div class="card"><div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6z"/><path d="m9 12 2 2 4-4.5"/></svg></div><h3>서버로 안 보내요</h3><p>캡처 · 채팅방 · 데스크톱 목록은 이 기기 브라우저에만 있어요. AI 가 읽게 직접 고른 것만 그때 한 건씩 Claude 로 가요.</p></div>
+    <div class="card"><div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M9.5 7V4.5h5V7M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/></svg></div><h3>지우지 않아요</h3><p>치울 후보를 목록으로 드려요. 복사해서 사진첩 · 카카오톡 · 파인더에서 직접 지우세요.</p></div>
+    <div class="card"><div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h9.5a6.5 6.5 0 0 1 0 13H9"/></svg></div><h3>되돌릴 수 있어요</h3><p>남김 · 치움 표시는 언제든 바꿔요. 돌을 쥐다 멈춰도 결은 그대로 남아요.</p></div>
   </div>
 </div></section>
 
@@ -255,9 +256,9 @@ h2{font-size:30px; line-height:1.3; font-weight:800; letter-spacing:-.03em}
   <h2>내 돌을 만들어요</h2>
   <p class="ld">돌 하나에 기능 하나예요. 바탕 돌을 고르고 이름과 맡을 것을 적으면 그 돌이 홈과 쥐기 화면에 들어가요.</p>
   <div class="cards">
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M10.5 9.2 12.5 8v8"/></svg></div><h3>기능 하나</h3><p>뭘 치우고 싶은지 한 줄로 적어요. 돌 하나가 그 한 가지만 맡아요.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 8.5a2 2 0 0 1 2-2h2.2l1.3-2h5l1.3 2H18a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.2"/></svg></div><h3>사진은 실물 그대로</h3><p>바탕 돌은 워리스톤 사진 그대로예요. 눈 · 입 같은 그림을 덧씌우지 않아요.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3.5 13.9 9l5.6 1.9-5.6 1.9L12 18.4l-1.9-5.6-5.6-1.9L10.1 9z"/><path d="M19 3.5v3M17.5 5h3"/></svg></div><h3>개발사 모드 · AI 모드</h3><p>지금은 요청을 복사해 보내면 개발사가 만들어 붙여요. AI 모드로 바꾸면 맡을 것을 읽어 치울 후보를 Claude 가 골라요.</p></div>
+    <div class="card"><div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M10.5 9.2 12.5 8v8"/></svg></div><h3>기능 하나</h3><p>뭘 치우고 싶은지 한 줄로 적어요. 돌 하나가 그 한 가지만 맡아요.</p></div>
+    <div class="card"><div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 8.5a2 2 0 0 1 2-2h2.2l1.3-2h5l1.3 2H18a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.2"/></svg></div><h3>사진은 실물 그대로</h3><p>바탕 돌은 워리스톤 사진 그대로예요. 눈 · 입 같은 그림을 덧씌우지 않아요.</p></div>
+    <div class="card"><div class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3.5 13.9 9l5.6 1.9-5.6 1.9L12 18.4l-1.9-5.6-5.6-1.9L10.1 9z"/><path d="M19 3.5v3M17.5 5h3"/></svg></div><h3>개발사 모드 · AI 모드</h3><p>지금은 요청을 복사해 보내면 개발사가 만들어 붙여요. AI 모드로 바꾸면 맡을 것을 읽어 치울 후보를 Claude 가 골라요.</p></div>
   </div>
   <h3 class="sub-h">스토어</h3>
   <p class="ld">앱 속 돌을 손에 쥘 수 있게 팔아요. 지금은 둘러보기만 되고, 값과 입고일은 정해지는 대로 올려요.</p>
@@ -299,12 +300,12 @@ h2{font-size:30px; line-height:1.3; font-weight:800; letter-spacing:-.03em}
   <div class="ph"><img src="media/dolworry/citrine.webp" alt="시트린 워리스톤" width="512" height="512" loading="lazy"></div>
   <h2>돌 하나,<br>3분만 쥐어 보세요</h2>
   <p>단톡방 돌 하나만 켜도 조용한 방이 보여요.</p>
-  <div class="btns"><a class="btn pri" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기<span class="go">›</span></a></div>
+  <div class="btns"><a class="btn pri" href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기</a></div>
 </div></section>
 
 <footer class="foot"><div class="inner">
   <div><b>돌워리</b> v0.9.1 기준 · 2026-10-16<div class="links" style="margin-top:8px"><a href="https://claude.ai/artifact/SG8zdW4MG88aUUTdvKA4wP">앱 열어보기</a><span style="margin-right:14px">dolworry.com 은 연결 준비 중</span><a href="https://www.myaaistudio.com/terms.html">이용약관</a><a href="https://www.myaaistudio.com/privacy.html">개인정보처리방침</a></div></div>
-  <div class="co"><b>먀 AI STUDIO</b> · 대표 이준원 · 사업자등록번호 758-01-03118<br>서울 마포구 월드컵로28길 34 · myaaistudio@gmail.com · 070-4571-8763<br>화면 속 결 · 문지름 숫자는 예시예요. 요금과 실물 돌 값은 아직 정해지지 않았어요.</div>
+  <div class="co"><b>먀 AI STUDIO</b><br>대표 이준원, 사업자등록번호 758-01-03118<br>서울 마포구 월드컵로28길 34<br>myaaistudio@gmail.com, 070-4571-8763<br>화면 속 결 · 문지름 숫자는 예시예요. 요금과 실물 돌 값은 아직 정해지지 않았어요.</div>
 </div></footer>
 </body>
 </html>
