@@ -1,0 +1,263 @@
+/* 홈 · 크몽 AX 결 (261106 대표 「레이아웃 · 구성 · 문안 쓰는 법 · 자간 · 높이 · 폰트까지」)
+   수치 = kmong.com/ax 261106 실측(1280 · 390 폭 computed style). 색만 먀(먹색 · 실버 크롬 · 무채색) */
+
+.k{--k-fill:var(--ink); --k-on:var(--bg); --k-hero-bg:var(--bg); --k-hero-ink:var(--ink); --k-hero-sub:var(--grey); --k-hero-box:var(--bg-2); --k-hero-line:var(--line); --k-pri-bg:var(--k-fill); --k-pri-fg:var(--k-on); --k-cta-bg:var(--bg-2); --k-eye-bg:none; --k-eye-c:var(--ink-2); font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif; word-break:keep-all; color:var(--ink)}
+.k-in{max-width:1168px; margin:0 auto; padding:0 20px}
+.k-narrow{max-width:900px; margin:0 auto; padding:0 20px}
+.k-sec{padding:100px 0}
+.k-soft{background:var(--bg-2)}
+.k-h2{font-size:40px; line-height:52px; font-weight:700; letter-spacing:-1.2px; text-align:center; text-wrap:balance; color:var(--ink); margin:0}
+.k-sub{margin:16px 0 0; text-align:center; font-size:16px; line-height:23px; color:var(--grey)}
+
+/* 1 히어로 */
+.k-hero{background:var(--k-hero-bg); color:var(--k-hero-ink); border-bottom:1px solid var(--line-2); padding:80px 0 80px; text-align:center}
+.k-eye{font-size:18px; line-height:27px; font-weight:700; margin:0; background:var(--k-eye-bg); -webkit-background-clip:text; background-clip:text; color:var(--k-eye-c)}
+.k-hero h1{font-size:48px; line-height:64px; font-weight:700; letter-spacing:normal; color:var(--k-hero-ink); margin:16px 0 0}
+.k-hero .k-lead{margin:20px 0 0; font-size:16px; line-height:23px; color:var(--k-hero-sub)}
+.k-stats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); max-width:606px; margin:44px auto 0; padding:24px 16px; border-radius:8px; background:var(--k-hero-box)}
+.k-stats>div{display:flex; flex-direction:column; gap:6px; padding:0 12px}
+.k-stats>div+div{border-left:1px solid var(--k-hero-line)}
+.k-stats span{font-size:14px; line-height:20px; color:var(--k-hero-sub)}
+.k-stats b{font-size:28px; line-height:39px; font-weight:700; color:var(--k-hero-ink); font-variant-numeric:tabular-nums}
+.k-src{margin:12px 0 0; font-size:12px; line-height:19px; color:var(--grey-2)}
+.k-btns{display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-top:52px}
+.k-btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; min-width:220px; height:52px; padding:0 24px; border-radius:4px; font-size:16px; line-height:23px; font-weight:700; text-decoration:none; cursor:pointer; border:0; font-family:inherit}
+.k-btn.line{border:1px solid var(--k-hero-sub); color:var(--k-hero-ink); background:transparent}
+.k-btn.chrome{background:var(--k-pri-bg); color:var(--k-pri-fg)}
+.k-btn.ink{background:var(--k-fill); color:var(--k-on); border-radius:4px}
+.k-btn svg{width:16px; height:16px}
+.k-btn:focus-visible{outline:2px solid var(--silver); outline-offset:3px}
+
+/* 2 고민 4칸 */
+.k-pain{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; max-width:800px; margin:48px auto 0}
+.k-q{background:var(--bg); border-radius:12px; padding:24px 16px 16px; text-align:center; display:flex; flex-direction:column}
+.k-q h3{font-size:20px; line-height:30px; font-weight:700; margin:0}
+.k-q i{display:block; margin:12px auto 12px; width:16px; height:16px; color:var(--silver-600)}
+.k-a{margin-top:auto; background:var(--bg-2); border-radius:8px; padding:16px}
+.k-a b{display:block; font-size:14px; line-height:20px; font-weight:700; color:var(--ink)}
+.k-a p{margin:6px 0 0; font-size:16px; line-height:23px; color:var(--grey)}
+
+/* 3 왜 먀 */
+.k-why{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin-top:48px}
+.k-why>div{border:1px solid var(--line); border-radius:12px; padding:32px 24px 28px; text-align:center; background:var(--bg)}
+.k-why .n{display:block; font-size:36px; line-height:43.2px; font-weight:700; font-variant-numeric:tabular-nums; color:var(--ink)}
+.k-why h3{margin:16px 0 0; font-size:18px; line-height:27px; font-weight:700}
+.k-why p{margin:12px 0 0; font-size:14px; line-height:20px; color:var(--grey-2)}
+.k-strip{margin-top:80px; text-align:center}
+.k-strip p{display:flex; align-items:center; justify-content:center; gap:16px; margin:0; font-size:16px; line-height:23px; font-weight:700; color:var(--grey)}
+.k-strip p::before,.k-strip p::after{content:""; width:40px; height:1px; background:var(--line)}
+.k-strip ul{list-style:none; margin:32px 0 0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:20px 56px}
+.k-strip li{font-size:22px; line-height:30px; font-weight:800; letter-spacing:-.5px; color:var(--ink-2)}
+.k-strip li small{display:block; font-size:12px; line-height:19px; font-weight:500; letter-spacing:0; color:var(--grey-2)}
+
+/* 4 사례 탭 */
+.k-tabs{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); max-width:852px; margin:32px auto 0; border:1px solid var(--line)}
+.k-tab{position:relative; padding:16px 8px; background:var(--bg); border:0; border-left:1px solid var(--line); cursor:pointer; font-family:inherit; text-align:center}
+.k-tab:first-child{border-left:0}
+.k-tab b{display:block; font-size:16px; line-height:23px; font-weight:700; color:var(--grey)}
+.k-tab span{display:block; font-size:13px; line-height:20px; color:var(--grey-2)}
+.k-tab[aria-selected="true"]{background:var(--k-fill)}
+.k-tab[aria-selected="true"] b{color:var(--k-on)}
+.k-tab[aria-selected="true"] span{color:var(--k-on); opacity:.6}
+.k-tab[aria-selected="true"]::after{content:""; position:absolute; left:50%; bottom:-7px; margin-left:-7px; border:7px solid transparent; border-bottom:0; border-top-color:var(--k-fill)}
+.k-tab:focus-visible{outline:2px solid var(--ink); outline-offset:-2px}
+.k-case{display:grid; grid-template-columns:minmax(0,300px) minmax(0,1fr); gap:32px 32px; align-items:center; max-width:852px; margin:64px auto 0}
+.k-case[hidden]{display:none}
+.k-tag{display:inline-block; padding:6px 12px; border-radius:4px; background:var(--line); font-size:13px; line-height:20px; font-weight:600; color:var(--ink-2)}
+.k-case h3{margin:14px 0 0; font-size:32px; line-height:43px; font-weight:700; letter-spacing:-.5px}
+.k-case .t p{margin:16px 0 0; font-size:16px; line-height:23px; color:var(--ink-2)}
+.k-case .t p strong{font-weight:600; color:var(--ink)}
+.k-case .t a{display:inline-block; margin-top:16px; font-size:14px; line-height:20px; font-weight:700; color:var(--ink)}
+.k-shot{background:var(--bg); border-radius:12px; box-shadow:0 8px 32px rgba(11,11,12,.08); overflow:hidden}
+.k-shot img{display:block; width:100%; height:auto}
+.k-shot figcaption{padding:10px 16px; font-size:12px; line-height:19px; color:var(--grey-2)}
+.k-kpi{padding:24px}
+.k-kpi .hd{font-size:16px; line-height:23px; font-weight:700; padding-bottom:14px; border-bottom:1px solid var(--line)}
+.k-kpi dl{margin:0}
+.k-kpi dl>div{display:flex; justify-content:space-between; align-items:baseline; gap:16px; padding:16px 0; border-bottom:1px solid var(--line)}
+.k-kpi dt{font-size:13px; line-height:20px; color:var(--grey)}
+.k-kpi dd{margin:0; font-size:20px; line-height:30px; font-weight:700; letter-spacing:-1px; font-variant-numeric:tabular-nums; text-align:right}
+.k-kpi dd small{display:block; font-size:12px; line-height:19px; font-weight:400; letter-spacing:0; color:var(--grey-2)}
+.k-kpi .ft{margin:12px 0 0; font-size:11px; line-height:16px; color:var(--grey-2)}
+
+/* 5 순서 4단계 */
+.k-line{position:relative; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:48px 0 0}
+.k-line::before{content:""; position:absolute; left:-100vw; right:-100vw; top:21px; height:4px; background:var(--k-fill)}
+.k-line span{position:relative; justify-self:center; display:grid; place-items:center; width:44px; height:44px; border-radius:50%; background:var(--k-fill); color:var(--k-on); font-size:16px; font-weight:700}
+.k-steps{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:32px; margin-top:32px}
+.k-step{background:var(--bg-2); border-radius:12px; padding:32px 16px; text-align:center}
+.k-step i{display:grid; place-items:center; width:44px; height:44px; margin:0 auto; border-radius:4px; background:var(--bg); color:var(--ink)}
+.k-step i svg{width:18px; height:18px}
+.k-step h3{margin:16px 0 0; font-size:24px; line-height:34px; font-weight:700}
+.k-step b{display:block; margin-top:4px; font-size:14px; line-height:20px; font-weight:600; color:var(--ink-2)}
+.k-step p{margin:12px 0 0; font-size:15px; line-height:22px; color:var(--grey)}
+
+/* 6 계산기 */
+.k-calc-sec{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%)}
+.k-calc{display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); max-width:900px; margin:48px auto 0; background:var(--bg); border-radius:12px; overflow:hidden; box-shadow:0 8px 32px rgba(11,11,12,.06)}
+.k-calc .l{padding:40px}
+.k-calc .r{padding:40px; background:var(--bg-2); display:flex; flex-direction:column; text-align:center}
+.k-calc label,.k-calc .lb{display:block; font-size:16px; line-height:23px; font-weight:700; margin:0}
+.k-chips{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:16px 0 36px}
+.k-chip{height:44px; border:1px solid var(--line); border-radius:4px; background:var(--bg); font-family:inherit; font-size:14px; line-height:20px; font-weight:600; color:var(--grey); cursor:pointer}
+.k-chip[aria-pressed="true"]{border-color:var(--ink); color:var(--ink); font-weight:700}
+.k-range{margin:12px 0 28px}
+.k-range output{display:inline-block; margin-bottom:10px; padding:4px 10px; border-radius:4px; background:var(--k-fill); color:var(--k-on); font-size:18px; line-height:27px; font-weight:700}
+.k-range input{width:100%; accent-color:var(--k-fill)}
+.k-range .ends{display:flex; justify-content:space-between; font-size:12px; line-height:19px; color:var(--grey-2)}
+.k-calc .r .cap{font-size:14px; line-height:20px; font-weight:600; color:var(--grey)}
+.k-calc .r .big{margin:8px 0 24px; font-size:40px; line-height:40px; font-weight:700; letter-spacing:-1.2px; font-variant-numeric:tabular-nums}
+.k-calc .r dl{margin:0; text-align:left}
+.k-calc .r dl>div{display:flex; justify-content:space-between; align-items:baseline; padding:16px 0; border-top:1px solid var(--line)}
+.k-calc .r dt{font-size:12px; line-height:19px; font-weight:600; color:var(--grey)}
+.k-calc .r dd{margin:0; font-size:20px; line-height:30px; font-weight:700; letter-spacing:-1px; font-variant-numeric:tabular-nums}
+.k-calc .r .k-btn{margin-top:auto; width:100%; min-width:0; height:44px; font-size:16px; font-weight:500}
+.k-foot{margin:20px 0 0; text-align:center; font-size:12px; line-height:19px; color:var(--grey-2)}
+
+/* 7 CTA */
+.k-cta{background:var(--k-cta-bg); color:var(--k-hero-ink); text-align:center; padding:80px 0}
+.k-cta h2{font-size:36px; line-height:48px; font-weight:700; letter-spacing:-1px; margin:0; color:var(--k-hero-ink); text-wrap:balance}
+.k-cta p{margin:16px 0 0; font-size:16px; line-height:23px; color:var(--k-hero-sub)}
+.k-cta .k-btn{margin-top:52px; min-width:266px}
+
+/* 8 자주 묻는 질문 */
+.k-faq{max-width:852px; margin:48px auto 0; border-top:1px solid var(--line)}
+.k-faq details{border-bottom:1px solid var(--line)}
+.k-faq summary{display:flex; justify-content:space-between; align-items:center; gap:16px; padding:24px 0; font-size:16px; line-height:23px; color:var(--ink); cursor:pointer; list-style:none}
+.k-faq summary::-webkit-details-marker{display:none}
+.k-faq summary::after{content:""; flex:none; width:8px; height:8px; margin-right:6px; border-right:2px solid var(--ink); border-bottom:2px solid var(--ink); transform:rotate(45deg) translateY(-3px); transition:transform .2s}
+.k-faq details[open] summary::after{transform:rotate(-135deg) translateY(-3px)}
+.k-faq summary:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+.k-faq .ans{padding:0 0 24px; font-size:16px; line-height:23px; color:var(--ink-2)}
+.k-faq .ans p{margin:0}
+.k-faq .ans p+p{margin-top:8px}
+
+/* 헤더 메뉴: 크몽처럼 글자 링크 4개, 단추 없음 */
+.k-nav .nav-links a{font-size:14px; line-height:20px; font-weight:500}
+
+@media (max-width:760px){
+  .k-sec{padding:60px 0}
+  .k-h2{font-size:24px; line-height:34px}
+  .k-hero{padding:56px 0 60px}
+  .k-hero h1{font-size:32px; line-height:43px}
+  .k-stats{padding:16px 4px}
+  .k-stats>div{padding:0 6px}
+  .k-stats span{font-size:12px; line-height:19px}
+  .k-stats b{font-size:20px; line-height:30px}
+  .k-btns{flex-direction:column; align-items:stretch; margin-top:36px}
+  .k-pain,.k-why,.k-steps{grid-template-columns:minmax(0,1fr)}
+  .k-why .n{font-size:28px; line-height:39px}
+  .k-strip ul{gap:16px 32px}
+  .k-strip li{font-size:18px; line-height:27px}
+  .k-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .k-tab:nth-child(3){border-left:0}
+  .k-tab:nth-child(n+3){border-top:1px solid var(--line)}
+  .k-case{grid-template-columns:minmax(0,1fr); margin-top:40px}
+  .k-case h3{font-size:24px; line-height:34px}
+  .k-line{display:none}
+  .k-steps{gap:16px}
+  .k-step h3{font-size:20px; line-height:30px}
+  .k-calc{grid-template-columns:minmax(0,1fr)}
+  .k-calc .l,.k-calc .r{padding:24px 20px}
+  .k-calc .r .big{font-size:32px; line-height:39px}
+  .k-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .k-cta h2{font-size:24px; line-height:34px}
+  .k-cta .k-btn{min-width:0; width:100%}
+  .k-faq summary{padding:20px 0; font-size:14px; line-height:20px}
+  .k-faq .ans{font-size:14px; line-height:20px}
+}
+@media (prefers-reduced-motion:reduce){ .k-faq summary::after{transition:none} }
+
+/* 261106 2차: 빛 틈 워드마크 · 맡는 일 6개 · 팀 · 띠 두 묶음 · 탭 5개 */
+.k-wm{display:block; width:min(420px,80%); height:auto; margin:0 auto}
+.k-svcs{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin-top:48px}
+.k-svc{display:flex; flex-direction:column; padding:32px 24px 28px; border:1px solid var(--line); border-radius:12px; background:var(--bg); color:var(--ink); text-decoration:none}
+.k-svc b{font-size:14px; line-height:20px; font-weight:600; color:var(--grey)}
+.k-svc h3{margin:8px 0 0; font-size:20px; line-height:30px; font-weight:700}
+.k-svc p{margin:12px 0 0; font-size:15px; line-height:22px; color:var(--grey)}
+.k-svc span{margin-top:auto; padding-top:20px; font-size:14px; line-height:20px; font-weight:700}
+.k-svc:hover{border-color:var(--ink)}
+.k-svc:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+.k-strip .k-strip2{margin-top:48px}
+.k-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
+.k-team{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin-top:48px}
+.k-person{padding:32px 24px 28px; border:1px solid var(--line); border-radius:12px; background:var(--bg)}
+.k-person span{font-size:14px; line-height:20px; font-weight:600; color:var(--grey)}
+.k-person h3{margin:8px 0 0; font-size:24px; line-height:34px; font-weight:700}
+.k-person h3 small{margin-left:8px; font-size:15px; font-weight:600; color:var(--grey)}
+.k-person p{margin:12px 0 0; font-size:15px; line-height:22px; color:var(--ink-2)}
+@media (max-width:760px){
+  .k-svcs,.k-team{grid-template-columns:minmax(0,1fr)}
+  .k-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .k-tab:nth-child(odd){border-left:0}
+  .k-tab:nth-child(n+3){border-top:1px solid var(--line)}
+  .k-tab:last-child{grid-column:1 / -1}
+}
+
+/* 261106 3차 (대표 「큰 로고는 좌측 상단에, 화이트 · 블랙 각각, 나이트 모드 켤 수 있게」)
+   헤더 로고 = 워드마크 흰 판(검정 선) / 검정 판(흰 선). 테마는 기기 설정 → 단추로 고른 값 순 */
+.k-logo{display:block; line-height:0}
+.k-logo img{display:block; height:36px; width:auto; border-radius:0}
+.k-logo .wm-d{display:none}
+.k-nav .nav-in{max-width:1168px; padding-inline:20px}
+.k-theme{flex:none; display:grid; place-items:center; width:36px; height:36px; padding:0; border:1px solid var(--line); border-radius:50%; background:var(--bg); color:var(--ink); cursor:pointer}
+.k-theme svg{width:18px; height:18px}
+.k-theme .i-sun{display:none}
+.k-theme:hover{border-color:var(--ink)}
+.k-theme:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .k-logo .wm-l{display:none}
+  :root:not([data-theme="light"]) .k-logo .wm-d{display:block}
+  :root:not([data-theme="light"]) .k-theme .i-moon{display:none}
+  :root:not([data-theme="light"]) .k-theme .i-sun{display:block}
+}
+:root[data-theme="dark"] .k-logo .wm-l{display:none}
+:root[data-theme="dark"] .k-logo .wm-d{display:block}
+:root[data-theme="dark"] .k-theme .i-moon{display:none}
+:root[data-theme="dark"] .k-theme .i-sun{display:block}
+@media (max-width:860px){ .k-theme{margin-left:auto} }
+@media (max-width:640px){ .k-logo img{height:28px} }
+
+/* 261106 4차 (대표 「화이트에는 화이트 배경이어야지」): 히어로 · CTA 띠가 테마를 따름. 라이트 = 흰 바탕 · 먹색 단추, 다크 = 먹색 무대 · 실버 단추 */
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .k{--k-hero-bg:var(--stage); --k-hero-ink:#fff; --k-hero-sub:rgba(255,255,255,.6); --k-hero-box:rgba(255,255,255,.06); --k-hero-line:rgba(255,255,255,.12); --k-pri-bg:var(--silver-sheen); --k-pri-fg:#212224; --k-cta-bg:var(--stage); --k-eye-bg:var(--silver-sheen); --k-eye-c:transparent} }
+:root[data-theme="dark"] .k{--k-hero-bg:var(--stage); --k-hero-ink:#fff; --k-hero-sub:rgba(255,255,255,.6); --k-hero-box:rgba(255,255,255,.06); --k-hero-line:rgba(255,255,255,.12); --k-pri-bg:var(--silver-sheen); --k-pri-fg:#212224; --k-cta-bg:var(--stage); --k-eye-bg:var(--silver-sheen); --k-eye-c:transparent}
+
+/* 261106 5차 다듬기 (대표 「오탈자나 크몽 AX 와 비교해서 뒤처진 부분 없게」) */
+section[id]{scroll-margin-top:64px}
+/* 출처 보기 ⓘ: 눌러도(포커스) 마우스를 올려도 말풍선 */
+.k-stats span{display:inline-flex; align-items:center; justify-content:center; gap:4px}
+.k-i{position:relative; display:inline-grid; place-items:center; width:16px; height:16px; padding:0; border:0; background:none; color:inherit; cursor:pointer; opacity:.7}
+.k-i svg{width:12px; height:12px}
+.k-i:hover,.k-i:focus-visible{opacity:1}
+.k-i:focus-visible{outline:2px solid currentColor; outline-offset:2px; border-radius:50%}
+.k-i::after{content:attr(data-tip); position:absolute; left:50%; bottom:calc(100% + 8px); transform:translateX(-50%); width:220px; padding:10px 12px; border-radius:8px; background:var(--k-fill); color:var(--k-on); font-size:12px; line-height:18px; font-weight:500; text-align:left; white-space:normal; opacity:0; pointer-events:none; transition:opacity .15s; z-index:5}
+.k-i:hover::after,.k-i:focus-visible::after,.k-i.on::after{opacity:1}
+@media (max-width:760px){ .k-i::after{width:180px} .k-stats>div:first-child .k-i::after{left:0; transform:none} .k-stats>div:last-child .k-i::after{left:auto; right:0; transform:none} }
+/* 고민 칸 격자 바탕 (크몽 결, 무채색) */
+.k-grid{position:relative; overflow:hidden}
+.k-grid::before{content:""; position:absolute; inset:0; background-image:linear-gradient(90deg,var(--line) 1px,transparent 1px),linear-gradient(var(--line) 1px,transparent 1px); background-size:48px 48px; opacity:.6; -webkit-mask-image:radial-gradient(ellipse 60% 55% at 50% 45%,#000 0%,transparent 75%); mask-image:radial-gradient(ellipse 60% 55% at 50% 45%,#000 0%,transparent 75%); pointer-events:none}
+.k-grid>.k-in{position:relative}
+/* CTA 점 무늬 */
+.k-cta{position:relative; overflow:hidden}
+.k-cta::before{content:""; position:absolute; inset:0; background-image:radial-gradient(var(--k-hero-line) 1.2px,transparent 1.2px); background-size:22px 22px; -webkit-mask-image:linear-gradient(90deg,#000,transparent 35%,transparent 65%,#000); mask-image:linear-gradient(90deg,#000,transparent 35%,transparent 65%,#000); pointer-events:none}
+.k-cta>.k-in{position:relative}
+/* 계산기: 채운 막대 + 손잡이를 따라가는 말풍선 + 두 칸 사이 화살 */
+.k-range{position:relative; padding-top:46px}
+.k-range output{position:absolute; top:0; transform:translateX(-50%); margin:0; white-space:nowrap}
+.k-range output::after{content:""; position:absolute; left:50%; bottom:-6px; margin-left:-6px; border:6px solid transparent; border-bottom:0; border-top-color:var(--k-fill)}
+.k-range input{-webkit-appearance:none; appearance:none; height:8px; border-radius:16px; background:linear-gradient(to right,var(--k-fill) var(--p,50%),var(--line) var(--p,50%)); outline:none; margin:6px 0 8px}
+.k-range input::-webkit-slider-thumb{-webkit-appearance:none; width:28px; height:28px; border-radius:50%; background:var(--bg); border:1px solid var(--line); box-shadow:0 2px 6px rgba(11,11,12,.18); cursor:pointer}
+.k-range input::-moz-range-thumb{width:28px; height:28px; border-radius:50%; background:var(--bg); border:1px solid var(--line); box-shadow:0 2px 6px rgba(11,11,12,.18); cursor:pointer}
+.k-range input:focus-visible::-webkit-slider-thumb{outline:2px solid var(--ink); outline-offset:2px}
+.k-calc .l{position:relative}
+.k-calc .l::after{content:""; position:absolute; right:-12px; top:50%; margin-top:-12px; border:12px solid transparent; border-right:0; border-left-color:var(--bg); z-index:1}
+@media (max-width:760px){ .k-calc .l::after{right:auto; left:50%; top:auto; bottom:-12px; margin:0 0 0 -12px; border:12px solid transparent; border-bottom:0; border-top-color:var(--bg)} }
+/* FAQ 답: 대비 한 줄 · 예시 목록 */
+.k-faq .ans ul{margin:10px 0 0; padding-left:18px}
+.k-faq .ans li+li{margin-top:4px}
+.k-faq .ans ul+p{margin-top:10px}
+.k-faq .ans strong{font-weight:700; color:var(--ink)}
+/* 문의 제목도 같은 글자 체계 */
+.k-contact .k-h2l{font-size:40px; line-height:52px; font-weight:700; letter-spacing:-1.2px}
+@media (max-width:760px){ .k-contact .k-h2l{font-size:24px; line-height:34px} }
+@media (prefers-reduced-motion:reduce){ .k-i::after{transition:none} }
