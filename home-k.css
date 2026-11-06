@@ -19,6 +19,7 @@
 .k-stats>div+div{border-left:1px solid var(--k-hero-line)}
 .k-stats span{font-size:14px; line-height:20px; color:var(--k-hero-sub)}
 .k-stats b{font-size:28px; line-height:39px; font-weight:700; color:var(--k-hero-ink); font-variant-numeric:tabular-nums}
+.k-stats .k-was{font-size:13px; line-height:19px; color:var(--k-hero-sub); font-variant-numeric:tabular-nums}
 .k-src{margin:12px 0 0; font-size:12px; line-height:19px; color:var(--grey-2)}
 .k-btns{display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-top:52px}
 .k-btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; min-width:220px; height:52px; padding:0 24px; border-radius:4px; font-size:16px; line-height:23px; font-weight:700; text-decoration:none; cursor:pointer; border:0; font-family:inherit}
@@ -84,8 +85,8 @@
 .k-steps{list-style:none; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; margin:48px 0 0}
 .k-step{padding:0 28px 0 0; text-align:left}
 .k-no{display:flex; align-items:center; margin-bottom:20px}
-.k-no span{flex:none; display:grid; place-items:center; width:44px; height:44px; border-radius:50%; font-size:17px; font-weight:800; font-variant-numeric:tabular-nums; color:#111; background:linear-gradient(135deg,#F4F6F7 0%,#B6BCC4 38%,#E7EAED 56%,#8F96A0 100%); box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 2px 8px rgba(0,0,0,.14)}
-.k-no::after{content:""; flex:1; height:2px; margin-left:12px; background:linear-gradient(90deg,#8F96A0,rgba(143,150,160,.12))}
+.k-no span{flex:none; display:grid; place-items:center; width:36px; height:36px; border-radius:50%; font-size:15px; font-weight:700; font-variant-numeric:tabular-nums; color:inherit; border:1.5px solid currentColor}
+.k-no::after{content:""; flex:1; height:1px; margin-left:12px; background:currentColor; opacity:.18}
 .k-step:last-child .k-no::after{display:none}
 .k-when{display:inline-block; padding:4px 10px; border-radius:999px; border:1px solid var(--line); font-size:13px; line-height:18px; font-weight:700; color:var(--ink-2)}
 .k-step:first-child .k-when{background:var(--ink); border-color:var(--ink); color:var(--bg)}
@@ -144,6 +145,7 @@
   .k-stats>div{padding:0 6px}
   .k-stats span{font-size:12px; line-height:19px}
   .k-stats b{font-size:20px; line-height:30px}
+  .k-stats .k-was{font-size:11px; line-height:16px; letter-spacing:-.02em}
   .k-btns{flex-direction:column; align-items:stretch; margin-top:36px}
   .k-pain,.k-why{grid-template-columns:minmax(0,1fr)}
   .k-why .n{font-size:28px; line-height:39px}
@@ -158,7 +160,7 @@
   .k-step{display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:16px; padding:0 0 28px}
   .k-step>*:not(.k-no){grid-column:2}
   .k-no{grid-row:1 / span 3; flex-direction:column; align-self:stretch; margin:0}
-  .k-no::after{width:2px; height:auto; flex:1; margin:8px 0 -28px; background:linear-gradient(180deg,#8F96A0,rgba(143,150,160,.12))}
+  .k-no::after{width:1px; height:auto; flex:1; margin:8px 0 -28px}
   .k-when{justify-self:start; margin-top:10px}
   .k-step h3{font-size:20px; line-height:30px}
   .k-calc{grid-template-columns:minmax(0,1fr)}
@@ -262,8 +264,8 @@ section[id]{scroll-margin-top:64px}
 @media (min-width:761px){
   .k-step{padding:0 12px; text-align:center}
   .k-no{position:relative; justify-content:center; margin-bottom:22px}
-  .k-no span{position:relative; z-index:1; width:48px; height:48px; font-size:18px}
-  .k-no::after{position:absolute; top:50%; left:calc(50% + 34px); width:calc(100% - 44px); height:2px; margin:-1px 0 0; background:linear-gradient(90deg,#8F96A0,#C9CED4 50%,#8F96A0)}
+  .k-no span{position:relative; z-index:1; width:40px; height:40px; font-size:16px}
+  .k-no::after{position:absolute; top:50%; left:calc(50% + 34px); width:calc(100% - 44px); height:1px; margin:0}
   .k-when{background:var(--bg)}
 }
 .k-step p br{display:none}
