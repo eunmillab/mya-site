@@ -256,3 +256,25 @@ section[id]{scroll-margin-top:64px}
   .k-svc{grid-column:span 2}
   .k-svc:nth-child(n+4){grid-column:span 3}
 }
+/* 261106 대표 「잘못된 거 같아」: 12px 문장 안의 링크가 전역 .linkout(16.5px · 700) 을 받아 혼자 커 보이던 것 */
+.k-foot .linkout{font-size:inherit; line-height:inherit; font-weight:600; padding-bottom:0; margin-left:2px}
+/* 261106 대표 「이것도 좀 다듬어줘」: 데스크톱 4단계를 가운데 정렬로, 이음선은 원과 원 사이를 끝까지 잇고, 알약은 네 개 같은 결 */
+@media (min-width:761px){
+  .k-step{padding:0 12px; text-align:center}
+  .k-no{position:relative; justify-content:center; margin-bottom:22px}
+  .k-no span{position:relative; z-index:1; width:48px; height:48px; font-size:18px}
+  .k-no::after{position:absolute; top:50%; left:calc(50% + 34px); width:calc(100% - 44px); height:2px; margin:-1px 0 0; background:linear-gradient(90deg,#8F96A0,#C9CED4 50%,#8F96A0)}
+  .k-when{background:var(--bg)}
+}
+.k-step p br{display:none}
+@media (min-width:761px){ .k-step p br{display:inline} }
+/* 261106 대표 「이거 이상해」: 진행 막대 두 줄이 글자 없이 선으로만 보이던 것 → 번호 + 이름. 「바꾸기」는 문장 크기 글자 링크로 */
+.k-contact .pstep{gap:0; align-items:center; margin:0 0 28px}
+.k-contact .pstep i{flex:none; height:auto; background:none; border-radius:0; display:flex; align-items:center; gap:8px; font-style:normal; font-size:14px; line-height:20px; font-weight:600; color:var(--grey-2)}
+.k-contact .pstep i+i::before{content:""; width:32px; height:1px; margin:0 12px; background:var(--line)}
+.k-contact .pstep b{display:grid; place-items:center; width:24px; height:24px; border-radius:50%; font-size:12px; font-weight:800; border:1px solid var(--line); color:var(--grey-2)}
+.k-contact .pstep i.on{color:var(--ink)}
+.k-contact .pstep i.on b{border-color:transparent; color:#111; background:linear-gradient(135deg,#F4F6F7 0%,#B6BCC4 38%,#E7EAED 56%,#8F96A0 100%)}
+.k-contact #back{height:auto; padding:0; margin-left:10px; border:0; background:none; font-size:inherit; font-weight:500; color:var(--grey); text-decoration:underline; text-underline-offset:4px; vertical-align:baseline}
+.k-contact #back:hover{color:var(--ink)}
+.k-step:first-child .k-when{background:var(--bg); border-color:var(--line); color:var(--ink-2)}
