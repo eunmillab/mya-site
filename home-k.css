@@ -196,27 +196,8 @@
 
 /* 261106 3차 (대표 「큰 로고는 좌측 상단에, 화이트 · 블랙 각각, 나이트 모드 켤 수 있게」)
    헤더 로고 = 워드마크 흰 판(검정 선) / 검정 판(흰 선). 테마는 기기 설정 → 단추로 고른 값 순 */
-.k-logo{display:block; line-height:0}
-.k-logo img{display:block; height:36px; width:auto; border-radius:0}
-.k-logo .wm-d{display:none}
 .k-nav .nav-in{max-width:1168px; padding-inline:20px}
-.k-theme{flex:none; display:grid; place-items:center; width:36px; height:36px; padding:0; border:1px solid var(--line); border-radius:50%; background:var(--bg); color:var(--ink); cursor:pointer}
-.k-theme svg{width:18px; height:18px}
-.k-theme .i-sun{display:none}
-.k-theme:hover{border-color:var(--ink)}
-.k-theme:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) .k-logo .wm-l{display:none}
-  :root:not([data-theme="light"]) .k-logo .wm-d{display:block}
-  :root:not([data-theme="light"]) .k-theme .i-moon{display:none}
-  :root:not([data-theme="light"]) .k-theme .i-sun{display:block}
-}
-:root[data-theme="dark"] .k-logo .wm-l{display:none}
-:root[data-theme="dark"] .k-logo .wm-d{display:block}
-:root[data-theme="dark"] .k-theme .i-moon{display:none}
-:root[data-theme="dark"] .k-theme .i-sun{display:block}
-@media (max-width:860px){ .k-theme{margin-left:auto} }
-@media (max-width:640px){ .k-logo img{height:28px} }
+
 
 /* 261106 4차 (대표 「화이트에는 화이트 배경이어야지」): 히어로 · CTA 띠가 테마를 따름. 라이트 = 흰 바탕 · 먹색 단추, 다크 = 먹색 무대 · 실버 단추 */
 @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .k{--k-hero-bg:var(--stage); --k-hero-ink:#fff; --k-hero-sub:rgba(255,255,255,.6); --k-hero-box:rgba(255,255,255,.06); --k-hero-line:rgba(255,255,255,.12); --k-pri-bg:var(--silver-sheen); --k-pri-fg:#212224; --k-cta-bg:var(--stage); --k-eye-bg:var(--silver-sheen); --k-eye-c:transparent} }
