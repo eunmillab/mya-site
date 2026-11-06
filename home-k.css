@@ -81,16 +81,16 @@
 .k-kpi .ft{margin:12px 0 0; font-size:11px; line-height:16px; color:var(--grey-2)}
 
 /* 5 순서 4단계 */
-.k-line{position:relative; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:48px 0 0}
-.k-line::before{content:""; position:absolute; left:-100vw; right:-100vw; top:21px; height:4px; background:var(--k-fill)}
-.k-line span{position:relative; justify-self:center; display:grid; place-items:center; width:44px; height:44px; border-radius:50%; background:var(--k-fill); color:var(--k-on); font-size:16px; font-weight:700}
-.k-steps{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:32px; margin-top:32px}
-.k-step{background:var(--bg-2); border-radius:12px; padding:32px 16px; text-align:center}
-.k-step i{display:grid; place-items:center; width:44px; height:44px; margin:0 auto; border-radius:4px; background:var(--bg); color:var(--ink)}
-.k-step i svg{width:18px; height:18px}
-.k-step h3{margin:16px 0 0; font-size:24px; line-height:34px; font-weight:700}
-.k-step b{display:block; margin-top:4px; font-size:14px; line-height:20px; font-weight:600; color:var(--ink-2)}
-.k-step p{margin:12px 0 0; font-size:15px; line-height:22px; color:var(--grey)}
+.k-steps{list-style:none; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; margin:48px 0 0}
+.k-step{padding:0 28px 0 0; text-align:left}
+.k-no{display:flex; align-items:center; margin-bottom:20px}
+.k-no span{flex:none; display:grid; place-items:center; width:44px; height:44px; border-radius:50%; font-size:17px; font-weight:800; font-variant-numeric:tabular-nums; color:#111; background:linear-gradient(135deg,#F4F6F7 0%,#B6BCC4 38%,#E7EAED 56%,#8F96A0 100%); box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 2px 8px rgba(0,0,0,.14)}
+.k-no::after{content:""; flex:1; height:2px; margin-left:12px; background:linear-gradient(90deg,#8F96A0,rgba(143,150,160,.12))}
+.k-step:last-child .k-no::after{display:none}
+.k-when{display:inline-block; padding:4px 10px; border-radius:999px; border:1px solid var(--line); font-size:13px; line-height:18px; font-weight:700; color:var(--ink-2)}
+.k-step:first-child .k-when{background:var(--ink); border-color:var(--ink); color:var(--bg)}
+.k-step h3{margin:12px 0 0; font-size:24px; line-height:32px; font-weight:700; letter-spacing:-.5px; color:var(--ink)}
+.k-step p{margin:8px 0 0; font-size:15px; line-height:24px; color:var(--grey); text-wrap:pretty; word-break:keep-all}
 
 /* 6 계산기 */
 .k-calc-sec{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%)}
@@ -145,7 +145,7 @@
   .k-stats span{font-size:12px; line-height:19px}
   .k-stats b{font-size:20px; line-height:30px}
   .k-btns{flex-direction:column; align-items:stretch; margin-top:36px}
-  .k-pain,.k-why,.k-steps{grid-template-columns:minmax(0,1fr)}
+  .k-pain,.k-why{grid-template-columns:minmax(0,1fr)}
   .k-why .n{font-size:28px; line-height:39px}
   .k-strip ul{gap:16px 32px}
   .k-strip li{font-size:18px; line-height:27px}
@@ -154,8 +154,12 @@
   .k-tab:nth-child(n+3){border-top:1px solid var(--line)}
   .k-case{grid-template-columns:minmax(0,1fr); margin-top:40px}
   .k-case h3{font-size:24px; line-height:34px}
-  .k-line{display:none}
-  .k-steps{gap:16px}
+  .k-steps{grid-template-columns:minmax(0,1fr); margin-top:32px}
+  .k-step{display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:16px; padding:0 0 28px}
+  .k-step>*:not(.k-no){grid-column:2}
+  .k-no{grid-row:1 / span 3; flex-direction:column; align-self:stretch; margin:0}
+  .k-no::after{width:2px; height:auto; flex:1; margin:8px 0 -28px; background:linear-gradient(180deg,#8F96A0,rgba(143,150,160,.12))}
+  .k-when{justify-self:start; margin-top:10px}
   .k-step h3{font-size:20px; line-height:30px}
   .k-calc{grid-template-columns:minmax(0,1fr)}
   .k-calc .l,.k-calc .r{padding:24px 20px}
