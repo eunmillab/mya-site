@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-label="먀 AI STUDIO">
+<style>@media (prefers-reduced-motion:reduce){.sh{display:none}}</style>
+<defs>
+<linearGradient id="m" x1="0" y1="0" x2="1" y2="1" spreadMethod="reflect"><animateTransform attributeName="gradientTransform" type="translate" values="-.6 -.6;.6 .6;-.6 -.6" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="7.2s" repeatCount="indefinite"/><stop offset="0" stop-color="#F2F4F6"/><stop offset=".2" stop-color="#FFFFFF"/><stop offset=".4" stop-color="#C9CFD6"/><stop offset=".6" stop-color="#9AA3AD"/><stop offset=".8" stop-color="#EDEFF2"/><stop offset="1" stop-color="#B6BCC4"/></linearGradient>
+<linearGradient id="b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+<clipPath id="q"><path d="M83,0 H837 L1000,163 V917 Q1000,1000 917,1000 H83 Q0,1000 0,917 V83 Q0,0 83,0 Z"/></clipPath>
+</defs>
+<g clip-path="url(#q)">
+<path d="M83,0 H837 L1000,163 V917 Q1000,1000 917,1000 H83 Q0,1000 0,917 V83 Q0,0 83,0 Z" fill="url(#m)"/>
+<g class="sh"><animateTransform attributeName="transform" type="translate" values="-700 0;1300 0;-700 0" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="7.2s" repeatCount="indefinite"/><rect x="-200" y="-300" width="420" height="1600" fill="url(#b)" transform="rotate(20 10 500)"/></g>
+<g fill="none" stroke="#0B0B0C" stroke-width="22"><path d="M248,270 L248,730"/><path d="M500,-60 L500,1060"/><path d="M755,-60 L755,270 L1000,270"/><path d="M1000,450 L755,450 L755,550 L1000,550"/><path d="M755,1060 L755,730 L1000,730"/><path d="M83,0 H837 L1000,163 V917 Q1000,1000 917,1000 H83 Q0,1000 0,917 V83 Q0,0 83,0 Z" stroke-width="44"/></g>
+</g>
+</svg>
