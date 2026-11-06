@@ -246,3 +246,9 @@ section[id]{scroll-margin-top:64px}
 @media (max-width:760px){
   .k-in,.k-nav .nav-in{padding-inline:24px}
 }
+/* 261106 대표 「작곡 작사는 빼줘」: 서비스 카드 5장, 위 3장 · 아래 2장이 빈칸 없이 줄을 채우게 */
+@media (min-width:761px){
+  .k-svcs{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .k-svc{grid-column:span 2}
+  .k-svc:nth-child(n+4){grid-column:span 3}
+}

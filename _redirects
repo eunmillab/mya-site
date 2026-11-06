@@ -5,7 +5,6 @@ https://myaaistudio.com/*    https://www.myaaistudio.com/:splat    301!
 # 확장자 없이 들어와도 열리게
 /ai-ops      /ai-ops.html      200
 /content     /content.html     200
-/music       /music.html       200
 /dev         /dev.html         200
 /branding    /branding.html    200
 /team        /team.html        200
